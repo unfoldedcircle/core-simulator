@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "minor_version": 1,
+    "key": "person",
+    "data": {
+        "items": [
+            {
+                "name": "Unfolded Simulator",
+                "user_id": "1571c1bbf7b443108b00f06a3c35de00",
+                "device_trackers": [],
+                "id": "unfolded_simulator"
+            }
+        ]
+    }
+}

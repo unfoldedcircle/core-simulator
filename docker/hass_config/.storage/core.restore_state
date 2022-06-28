@@ -1,0 +1,28 @@
+{
+    "version": 1,
+    "minor_version": 1,
+    "key": "core.restore_state",
+    "data": [
+        {
+            "state": {
+                "entity_id": "person.unfolded_simulator",
+                "state": "unknown",
+                "attributes": {
+                    "editable": false,
+                    "id": "unfolded_simulator",
+                    "user_id": "1571c1bbf7b443108b00f06a3c35de00",
+                    "friendly_name": "Unfolded Simulator"
+                },
+                "last_changed": "2022-06-28T18:09:27.899518+00:00",
+                "last_updated": "2022-06-28T18:09:30.383771+00:00",
+                "context": {
+                    "id": "01G6NR238F7QE7VN6XK58705GH",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "extra_data": null,
+            "last_seen": "2022-06-28T18:32:17.733544+00:00"
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+/hass_config/home-assistant.log*
+/hass_config/home-assistant_v2.db-shm
+/hass_config/home-assistant_v2.db-wal

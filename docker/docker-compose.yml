@@ -1,0 +1,38 @@
+version: '2.3'
+
+services:
+  core-simulator:
+    image: unfoldedcircle/core-simulator
+    container_name: core-simulator
+    #restart: "unless-stopped"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+
+  integration-hass:
+    image: unfoldedcircle/integration-hass
+    container_name: integration-hass
+    #restart: "unless-stopped"
+    # configure Home Assistant demo server defined below
+    environment:
+      - UC_HASS_URL=ws://hassio:8123/api/websocket
+      - UC_HASS_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhMWE0Y2YyYTIwYWU0MjZlYTc2NjJhNWY1OTk3NzQyOCIsImlhdCI6MTY1NTQ4MTIzNywiZXhwIjoxOTcwODQxMjM3fQ.RH4Xte1j8-k0gGbxx16NlSefGLMuIeuFgb8mpJk8Q9k
+      # Token can also be propagated from an already defined environment variable. E.g. if defined in HASS_TOKEN:
+      #- UC_HASS_TOKEN=$HASS_TOKEN
+    # Port exposure is not really required, only for testing
+    ports:
+      - "8000:8000"
+
+  hassio:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: home-assistant-demo
+    hostname: hassio
+    #restart: "unless-stopped"
+    environment:
+      - TZ=Europe/Zurich
+    # expose web ui
+    ports:
+      - "8123:8123"
+    volumes:
+      - ./hass_config:/config
+    privileged: true

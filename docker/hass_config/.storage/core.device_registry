@@ -1,0 +1,83 @@
+{
+    "version": 1,
+    "minor_version": 3,
+    "key": "core.device_registry",
+    "data": {
+        "devices": [
+            {
+                "config_entries": [
+                    "77bdcd37d504e3ea13eb02504e128a6f"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "dnsip",
+                        "myip.opendns.com_False"
+                    ]
+                ],
+                "manufacturer": "DNS",
+                "model": "3.0.0",
+                "name": "myip.opendns.com",
+                "sw_version": null,
+                "hw_version": null,
+                "entry_type": "service",
+                "id": "0c9850307b0a1a7298fada36a7837aa4",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null,
+                "configuration_url": null
+            },
+            {
+                "config_entries": [
+                    "81080ce1926fe6bcb84df4bac1e6eb7e"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "eafm",
+                        "measure-id",
+                        "720215"
+                    ]
+                ],
+                "manufacturer": "https://environment.data.gov.uk/",
+                "model": "Water Level",
+                "name": "A6 Bridge Water Level Stage",
+                "sw_version": null,
+                "hw_version": null,
+                "entry_type": "service",
+                "id": "f747b168dd772a5dafafaf76d9fd6afa",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null,
+                "configuration_url": null
+            },
+            {
+                "config_entries": [
+                    "fd22c62754b0f5ebe13acac8c66b8637"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "forecast_solar",
+                        "fd22c62754b0f5ebe13acac8c66b8637"
+                    ]
+                ],
+                "manufacturer": "Forecast.Solar",
+                "model": "public",
+                "name": "Solar Production Forecast",
+                "sw_version": null,
+                "hw_version": null,
+                "entry_type": "service",
+                "id": "6fa1bfdbc213b04705b2489758f3050e",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null,
+                "configuration_url": "https://forecast.solar"
+            }
+        ],
+        "deleted_devices": []
+    }
+}

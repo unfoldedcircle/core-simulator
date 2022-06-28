@@ -11,7 +11,7 @@ YAML specification files:
 
 The rendered html files are available from the built-in core-simulator webserver: <http://localhost:8080>
 
-## Install
+## Installation
 
 The Remote-Core simulator is a statically compiled binary with no external dependencies on macOS.  
 
@@ -36,6 +36,27 @@ Extract the archive, change into the extracted directory and run the `core-simul
   - <https://localhost:8443/api>
 - At first run it will create a user data subdirectory `./data`.
 
+### User Accounts
+
+The Remote-Core simulator has the following predefined administrator accounts:
+
+#### REST API
+
+- user: `admin`
+- password: `remote2`
+
+⚠️ The current version only supports Basic Authentication. Login functionality with session cookies will be included in
+the next version.
+
+#### WebSocket API
+
+The WebSocket API uses token based authentication sent in the header:
+
+- header: `auth-token`
+- admin token: `1-2-3`
+
+⚠️ WebSocket authentication will be reworked in a future version to simplify login flow with a REST session.
+
 ## Configuration
 
 The Remote-Core simulator runs with pre-configured defaults.
@@ -49,6 +70,20 @@ UC_API_HTTPS_PORT=9000
 An optional configuration can be specified with the command line argument `--config FILE`.  
 See `simulator.yaml` in the extracted directory for supported configuration options.
 
+- The configuration file may only contain sub-sections. It's not required to uncomment and use the full configuration.
+  - Example with just re-defining the http settings:
+
+```
+api:
+  http:
+    enabled: true
+    port: 9000
+  https:
+    enabled: false
+    port: 8443
+```
+- `userdata` is an absolute directory if the path starts with `/`, otherwise it's a relative directory.
+
 ### Certificates
 
 Certificates for the TLS connection can be specified with environment variables:
@@ -59,3 +94,12 @@ UC_CERTS_PRIVATE=./data/certs/private.pem
 ```
 
 Use [mkcert](https://github.com/FiloSottile/mkcert) for easy local development with self-signed certificates.
+
+### Logging
+
+The log level of the simulator can be changed through the environment variable `RUST_LOG=debug`.  
+Valid log levels are: debug, info, warn, error.
+
+## Docker Compose Demo Setup
+
+See [docker](docker) directory for an all-in-one simulation setup using Docker Compose.

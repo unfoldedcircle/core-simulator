@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "minor_version": 1,
+    "key": "auth_provider.homeassistant",
+    "data": {
+        "users": [
+            {
+                "username": "unfolded",
+                "password": "JDJiJDEyJHAzL1pCbWZMdmJuek1TWFVwaXR0Sk9wYTdFY2FBQUkyTHpIYjBLUEpuWkE4YnBsZm1peUdD"
+            }
+        ]
+    }
+}
