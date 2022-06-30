@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Generic /api endpoint in OpenAPI specification for easier testing.
+- Active profile switching and retrieval of active profile identifier.
 
 ## v0.8.0-alpha - 2022-06-30
 ### Added

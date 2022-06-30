@@ -31,9 +31,12 @@ sudo apt install libavahi-compat-libdnssd-dev
 Extract the archive, change into the extracted directory and run the `core-simulator` binary.
 
 - Web page: <http://localhost:8080>
-- Default API endpoints:
+- Default REST API endpoints:
   - <http://localhost:8080/api>
   - <https://localhost:8443/api>
+- Default WebSocket API endpoints:
+  - <http://localhost:8080/ws>
+  - <https://localhost:8443/ws>
 - At first run it will create a user data subdirectory `./data`.
 
 ### User Accounts
@@ -45,8 +48,14 @@ The Remote-Core simulator has the following predefined administrator accounts:
 - user: `admin`
 - password: `remote2`
 
-⚠️ The current version only supports Basic Authentication. Login functionality with session cookies will be included in
-the next version.
+Either use Basic Authentication for each request (when doing single tests or using OpenAPI), or use the `/api/pub/login`
+endpoint for a session login with cookie.
+
+⚠️ Pin based login for the web-configurator will be added with the next version:
+- dedicated user account for the web-configurator which needs to be hard-coded in the web-app.
+- password will be a default 4-digit pin.
+
+ℹ️ Note: user account management will be added in a future release. 
 
 #### WebSocket API
 
