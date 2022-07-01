@@ -45,15 +45,16 @@ The Remote-Core simulator has the following predefined administrator accounts:
 
 #### REST API
 
+Web configurator account (with admin rights):
+- user: `web-configurator`
+- password: `1234`
+
+Administrator account:
 - user: `admin`
 - password: `remote2`
 
 Either use Basic Authentication for each request (when doing single tests or using OpenAPI), or use the `/api/pub/login`
 endpoint for a session login with cookie.
-
-⚠️ Pin based login for the web-configurator will be added with the next version:
-- dedicated user account for the web-configurator which needs to be hard-coded in the web-app.
-- password will be a default 4-digit pin.
 
 ℹ️ Note: user account management will be added in a future release. 
 

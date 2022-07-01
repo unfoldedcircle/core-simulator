@@ -10,8 +10,12 @@ The pre-defined [docker-compose.yml](docker-compose.yml) is an all-in-one simula
 Core-Simulator:
 
 - Web page: <http://localhost:8080>
-- user: `admin`
-- password: `remote2`
+- Web configurator user account (with admin rights:
+  - user: `web-configurator`
+  - password: `1234`
+- Administrator user account:
+  - user: `admin`
+  - password: `remote2`
 
 Home-Assistant:
 
@@ -20,6 +24,9 @@ Home-Assistant:
 - password: `remotetwo`
 
 ## Docker Compose Commands
+
+The setup defines `latest` images. Check <https://hub.docker.com/u/unfoldedcircle> for new releases.  
+ℹ️ Official documentation on Docker Hub will be provided later.
 
 Start in foreground:
 ```bash
