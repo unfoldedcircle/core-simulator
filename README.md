@@ -113,3 +113,8 @@ Valid log levels are: debug, info, warn, error.
 ## Docker Compose Demo Setup
 
 See [docker](docker) directory for an all-in-one simulation setup using Docker Compose.
+
+## Linux VM for Core-Simulator
+
+See [linux-vm](linux-vm) for a prepared Linux virtual machine containing the full Remote-Core simulator setup including
+the Qt based remote-ui application.
