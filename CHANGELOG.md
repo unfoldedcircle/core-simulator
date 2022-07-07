@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Linux VM setup instructions and download link.
 
+## v0.8.2-alpha - 2022-07-07
+### Fixed
+- WS Core-API: `get_active_profile` response msg type.
+- CORS: missing PATCH, HEAD methods & allow any headers for the time being for WebSocket upgrade & authentication.
+- REST Core-API endpoints: corrected time zone name endpoint & typo in OpenAPI software update cfg endpoint.
+
 ## v0.8.1-alpha - 2022-07-01
 ### Added
 - Dedicated `web-configurator` account usable for pin entry.
