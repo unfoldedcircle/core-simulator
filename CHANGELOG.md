@@ -6,9 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### Added
-- Linux VM setup instructions and download link.
+- Core-API: new endpoints and messages to retrieve language and country lists for localization configuration.
 
 ## v0.8.2-alpha - 2022-07-07
+### Added
+- Linux VM setup instructions and download link.
 ### Fixed
 - WS Core-API: `get_active_profile` response msg type.
 - CORS: missing PATCH, HEAD methods & allow any headers for the time being for WebSocket upgrade & authentication.
