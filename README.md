@@ -45,6 +45,13 @@ The Remote-Core simulator has the following predefined administrator accounts:
 
 #### REST API
 
+Either use Basic Authentication for each request (when doing single tests or using OpenAPI), or use the `/api/pub/login`
+endpoint for a session login with cookie.
+
+ℹ️ Note: user account management will be added in a future release.
+
+##### User accounts
+
 Web configurator account (with admin rights):
 - user: `web-configurator`
 - password: `1234`
@@ -53,19 +60,20 @@ Administrator account:
 - user: `admin`
 - password: `remote2`
 
-Either use Basic Authentication for each request (when doing single tests or using OpenAPI), or use the `/api/pub/login`
-endpoint for a session login with cookie.
+##### API key
 
-ℹ️ Note: user account management will be added in a future release. 
+API keys can be generated with the `/api/auth/api_keys` endpoint and can be used for the REST and WebSocket APIs.
+
+Use `Bearer Token` authorization with an API key.
 
 #### WebSocket API
 
 The WebSocket API uses token based authentication sent in the header:
 
-- header: `auth-token`
-- admin token: `1-2-3`
+- header: `API-KEY`
+- admin key: `BtlCEne.OWU2YzBhZjMyNmI2NDQ5YWI3N2NmMGExYWU5ZTNlNDEuZmIzOTNkM2FhOGY2NDA1N2FjNzQzNDdlOWE1YTU0OTc`
 
-⚠️ WebSocket authentication will be reworked in a future version to simplify login flow with a REST session.
+Alternatively, the session cookie can be used from the REST login. ⚠️ This has not yet been verified with a browser!
 
 ## Configuration
 
