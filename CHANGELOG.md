@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Changed
+- Refactor Core-API with proper API keys instead of ws-tokens.  
+  API keys cannot be retrieved and are only displayed at creation time. They can be used for the WebSocket and REST APIs.
+- rename WS authentication header to API-KEY.
+### Added
+- Allow session cookie from REST login for WebSocket connection.
 
 ## v0.8.3-alpha - 2022-07-10
 ### Added
