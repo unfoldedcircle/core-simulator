@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.9.1-alpha - 2022-07-14
+### Added
+- HTML WebSocket test console `/ws.html` with session based login.
+- Send WebSocket `authentication` message after successful session connection setup.
+### Fixed
+- Only send WebSocket `get_location_languages` message after login for UI clients (= accounts having `remote-ui` role).
+### Changed
+- Improved WebSocket connection setup description.
+
 ## v0.9.0-alpha - 2022-07-11
 ### Changed
 - Refactor Core-API with proper API keys instead of simple tokens.  
