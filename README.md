@@ -73,7 +73,7 @@ The WebSocket API uses token based authentication sent in the header:
 - header: `API-KEY`
 - admin key: `BtlCEne.OWU2YzBhZjMyNmI2NDQ5YWI3N2NmMGExYWU5ZTNlNDEuZmIzOTNkM2FhOGY2NDA1N2FjNzQzNDdlOWE1YTU0OTc`
 
-Alternatively, the session cookie can be used from the REST login. ⚠️ This has not yet been verified with a browser!
+Alternatively, the session cookie can be used from the REST login.
 
 ## Configuration
 
