@@ -1,8 +1,11 @@
 # Linux VM for Core-Simulator
 
 Download link: <https://drive.google.com/drive/folders/1xIz2iwHZTM9RsKTXzhmAtTFlcb1iT7b2>  
-Note: downloading a full directory might not work, download the `.ova` & readme files one by one. 
+Note: downloading a full directory might not work, download the `.ova` & readme files one by one.  
+The `remote-ui` directory contains the UI binary only for manual updates of the ui app in `~/Remote-Two` without
+downloading a full VM image.
 
+Virtual machine:
 - VirtualBox 6.1
 - Ubuntu 22.04 minimal desktop
 - user: `unfolded`
@@ -72,11 +75,12 @@ Endpoint: <ws://localhost:8080/ws>
 
 The WebSocket API uses token based authentication sent in the header:
 
-- header: `auth-token`
-- admin token: `1-2-3`
+- header: `API-KEY`
+- admin key: `BtlCEne.OWU2YzBhZjMyNmI2NDQ5YWI3N2NmMGExYWU5ZTNlNDEuZmIzOTNkM2FhOGY2NDA1N2FjNzQzNDdlOWE1YTU0OTc`
 
-⚠️ WebSocket authentication will be reworked in a future version to simplify login flow with a REST session.
+Alternatively, the session cookie can be used from the REST login.
 
+Simple html test console: <http://localhost:8080/ws.html>
 
 ### Docker Compose Commands
 
