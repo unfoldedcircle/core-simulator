@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+## v0.9.3-alpha - 2022-07-18
 ### Added
 - Retrieve button layout metadata definition for assigning functions to physical buttons: `/api/cfg/device/button_layout`.
 - Retrieve icon mapping with `/api/cfg/device/icon_mapping`.
