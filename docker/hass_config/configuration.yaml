@@ -6,6 +6,211 @@ default_config:
 tts:
   - platform: google_translate
 
+light:
+  - platform: template
+    lights:
+      theater_lights:
+        friendly_name: "Theater Lights"
+        turn_on:
+          service: script.non_existent
+        turn_off:
+          service: script.non_existent
+        set_level:
+          service: script.non_existent
+          data:
+            brightness: "{{ brightness }}"
+
+  - platform: template
+    lights:
+      living_room_lights:
+        friendly_name: "Living room lights"
+        turn_on:
+          service: script.non_existent
+        turn_off:
+          service: script.non_existent
+        set_level:
+          service: script.non_existent
+          data:
+            brightness: "{{ brightness }}"
+
+  - platform: template
+    lights:
+      kitchen_sink:
+        friendly_name: "Kitchen sink light"
+        turn_on:
+          service: script.non_existent
+        turn_off:
+          service: script.non_existent
+
+  - platform: template
+    lights:
+      bedroom_lamp:
+        friendly_name: "Bedroom lamp"
+        turn_on:
+          service: script.non_existent
+        turn_off:
+          service: script.non_existent
+
+  - platform: template
+    lights:
+      bedside_table:
+        friendly_name: "Bedside table light"
+        turn_on:
+          service: script.non_existent
+        turn_off:
+          service: script.non_existent
+
+  - platform: template
+    lights:
+      hallway_light:
+        friendly_name: "Hallway"
+        turn_on:
+          service: script.non_existent
+        turn_off:
+          service: script.non_existent
+
+  - platform: template
+    lights:
+      kitchen_overhead:
+        friendly_name: "Kitchen overhead lights"
+        turn_on:
+          service: script.non_existent
+        turn_off:
+          service: script.non_existent
+
+  - platform: template
+    lights:
+      kitchen_floor:
+        friendly_name: "Kitchen floor light"
+        turn_on:
+          service: script.non_existent
+        turn_off:
+          service: script.non_existent
+
+  - platform: template
+    lights:
+      sitting_room_chandellier:
+        friendly_name: "Sitting room chandellier"
+        turn_on:
+          service: script.non_existent
+        turn_off:
+          service: script.non_existent
+        set_level:
+          service: script.non_existent
+          data:
+            brightness: "{{ brightness }}"
+        set_white_value:
+          service: input_number.set_value
+          data:
+            value: "{{ white_value }}"
+            entity_id: input_number.white_value_input
+        set_color:
+          - service: input_number.set_value
+            data:
+              value: "{{ h }}"
+              entity_id: input_number.h_input
+          - service: input_number.set_value
+            data:
+              value: "{{ s }}"
+              entity_id: input_number.s_input
+          - service: light.turn_on
+            data_template:
+              entity_id:
+                - light.led_strip
+              hs_color:
+                - "{{ hs[0] }}"
+                - "{{ hs[1] }}"
+
+  - platform: template
+    lights:
+      study_reading_light:
+        friendly_name: "Study reading light"
+        turn_on:
+          service: script.non_existent
+        turn_off:
+          service: script.non_existent
+        set_level:
+          service: script.non_existent
+          data:
+            brightness: "{{ brightness }}"
+
+cover:
+  - platform: template
+    covers:
+      living_room_blind:
+        device_class: blind
+        friendly_name: "Living room blinds"
+        value_template: 0
+        open_cover:
+          service: script.non_existent
+        close_cover:
+          service: script.non_existent
+        stop_cover:
+          service: script.non_existent
+
+  - platform: template
+    covers:
+      kitchen_shades:
+        device_class: blind
+        friendly_name: "Kitchen shades"
+        value_template: 50
+        open_cover:
+          service: script.non_existent
+        close_cover:
+          service: script.non_existent
+        stop_cover:
+          service: script.non_existent
+
+  - platform: template
+    covers:
+      bedroom_shades:
+        device_class: blind
+        friendly_name: "Bedroom shades"
+        value_template: 50
+        open_cover:
+          service: script.non_existent
+        close_cover:
+          service: script.non_existent
+        stop_cover:
+          service: script.non_existent
+
+climate:
+  - platform: generic_thermostat
+    name: Study
+    heater: switch.study_heater
+    target_sensor: sensor.study_temperature
+
+  - platform: generic_thermostat
+    name: Living room
+    heater: switch.study_heater
+    target_sensor: sensor.study_temperature
+    min_temp: 15
+    max_temp: 21
+    ac_mode: false
+    target_temp: 17
+    cold_tolerance: 0.3
+    hot_tolerance: 0
+    min_cycle_duration:
+      seconds: 5
+    keep_alive:
+      minutes: 3
+    initial_hvac_mode: "off"
+    away_temp: 16
+    precision: 0.1
+
+media_player:
+  - platform: channels
+    name: Family Room Speaker
+    host: 192.168.1.50
+
+  - platform: channels
+    name: Living room speaker
+    host: 192.168.1.51
+
+  - platform: channels
+    name: Kitchen speaker
+    host: 192.168.1.52
+
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml

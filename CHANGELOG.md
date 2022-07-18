@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Retrieve icon mapping with `/api/cfg/device/icon_mapping`.
 - Core-API definition enhancements for activity, macro & remote user-interface management.  
   This is a **preview version**. Implementation will follow in upcoming releases.
+### Changed
+- Home Assistant configuration features additional devices (based on templates) for testing: light, cover, climate, media player 
 
 ## v0.9.2-alpha - 2022-07-15
 ### Added
