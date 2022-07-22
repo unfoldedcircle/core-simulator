@@ -1269,7 +1269,7 @@ paths:
       summary: Get an integration instance.
       operationId: getIntegration
       parameters:
-        - $ref: '#/components/parameters/intg_id'
+        - $ref: '#/components/parameters/integration_id'
       responses:
         '200':
           description: Successful operation.
@@ -1296,7 +1296,7 @@ paths:
         The integration driver of an instance cannot be changed and will be ignored if provided in the request.
       operationId: updateIntegration
       parameters:
-        - $ref: '#/components/parameters/intg_id'
+        - $ref: '#/components/parameters/integration_id'
       requestBody:
         description: Integration instance data.
         content:
@@ -1332,7 +1332,7 @@ paths:
         their references in profile pages and groups.**
       operationId: deleteIntegration
       parameters:
-        - $ref: '#/components/parameters/intg_id'
+        - $ref: '#/components/parameters/integration_id'
       responses:
         '200':
           description: Successful operation.
@@ -1358,7 +1358,7 @@ paths:
         - `disconnect`: disconnect from the driver and stop processing events.
       operationId: executeIntegrationCommand
       parameters:
-        - $ref: '#/components/parameters/intg_id'
+        - $ref: '#/components/parameters/integration_id'
         - name: cmd
           in: query
           description: Command to execute.
@@ -1389,7 +1389,7 @@ paths:
         only the already configured entities.
       operationId: getAvailableEntitiesFromInstance
       parameters:
-        - $ref: '#/components/parameters/intg_id'
+        - $ref: '#/components/parameters/integration_id'
         - name: reload
           in: query
           description: Force reload available entities from driver.
@@ -1454,7 +1454,7 @@ paths:
         the available entity are used.
       operationId: configureEntityFromIntegration
       parameters:
-        - $ref: '#/components/parameters/intg_id'
+        - $ref: '#/components/parameters/integration_id'
         - $ref: '#/components/parameters/entity_id'
       requestBody:
         description: Entity data.
@@ -1486,6 +1486,9 @@ paths:
         - entities
       summary: Get total number of configured entities.
       operationId: getEntityCount
+      parameters:
+        - $ref: '#/components/parameters/entity_type'
+        - $ref: '#/components/parameters/intg_id'
       responses:
         '200':
           description: Successful operation.
@@ -1509,6 +1512,8 @@ paths:
         Entities can be filtered by type and integration.
       operationId: getEntities
       parameters:
+        - $ref: '#/components/parameters/entity_type'
+        - $ref: '#/components/parameters/intg_id'
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/limit'
       responses:
@@ -4767,7 +4772,12 @@ components:
       schema:
         $ref: '#/components/schemas/SimpleId'
     integration_id:
-      $ref: '#/components/parameters/intg_id'
+      name: intgId
+      in: path
+      description: Integration identification
+      required: true
+      schema:
+        $ref: '#/components/schemas/IntegrationId'
     page_id:
       name: pageId
       in: path
@@ -4832,10 +4842,10 @@ components:
       schema:
         $ref: '#/components/schemas/EntityType'
     intg_id:
-      name: intgId
-      in: path
-      description: Integration identification
-      required: true
+      name: intg_id
+      in: query
+      description: Filter by integration.
+      required: false
       schema:
         $ref: '#/components/schemas/IntegrationId'
     resource_type_query:
