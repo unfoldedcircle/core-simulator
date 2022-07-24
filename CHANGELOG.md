@@ -6,6 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.10.0-alpha - 2022-07-24
+### Added
+- Initial activity implementation.
+  - Entity command definitions are not yet included.
+  - Update operation is partially working.
+- Skeleton implementations for macro & remote handling.
+  - Read & delete operations are working, remaining operations will follow in an upcoming release.
+### Changed
+- Refined Core-API definitions for activity, macro & remote entity management.
+  - Refactored remote-entity handling with user interfaces.
+  - Added initial infrared code set search and custom code set handling.
+- Updated icon mapping definition.
+
 ## v0.9.3-alpha - 2022-07-18
 ### Added
 - Retrieve button layout metadata definition for assigning functions to physical buttons: `/api/cfg/device/button_layout`.
