@@ -39,7 +39,7 @@ tags:
       Common handling of configured entities like sending commands and modifying editable properties.  
       Entities are usually provided by integrations, except the special activity, macro and infrared-remote entities.
   - name: activities
-    description: "\U0001F477 **work in progress**, not yet implemented! Combine multiple entities into an activity with optional on- & off-sequences, physical button mappings and a\ncustom user interface.\n"
+    description: "\U0001F477 **work in progress**! Combine multiple entities into an activity with optional on- & off-sequences, physical button mappings and a\ncustom user interface.\n"
   - name: macros
     description: "\U0001F477 **work in progress**, not yet implemented! Macros execute a sequence of commands which is exposed as an entity command. Macros don't have a custom user\ninterface.\n"
   - name: infrared
