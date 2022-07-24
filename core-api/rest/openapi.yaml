@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Remote Two REST API
-  version: 0.10.1
+  version: 0.10.2
   contact:
     name: API Support
     url: 'https://github.com/unfoldedcircle/core-api/issues'
@@ -1675,10 +1675,13 @@ paths:
     get:
       tags:
         - activities
-      summary: Get all activities with paging.
+      summary: Get activity entities overview with paging.
       description: |
-        Returns all defined activities with the given paging parameters. Use the `HEAD` operation to retrieve the total
-        number of defined activities.
+        Returns an overview of all defined activities with the given paging parameters. Use the `HEAD` operation to retrieve
+        the total number of defined activities.
+
+        The overview information doesn't include all details of an activity. The full activity information is retrievable
+        with `/activities/{entityId}`.
       operationId: getActivities
       parameters:
         - $ref: '#/components/parameters/page'
@@ -1715,7 +1718,7 @@ paths:
         Create a new entity of type `activity`. An activity entity is a special internal entity without association to an
         integration driver.
 
-        To create a new activity at least a name must be provided. The `icon`, `description` and `options.included_entities`
+        To create a new activity at least a name must be provided. The `icon`, `description` and `options.entity_ids`
         are optional and can be set later with the `PUT` update operation.
 
         When setting a text in a multilingual field, like name or description, the default `en` identifier should always be
@@ -1829,7 +1832,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiKey'
+                $ref: '#/components/schemas/Activity'
         '400':
           $ref: '#/components/responses/Err400BadRequest'
         '401':
@@ -1880,10 +1883,13 @@ paths:
     get:
       tags:
         - macros
-      summary: Get all macros with paging.
+      summary: Get macro entities overview with paging.
       description: |
-        Returns all defined macros with the given paging parameters. Use the `HEAD` operation to retrieve the total
-        number of defined macros.
+        Returns an overview of all defined macros with the given paging parameters. Use the `HEAD` operation to retrieve
+        the total number of defined macros.
+
+        The overview information doesn't include all details of a macro. The full macro information is retrievable
+        with `/macros/{entityId}`.
       operationId: getMacros
       parameters:
         - $ref: '#/components/parameters/page'
@@ -1922,7 +1928,7 @@ paths:
         Create a new entity of type `macro`. An macro entity is a special internal entity without association to an
         integration driver.
 
-        To create a new macro at least a name must be provided. The `icon`, `description` and `options.included_entities`
+        To create a new macro at least a name must be provided. The `icon`, `description` and `options.entity_ids`
         are optional and can be set later with the `PUT` update operation.
 
         When setting a text in a multilingual field, like name or description, the default `en` identifier should always be
@@ -2539,9 +2545,13 @@ paths:
     get:
       tags:
         - remotes
-      summary: Get all infrared remote entities.
+      summary: Get infrared remote entities overview with paging.
       description: |
-        TODO.
+        Returns an overview of all defined remotes with the given paging parameters. Use the `HEAD` operation to retrieve
+        the total number of defined remotes.
+
+        The overview information doesn't include all details of a remote. The full remote information is retrievable
+        with `/remotes/{entityId}`.
       operationId: getInfraredEntities
       parameters:
         - $ref: '#/components/parameters/page'
@@ -4894,7 +4904,7 @@ components:
     Activities:
       type: array
       items:
-        $ref: '#/components/schemas/Activity'
+        $ref: '#/components/schemas/ActivityOverview'
     Activity:
       description: |
         The activity entity executes a sequence of commands and at the end displays a user interface (similar to remote entity)
@@ -4920,6 +4930,12 @@ components:
             options:
               type: object
               properties:
+                editable:
+                  description: |
+                    - `true` / property missing: activity was created by Remote Two and can be edited.
+                    - `false`: activity was provided by an integration and cannot be edited.
+                  type: boolean
+                  default: true
                 included_entities:
                   description: |
                     Included entities in the activity. This object is writable from the client and persisted when saving an
@@ -4941,14 +4957,33 @@ components:
                     properties:
                       entity_id:
                         $ref: '#/components/schemas/EntityId'
+                      entity_type:
+                        $ref: '#/components/schemas/EntityType'
                       name:
                         $ref: '#/components/schemas/LanguageText'
                       icon:
                         $ref: '#/components/schemas/IconIdentifier'
+                      entity_commands:
+                        description: |
+                          Supported entity commands. These command identifiers refer to the common entity command definitions
+                          description all required parameters to set for calling the entity command like `cmd_id` and optional
+                          parameters.
+                        type: array
+                        items:
+                          type: string
+                      simple_commands:
+                        description: |
+                          Simple commands are additional commands supported by the entity, which are not included in the
+                          common entity command definitions. A typical example are remote-entity commands like `VOLUME_UP` etc
+                          which don't have additional parameters. A simple command relates directly to the `cmd_id` attribute
+                          when calling a command.
+                        type: array
+                        items:
+                          type: string
                       available:
                         description: |
-                          State of the entity: True = entity is available as configured entity and can be used. False = entity
-                          has been removed and must be corrected by the user.
+                          State of the entity: True / missing = entity is available as configured entity and can be used.  
+                          False = entity has been removed and must be corrected by the user.
 
                           If an entity is no longer available then all usages in the sequences are still present in case the
                           entity is re-configured. The execution of the on- or off-sequence will then simply skip the actions
@@ -4956,37 +4991,12 @@ components:
                         type: boolean
                     required:
                       - entity_id
-                available_commands:
-                  description: |
-                    All available commands from the `included_entities` plus the special delay command. Using this list avoids
-                    retrieving the commands from each entity separately. This is a read only object and not persisted when
-                    saving an activity.
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      entity_id:
-                        $ref: '#/components/schemas/EntityId'
-                      command:
-                        type: string
-                      metadata:
-                        description: |
-                          TODO Metadata describing the available parameters of the command. Simple "button like" commands
-                          don't have any parameters, whereas e.g. a light entity can also dim the light, change color or color
-                          temperature.
-                        type: object
                 sequences:
                   $ref: '#/components/schemas/ActivitySequences'
                 button_mapping:
                   $ref: '#/components/schemas/DeviceButtonMappings'
                 user_interface:
                   $ref: '#/components/schemas/ActivityUserInterface'
-              required:
-                - included_entities
-                - available_commands
-                - sequences
-                - button_mapping
-                - user_interface
           required:
             - options
     ActivityId:
@@ -4995,6 +5005,43 @@ components:
       minLength: 1
       maxLength: 36
       description: Activity identifier
+    ActivityOverview:
+      description: |
+        The activity entity executes a sequence of commands and at the end displays a user interface (similar to remote entity)
+        to the user. If the entity has an off sequence, it can be turned off.
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/Entity'
+        - properties:
+            entity_type:
+              type: string
+              enum:
+                - activity
+            features:
+              description: |
+                Supported features of the activity. If the activity has an `off` sequence, it supports the common `on_off`
+                feature, otherwise only `start`.
+              type: array
+              items:
+                type: string
+                enum:
+                  - on_off
+                  - start
+            options:
+              type: object
+              properties:
+                editable:
+                  description: |
+                    - `true` / property missing: activity was created by Remote Two and can be edited.
+                    - `false`: activity was provided by an integration and cannot be edited.
+                  type: boolean
+                  default: true
+                sequences:
+                  $ref: '#/components/schemas/ActivitySequences'
+                button_mapping:
+                  $ref: '#/components/schemas/DeviceButtonMappings'
+                user_interface:
+                  $ref: '#/components/schemas/ActivityUserInterface'
     ActivityRequest:
       description: |
         Dedicated request object to create a new activity.  
@@ -5012,20 +5059,17 @@ components:
               properties:
                 clone_from:
                   $ref: '#/components/schemas/EntityId'
+              required:
+                - clone_from
             - type: object
               properties:
                 options:
                   type: object
                   properties:
-                    included_entities:
+                    entity_ids:
                       type: array
                       items:
-                        type: object
-                        properties:
-                          entity_id:
-                            $ref: '#/components/schemas/EntityId'
-                        required:
-                          - entity_id
+                        $ref: '#/components/schemas/EntityId'
                   required:
                     - included_entities
       required:
@@ -5043,12 +5087,12 @@ components:
         All root properties are optional and only the provided objects are updated in the activity. Omitted objects are
         ignored and not deleted from the activity.
 
-        The `included_entities` object must be managed by the client and is persisted when updating an activity.
+        The `entity_ids` object must be managed by the client and is persisted when updating an activity.
 
         Notes:
-        - Entities can be included in `included_entities` without being used in `sequences`.  
+        - Entities can be included in `entity_ids` without being used in `sequences`.  
           This allows to edit the activity in multiple sessions without having to reselect the desired entities.
-        - Every referenced entity in `sequences` must be included in `included_entities`, otherwise the activity cannot be saved.
+        - Every referenced entity in `sequences` must be included in `entity_ids`, otherwise the activity cannot be saved.
         - If the client removes a configured entity from the system which is included in an activity, it must make sure to
           also remove all references in the activity. See `available` property in the included entities object when retrieving
           a macro.
@@ -5063,15 +5107,10 @@ components:
         options:
           type: object
           properties:
-            included_entities:
+            entity_ids:
               type: array
               items:
-                type: object
-                properties:
-                  entity_id:
-                    $ref: '#/components/schemas/EntityId'
-                required:
-                  - entity_id
+                $ref: '#/components/schemas/EntityId'
             sequences:
               $ref: '#/components/schemas/ActivitySequences'
             button_mapping:
@@ -5102,6 +5141,22 @@ components:
                 $ref: '#/components/schemas/GridLocation'
               size:
                 $ref: '#/components/schemas/GridItemSize'
+    EntityCommandMetadata:
+      type: object
+      properties:
+        entity_id:
+          $ref: '#/components/schemas/EntityId'
+        cmd_id:
+          description: Entity specific command.
+          type: string
+        parameters:
+          description: |
+            TODO Metadata describing the available parameters of the command. Simple "button like" commands
+            don't have any parameters, whereas e.g. a light entity can also dim the light, change color or color
+            temperature.
+          type: object
+      required:
+        - cmd_id
     ApiKey:
       type: object
       properties:
@@ -5282,7 +5337,7 @@ components:
           entity_id: hass.main.light.living-room
           cmd_id: 'on'
           params:
-            brightness: 140
+            brightness: 75
     CommandSequenceDelay:
       description: Delay step in a command sequence.
       type: object
@@ -5290,6 +5345,7 @@ components:
         type:
           type: string
         delay:
+          description: Delay in milliseconds.
           type: integer
           minimum: 1
       required:
@@ -5590,7 +5646,7 @@ components:
               properties:
                 editable:
                   description: |
-                    - `true`: macro was created by Remote Two and can edited.
+                    - `true` / property missing: macro was created by Remote Two and can be edited.
                     - `false`: macro was provided by an integration and cannot be edited.
                   type: boolean
                   default: true
@@ -5619,6 +5675,23 @@ components:
                         $ref: '#/components/schemas/LanguageText'
                       icon:
                         $ref: '#/components/schemas/IconIdentifier'
+                      entity_commands:
+                        description: |
+                          Supported entity commands. These command identifiers refer to the common entity command definitions
+                          description all required parameters to set for calling the entity command like `cmd_id` and optional
+                          parameters.
+                        type: array
+                        items:
+                          type: string
+                      simple_commands:
+                        description: |
+                          Simple commands are additional commands supported by the entity, which are not included in the
+                          common entity command definitions. A typical example are remote-entity commands like `VOLUME_UP` etc
+                          which don't have additional parameters. A simple command relates directly to the `cmd_id` attribute
+                          when calling a command.
+                        type: array
+                        items:
+                          type: string
                       available:
                         description: |
                           State of the entity: True = entity is available as configured entity and can be used. False = entity
@@ -5630,37 +5703,14 @@ components:
                         type: boolean
                     required:
                       - entity_id
-                available_commands:
-                  description: |
-                    All available commands from the `included_entities` plus the special delay command. Using this list avoids
-                    retrieving the commands from each entity separately. This is a read only object and not persisted when
-                    saving a macro.
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      entity_id:
-                        $ref: '#/components/schemas/EntityId'
-                      command:
-                        type: string
-                      metadata:
-                        description: |
-                          TODO Metadata describing the available parameters of the command. Simple "button like" commands
-                          don't have any parameters, whereas e.g. a light entity can also dim the light, change color or color
-                          temperature.
-                        type: object
                 sequence:
                   $ref: '#/components/schemas/CommandSequence'
-              required:
-                - included_entities
-                - available_commands
-                - sequence
           required:
             - options
     Macros:
       type: array
       items:
-        $ref: '#/components/schemas/Macro'
+        $ref: '#/components/schemas/MacroOverview'
     MacroCreate:
       description: |
         Dedicated request object to create a new macro.  
@@ -5678,36 +5728,63 @@ components:
               properties:
                 clone_from:
                   $ref: '#/components/schemas/EntityId'
+              required:
+                - clone_from
             - type: object
               properties:
                 options:
                   type: object
                   properties:
-                    included_entities:
+                    entity_ids:
                       type: array
                       items:
-                        type: object
-                        properties:
-                          entity_id:
-                            $ref: '#/components/schemas/EntityId'
-                        required:
-                          - entity_id
+                        $ref: '#/components/schemas/EntityId'
                   required:
                     - included_entities
       required:
         - name
+    MacroOverview:
+      description: |
+        The macro entity executes a sequence of commands.
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/Entity'
+        - properties:
+            entity_type:
+              type: string
+              enum:
+                - macro
+            features:
+              description: |
+                Supported features of the macro.
+              type: array
+              items:
+                type: string
+                enum:
+                  - start
+            options:
+              type: object
+              properties:
+                editable:
+                  description: |
+                    - `true` / property missing: macro was created by Remote Two and can be edited.
+                    - `false`: macro was provided by an integration and cannot be edited.
+                  type: boolean
+                  default: true
+                sequence:
+                  $ref: '#/components/schemas/CommandSequence'
     MacroUpdate:
       description: |
         Dedicated request object to update an existing activity.  
         All root properties are optional and only the provided objects are updated in the activity. Omitted objects are
         ignored and not deleted from the activity.
 
-        The `included_entities` object must be managed by the client and is persisted when updating a macro.
+        The `entity_ids` object must be managed by the client and is persisted when updating a macro.
 
         Notes:
-        - Entities can be included in `included_entities` without being used in `sequence`.  
+        - Entities can be included in `entity_ids` without being used in `sequence`.  
           This allows to edit the macro in multiple sessions without having to reselect the desired entities.
-        - Every referenced entity in `sequence` must be included in `included_entities`, otherwise the activity cannot be saved.
+        - Every referenced entity in `sequence` must be included in `entity_ids`, otherwise the activity cannot be saved.
         - If the client removes a configured entity from the system which is included in a macro, it must make sure to also
           remove all references in the macro. See `available` property in the included entities object when retrieving a macro.
       type: object
@@ -5721,15 +5798,10 @@ components:
         options:
           type: object
           properties:
-            included_entities:
+            entity_ids:
               type: array
               items:
-                type: object
-                properties:
-                  entity_id:
-                    $ref: '#/components/schemas/EntityId'
-                required:
-                  - entity_id
+                $ref: '#/components/schemas/EntityId'
             sequence:
               $ref: '#/components/schemas/CommandSequence'
     Name:
@@ -5760,16 +5832,7 @@ components:
             separately. This is a read only object and not persisted when saving an interface.
           type: array
           items:
-            type: object
-            properties:
-              command:
-                type: string
-              metadata:
-                description: |
-                  TODO required for simple IR devices? Check HASS remote entity, e.g. repeat parameter etc.
-                type: object
-            required:
-              - command
+            $ref: '#/components/schemas/EntityCommandMetadata'
         button_mapping:
           $ref: '#/components/schemas/DeviceButtonMappings'
         user_interface:
@@ -6048,7 +6111,7 @@ components:
         cmd_id: 'on'
         params:
           hue: 180
-          saturation: 200
+          saturation: 90
     EntityRequest:
       type: object
       description: |
@@ -6076,6 +6139,7 @@ components:
         - switch
         - activity
         - macro
+        - remote
     GridItemSize:
       description: 'Item size in the button grid. Default size if not specified: 1 x 1'
       type: object
