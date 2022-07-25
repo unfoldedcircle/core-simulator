@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Core-API definitions:
+  - IR data definitions for `/ir/codes/manufacturers/*` for searching & retrieving IR code sets.  
+  - New endpoint `/cfg/entity/commands` to return the metadata of the entity commands.
+### Changed
+- Core-API definitions:
+  - Stabilize & enhance documentation of `/activities` & `/macros` endpoint definitions.
+  - Move remotes endpoint to `/remotes` & rename available_commands to simple_commands to align with activities and macros.
 
 ## v0.10.0-alpha - 2022-07-24
 ### Added
