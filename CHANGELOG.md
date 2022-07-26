@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.10.2-alpha - 2022-07-26
+### Added
+- Activity and macro data objects: add integration name & icon to included_entities.
+- Initial command metadata retrieval implementation.
+### Changed
+- Changed entity command metadata integer parameter to number.
+
 ## v0.10.1-alpha - 2022-07-26
 ### Added
 - Initial macro implementation.
