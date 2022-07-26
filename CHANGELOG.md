@@ -5,7 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+## v0.10.1-alpha - 2022-07-26
 ### Added
+- Initial macro implementation.
+  - Entity command definitions are not yet included.
+  - Update operation not fully working yet (options are ignored).
 - Core-API definitions:
   - IR data definitions for `/ir/codes/manufacturers/*` for searching & retrieving IR code sets.  
   - New endpoint `/cfg/entity/commands` to return the metadata of the entity commands.
