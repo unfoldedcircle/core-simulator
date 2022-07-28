@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Activity update implementation with basic validations.
+- Macro retrieval and update implementations with basic validations.
+- Core-API remote entity definitions:
+  - Entity payload definitions
+  - Infrared codeset definitions
+  - Dedicated endpoint for IR code management & editing
+- Remote implementations:
+  - Create a remote entity
+  - Retrieve overview and single entity, but returned entity payload is not yet fully implemented!
 
 ## v0.10.2-alpha - 2022-07-26
 ### Added
