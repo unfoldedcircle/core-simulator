@@ -6,6 +6,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.10.5-alpha - 2022-07-31
+### Added
+- Simulator implementations:
+  - Retrieve IR emitter devices & send IR command in a codeset.
+  - Search manufacturers and IR code sets with a test data set including the following manufacturers:  
+    Apple, Bang & Olufsen, Bowers & Wilkins, Denon, LG, Philips, Samsonite, Samsung, Sony
+- Core-API definitions:
+  - Add optional `active` query parameter for IR emitter devices.
+  - Add endpoint to retrieve an emitter device by id.
+### Changed
+- Core-API refactoring:
+  - Send emitter command: Payload must include reference to codeset_id, cmd_id and port_id.
+  - Dedicated definition for `active` query parameter.
+  - Dedicated definition for `emitter` data object.
+### Fixed
+- CORS handling of custom `pagination-*` headers.
+
+## v0.10.4-alpha - 2022-07-30 - internal release only
+
 ## v0.10.3-alpha - 2022-07-28
 ### Added
 - Simulator implementations:
