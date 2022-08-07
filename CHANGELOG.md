@@ -5,6 +5,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Core-API definition:
+  - Activity & remote-entity user interface: optional page name.
+- Simulator implementation:
+  - Remote entity get & update endpoints.
+  - Initial validation checks for updating activity, macro, and remote-entities.
+### Changed
+- Simulator implementations:
+  - Dependency updates
+### Fixed
+- Core-API definition:
+  - Integration driver & instance command enums: all commands are uppercase.
+  - Remote update payload: align `button_mapping` and `user_interface` with activities & macro, add missing `ir` object.
+  - Activity & remote-entity user interface: missing pages array for the defined user interface items.
 
 ## v0.10.6-alpha - 2022-08-03
 ### Added
