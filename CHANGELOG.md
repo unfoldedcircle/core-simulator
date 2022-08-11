@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Changed
+- Default localization: en_GB, UK, UTC, 24h, METRIC
+- Core-API definitions:
+  - Creating a profile page only requires the page name as mandatory message payload. Only the OpenAPI definition is affected,
+    the implementation already accepted the single name field as message payload. New message object: PageCreate.
+### Fixed
+- Simulator implementations:
+  - Creating multiple pages in a profile.
+  - ActivitySequence serialization: use `type` as specified in OpenAPI (instead of `sequence_type`).
+  - Default localization settings changed to use a valid timezone. Default is now: en_GB, UK, UTC, 24hour, METRIC.
 
 ## v0.11.0-alpha - 2022-08-07
 ### Added
