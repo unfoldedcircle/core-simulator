@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.11.2-alpha - 2022-08-12
+### Added
+-  Add `description` field in profile group.
+### Fixed
+- Use `GB` as default localization country if localization settings are reset.
+
 ## v0.11.1-alpha - 2022-08-11
 ### Changed
 - Default localization: en_GB, UK, UTC, 24h, METRIC
