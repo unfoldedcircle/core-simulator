@@ -1,18 +1,20 @@
-version: '2.3'
+version: '3.4'
 
 services:
   core-simulator:
     image: unfoldedcircle/core-simulator
     container_name: core-simulator
-    #restart: "unless-stopped"
+    restart: "unless-stopped"
     ports:
       - "8080:8080"
       - "8443:8443"
+    volumes:
+      - simulator-data:/data
 
   integration-hass:
     image: unfoldedcircle/integration-hass
     container_name: integration-hass
-    #restart: "unless-stopped"
+    restart: "unless-stopped"
     # configure Home Assistant demo server defined below
     environment:
       - UC_HASS_URL=ws://hassio:8123/api/websocket
@@ -27,7 +29,7 @@ services:
     image: ghcr.io/home-assistant/home-assistant:stable
     container_name: home-assistant-demo
     hostname: hassio
-    #restart: "unless-stopped"
+    restart: "unless-stopped"
     environment:
       - TZ=Europe/Zurich
     # expose web ui
@@ -36,3 +38,6 @@ services:
     volumes:
       - ./hass_config:/config
     privileged: true
+
+volumes:
+  simulator-data:
