@@ -5,6 +5,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Simulator: custom IR codeset handling
+
+### Changed
+- Refactor activity- and remote-entity management functions:
+  - Dedicated REST endpoints to modify button mappings and user interface pages
+    Instead of a do-it-all PATCH method for button mappings and user interface definitions.
+- Limit returned options in `GET /activities`, `GET /macros`, `GET /remotes`:  
+  Strip all information from options besides `editable`.
+- Refactor remote-entity create payload:
+  - Add custom_codeset options to specify optional manufacturer and device type.
+  - Remove options wrapper object for codeset_id.
 
 ## v0.11.3-alpha - 2022-08-19
 ### Added
