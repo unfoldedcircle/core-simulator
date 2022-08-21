@@ -5,11 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+## v0.12.0-alpha - 2022-08-21
 ### Added
 - Simulator: custom IR codeset handling
-
 ### Changed
-- Refactor activity- and remote-entity management functions:
+- **Breaking change**: refactor activity- and remote-entity management functions:  
+  **Existing activity-, macro- and remote-entities must be re-created to avoid any potential data errors.**
   - Dedicated REST endpoints to modify button mappings and user interface pages
     Instead of a do-it-all PATCH method for button mappings and user interface definitions.
 - Limit returned options in `GET /activities`, `GET /macros`, `GET /remotes`:  
