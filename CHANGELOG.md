@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.12.1-alpha - 2022-08-23
+### Fixed
+- Simulator: activity & remote-entity: user interface page item placement validation.
+
 ## v0.12.0-alpha - 2022-08-21
 ### Added
 - Simulator: custom IR codeset handling
