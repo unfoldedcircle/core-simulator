@@ -5,7 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+## v0.12.2-alpha - 2022-08-26
 ### Fixed
+- Simulator: keep existing entity options with `PATCH /remotes/:entityId`.  
+  The entity options button_mapping, simple_commands, user_interface are no longer removed when patching an entity.
 - Core-API definition:
   - Fix response payload of `PATCH /remotes/:entityId`
   - Fix parameter references of `/remotes/{entityId}/buttons/{buttonId}` and `/activities/{entityId}/buttons/{buttonId}`
