@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.12.2-alpha - 2022-08-27
+### Fixed
+- Core-API definition:
+  - Correct invalid previous fix of `PATCH /remotes/:entityId`: revert request payload and specify correct `Remote` object response.
+
 ## v0.12.2-alpha - 2022-08-26
 ### Fixed
 - Simulator: keep existing entity options with `PATCH /remotes/:entityId`.  
