@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+## v0.13.0-alpha - 2022-08-28
 ### Added
 - Validate IR emitter device and output port when updating a remote-entity.
 ### Changed
@@ -13,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - `DELETE /api/remotes/:entityId/ui/pages` validation. Resetting remote-entity ui pages now works correctly.
 
-## v0.12.2-alpha - 2022-08-27
+## v0.12.2-alpha - 2022-08-26
 ### Fixed
 - Core-API definition:
   - Correct invalid previous fix of `PATCH /remotes/:entityId`: revert request payload and specify correct `Remote` object response.
