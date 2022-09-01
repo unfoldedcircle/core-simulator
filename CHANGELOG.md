@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.13.1-alpha - 2022-09-01
+### Fixed
+- Remove double `remote.send` command in the remote-entity `entity_commands` object. E.g. returned in `activities.options.included_entities.entity_commands`.
+- Return correct `simple_commands` for remote-entities in activities and macros. There was still a hard coded command set.
+- Entity command descriptions in `GET /cfg/entity/commands` for activity, macro and remote-entities.
+
 ## v0.13.0-alpha - 2022-08-28
 ### Added
 - Validate IR emitter device and output port when updating a remote-entity.
