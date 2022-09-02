@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.13.3-alpha - 2022-09-02
+### Added
+- Add CORS header `access-control-allow-credentials: true`
+
 ## v0.13.2-alpha - 2022-09-01
 ### Added
 - enhance entity_change WebSocket event message with entity_type
