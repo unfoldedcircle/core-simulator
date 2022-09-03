@@ -5,14 +5,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Add `device_name` to `GET /api/pub/version` response. This allows to display the device name on the login page.
+- Implement `DELETE /api/resources/:type/:resource`.
+- Validate resource type file extensions when uploading files with `POST /api/resources/:type`.
+### Changed
+- Core-API `GET /api/pub/version` response: rename `app` to `ui` to align with WebSocket API.
+- Don't allow macros and activities to include themselves. The included entities must reference other entities.
+### Fixed
+- Profile page rearrange after page deletion.
 
 ## v0.13.3-alpha - 2022-09-02
 ### Added
-- Add CORS header `access-control-allow-credentials: true`
+- Add CORS header `access-control-allow-credentials: true`.
 
 ## v0.13.2-alpha - 2022-09-01
 ### Added
-- enhance entity_change WebSocket event message with entity_type
+- Enhance `entity_change` WebSocket event message with `entity_type`.
 
 ## v0.13.1-alpha - 2022-09-01
 ### Fixed
