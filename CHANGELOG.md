@@ -5,6 +5,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Core-API resource upload:
+  - Return metadata information for supported resource formats in `GET /api/resources`.
+  - Check image type and size during upload when the first file chunk is received.
+  - Check free disk space while uploading new resources. Add status code 507 if not enough free disk space.
+### Changed
+- Removing an included entity in an activity or macro removes all references in sequences and ui-pages.
+- Enforce hard limits:
+  - Profiles: max 30 profiles, 30 pages per profile and 30 groups per profile.
+  - Ui pages: 15
+  - Macros & activities: 50 steps, 50 included entities
+  - Custom resources: 256 icons, 256 tv channel icons, 30 background images, 50 sound files
+### Fixed
+- Don't return 404 when retrieving a macro or activity where an included remote-entity has been deleted.
+- Core-API resource upload:
+  - Response data structure as defined in OpenAPI: resource information object instead of only resource identifier.
+  - Bad Request error if upload file parameters are not correct instead of an internal server error.
+  - Sound file content type: `audio/wav`
 
 ## v0.13.4-alpha - 2022-09-03
 ### Added
