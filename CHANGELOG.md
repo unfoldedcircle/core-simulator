@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+## v0.13.6-alpha - 2022-10-02
 ### Added
 - REST Core-API sound resource upload:
   - Add supported channel and bit depth information in metadata.
@@ -13,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - WS event message `profile_change`: change category from `ENTITY` to `UI`.  
   The event categories of the individual event messages are now defined in the AsyncAPI specification.
+### Fixed
+- Core-API: metadata information for background images. Width & height were mixed up.
+- Proper error propagation for dock connection issues instead of always returning internal server error.
 
 ## v0.13.5-alpha - 2022-09-30
 ### Added
