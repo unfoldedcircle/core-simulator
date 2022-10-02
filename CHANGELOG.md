@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- REST Core-API sound resource upload:
+  - Add supported channel and bit depth information in metadata.
+  - Implement WAV file validation during upload.
+- WS Core-API messages to control API access of the web-configurator. 
+### Changed
+- WS event message `profile_change`: change category from `ENTITY` to `UI`.  
+  The event categories of the individual event messages are now defined in the AsyncAPI specification.
 
 ## v0.13.5-alpha - 2022-09-30
 ### Added
