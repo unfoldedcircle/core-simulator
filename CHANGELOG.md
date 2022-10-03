@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.13.7-alpha - 2022-10-03
+### Fixed
+- Retain activity button mappings when patching an activity entity.  
+  If a button mapping has a dangling entity in a command, only the command needs to be removed and not the whole mapping.
+- REST Core-API: return status code 200 for `PATCH /docks/:dock_id`.
+- Setting an inactive dock to active allows starting dock connection with `POST /api/docks/:dock_id/connect`.
+
 ## v0.13.6-alpha - 2022-10-02
 ### Added
 - REST Core-API sound resource upload:
