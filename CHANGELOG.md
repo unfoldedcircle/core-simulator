@@ -6,7 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### Added
+- REST Core-API: IR learning with emitters. New endpoint: `/ir/emitters/{emitterId}/learn`.
+  - New WebSocket event `ir_learning` for IR learning events: start / learn / stop.
+  - Enhance `Emitter` data object with new fields:
+    - `type`: type of IR emitter (docking station, IR blaster, other)
+    - `capabilities`: optional features of an emitter like IR learning (not every emitter is capable of learning).
 - Improve documentation of icon & image identifiers and make prefix mandatory in regex.
+- Validate icon and image identifiers in create & update operations.
+- Rewrite resource identifiers during upload: replace all non-valid resource-id characters with an underscore `_`.  
+  Valid characters are: ASCII letters, digits, dash, underscore and dot (regex: `[a-zA-Z0-9-_\\.]`). 
 ### Fixed
 - Add media_player commands to command definitions in `GET /api/cfg/entity/commands`.
 
