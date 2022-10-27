@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Validate IR codes, formats, manufacturers and devices. An IR code value must now in the correct PRONTO or HEX format.
+### Changed
+- Restricted valid characters in custom IR keys to upper case, dash, underscore and dot only. Lower case characters are no longer valid.
+### Fixed
+- OpenAPI definition: fixed invalid regex format patterns (dash character needs escaping).
 
 ## v0.14.0-alpha - 2022-10-17
 ### Added
