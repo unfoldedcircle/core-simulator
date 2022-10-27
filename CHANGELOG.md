@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+## v0.14.1-alpha - 2022-10-27
 ### Added
 - Validate IR codes, formats, manufacturers and devices. An IR code value must now in the correct PRONTO or HEX format.
 ### Changed
