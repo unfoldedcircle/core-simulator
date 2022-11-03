@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## v0.15.0-alpha - 2022-11-04
+### Added
+- REST Core-API: dock discovery, setup and update endpoints
+  - Implemented dock network discovery. The simulated device `sim.1` will always be returned, no physical docking station is required.  
+    Bluetooth discovery will be added later. 
+  - Dock setup flow is simulated. Does not yet work with real devices.
+  - Dock firmware update check is simulated. Update function will be added in the next release.
+### Fixed
+- Docker image: updated to Debian testing due to new glibc requirements.
+
 ## v0.14.1-alpha - 2022-10-27
 ### Added
 - Validate IR codes, formats, manufacturers and devices. An IR code value must now in the correct PRONTO or HEX format.
