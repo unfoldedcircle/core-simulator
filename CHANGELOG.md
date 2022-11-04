@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Core-API dock object refactoring.
   - Use constant naming, `dock_id` everywhere instead mix and match with `service_name`.
   - Return dock model as string to clearly identify dock.
+  - Use a single command to set dock brightness.
 
 ---
 
