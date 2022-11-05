@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+---
+
+## v0.15.1-alpha - 2022-11-05
 ### Added
 - Dock firmware event message `dock_update_change`.
 ### Changed
@@ -12,8 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Use constant naming, `dock_id` everywhere instead mix and match with `service_name`.
   - Return dock model as string to clearly identify dock.
   - Use a single command to set dock brightness.
-
----
 
 ## v0.15.0-alpha - 2022-11-04
 ### Added
