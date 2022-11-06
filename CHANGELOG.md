@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+---
+
+## v0.15.2-alpha - 2022-11-06
 ### Added
 - REST Core-API:
   - `HEAD /docks` endpoint to retrieve number of configured docks.
@@ -16,7 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - REST Core-API:
   - Remove `token` requirement for `RESET` command in `POST /docks/devices/:dock_id/command`.
----
 
 ## v0.15.1-alpha - 2022-11-05
 ### Added
