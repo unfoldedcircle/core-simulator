@@ -5,7 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
-
+### Added
+- REST Core-API:
+  - `HEAD /docks` endpoint to retrieve number of configured docks.
+  - Add `IDENTIFY` command to `POST /docks/devices/:dock_id/command`.
+  - Add `connection_type` and `version` fields to dock data in `GET /docks` and `GET /docks/devices/:dock_id`.
+  - Simulate dock bluetooth discovery & setup.
+  - Simulate dock firmware update.
+  - Dock update abort operation `DELETE /docks/devices/:dock_id/update`.
+### Changed
+- REST Core-API:
+  - Remove `token` requirement for `RESET` command in `POST /docks/devices/:dock_id/command`.
 ---
 
 ## v0.15.1-alpha - 2022-11-05
