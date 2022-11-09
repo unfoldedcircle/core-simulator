@@ -5,10 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
-### Changed
-- Enhance documentation of Core-API dock endpoints.
 
 ---
+
+## v0.15.3-alpha - 2022-11-09
+### Added
+- REST Core-API: add custom IR code payload to `PUT /ir/emitters/:deviceId/send` to send learned IR codes.
+### Changed
+- Enhance documentation of Core-API dock endpoints.
 
 ## v0.15.2-alpha - 2022-11-06
 ### Added
