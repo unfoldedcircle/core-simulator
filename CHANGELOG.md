@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.15.4-alpha - 2022-11-09
+### Changed
+- PRONTO hex code validation now also allows non-zero prefixed values.
+### Fixed
+- Simulated emitter learning returns proper PRONTO hex codes. 
+
 ## v0.15.3-alpha - 2022-11-09
 ### Added
 - REST Core-API: add custom IR code payload to `PUT /ir/emitters/:deviceId/send` to send learned IR codes.
