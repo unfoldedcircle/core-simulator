@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.15.5-alpha - 2022-11-11
+### Changed
+- Use uppercase dock state enum values to use same naming pattern as for entities and integrations.
+
 ## v0.15.4-alpha - 2022-11-09
 ### Changed
 - PRONTO hex code validation now also allows non-zero prefixed values.
