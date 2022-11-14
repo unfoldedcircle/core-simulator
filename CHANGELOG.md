@@ -5,6 +5,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- REST Core-API v0.16 integration setup flow preview:
+  - Integration discovery with `/intg/discover` endpoints.
+  - Integration setup with `/intg/setup` endpoints.
+  - Integration driver connection test command.
+- WS Core-API v0.12 preview:
+  - `integration_discovery` & `integration_setup_change` event messages.
+### Changed
+- REST Core-API integration handling:
+  - Refactored integration overview data returned in `GET /intg`:  common `state` property.
+  - Manual driver registration now fetches metadata from running driver, instead of providing all data during registration.
+  - Move `PUT /intg` operation to connect / disconnect integrations to `/intg/instances`.
+  - Declare `enabled` flag for development use only.
 
 ---
 
