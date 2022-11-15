@@ -5,14 +5,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+---
+
+## v0.15.6-alpha - 2022-11-15
 ### Changed
 - REST Core-API: manually set up a dock with the dock setup flow
   - CreateDockSetup is now a oneOf object for either a discovered dock (same structure as before) or a manual setup.
   - Manual setup uses the existing `DockSetup` object in the `POST /docks/setup` request and then automatically starts
     the setup process without calling `PUT /docks/setup/:dockId`.
 - If a dock setup process is already running, it can't be aborted with another POST request and returns 409.
-
----
 
 ## v0.15.5-alpha - 2022-11-11
 ### Changed
