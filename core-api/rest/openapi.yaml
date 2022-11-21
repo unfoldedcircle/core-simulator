@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Remote Two REST API
-  version: 0.16.0
+  version: 0.16.1
   contact:
     name: API Support
     url: 'https://github.com/unfoldedcircle/core-api/issues'
@@ -1110,13 +1110,16 @@ paths:
     put:
       tags:
         - integrations
-      summary: Execute command on discovered integration driver.
+      summary: Execute connection test command on discovered integration driver.
       description: |
         Perform a driver connection test with a discovered driver. If the driver requires a token, it must be specified in
         the request body.
 
         Response status codes:
-        - `200`: successful operation: the connection test was successful.
+        - `200`: successful operation: the connection test was successful and driver metadata could be retrieved.
+        - `404`: discovered driver with `driver_id` not found. Check if the discovery result is still available and has not
+                 been deleted. This can happen after a timeout since the discovery, or if the discovery result has been
+                 cleared with `DELETE /intg/discover`.
         - `503`: integration driver connection could not be established.
       operationId: executeCommandOnDiscoveredIntgDriver
       parameters:
@@ -1137,7 +1140,7 @@ paths:
             type: integer
             format: int32
             default: 5
-            minimum: 1
+            minimum: 3
             maximum: 60
       requestBody:
         required: false
@@ -1148,22 +1151,39 @@ paths:
               description: Driver connection parameters.
               type: object
               properties:
-                token:
-                  description: |
-                    Optional driver authentication token.
-                  type: string
-                  maxLength: 2048
-              required:
-                - driver_url
+                connection:
+                  type: object
+                  properties:
+                    driver_url:
+                      type: string
+                    token:
+                      description: |
+                        Optional driver authentication token.
+                      type: string
+                      maxLength: 2048
             examples:
+              Connection test without token and discovered driver url:
+                value: {}
               Connection test with token:
                 value:
-                  token: '0000'
-              Connection test without token:
-                value: null
+                  connection:
+                    token: '0000'
+              Connection test with custom driver url:
+                value:
+                  connection:
+                    driver_url: 'ws://my-integration.local:8080'
       responses:
         '200':
-          $ref: '#/components/responses/SuccessMessage'
+          description: Command response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  driver:
+                    $ref: '#/components/schemas/IntegrationDriver'
+                required:
+                  - driver
         '400':
           $ref: '#/components/responses/Err400BadRequest'
         '401':
@@ -1177,9 +1197,25 @@ paths:
     post:
       tags:
         - integrations
-      summary: Configure a discovered integration driver.
+      summary: Register a discovered integration driver.
       description: |
-        _TODO_
+        Register a discovered integration driver:
+        - establish communication with the driver.
+          - if the driver requires a password, it must be provided in the request.
+          - the discovered driver name and url can be overridden.
+        - fetch metadata from the driver.
+        - check compatability.
+        - register the driver and connection parameters in the remote.
+
+        After a successful registration the setup process of the driver can be started to configure the integration.
+        The required setup data is described in the returned `setup_data_schema` and the provided values by the user must
+        be passed to the `POST /intg/setup` operation.
+
+        Response status codes:
+        - `400`: invalid data in request body.
+        - `404`: no discovered driver found for given `driver_id`.
+        - `409`: integration driver is already registered.
+        - `503`: integration driver communication error. Either driver is not reachable or communication failed.
       operationId: configureDiscoveredIntgDriver
       parameters:
         - $ref: '#/components/parameters/driver_id'
@@ -1193,6 +1229,11 @@ paths:
               properties:
                 name:
                   $ref: '#/components/schemas/LanguageText'
+                driver_url:
+                  description: 'Custom WebSocket URL of the driver, otherwise the discovered driver address is used.'
+                  type: string
+                  format: uri
+                  maxLength: 2048
                 token:
                   description: |
                     Optional driver authentication token.
@@ -1201,17 +1242,24 @@ paths:
             examples:
               Default:
                 value: {}
-              Configure driver with default name and token:
+              Configure driver with custom url:
+                value:
+                  driver_url: 'ws://my-integration.local:8080'
+              Configure driver with default name & url and custom token:
                 value:
                   token: '0000'
-              Configure driver with custom name and without token:
+              Configure driver with custom name:
                 value:
                   name:
                     en: My integration
                     de: Meine Integration
       responses:
-        '200':
-          $ref: '#/components/responses/SuccessMessage'
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntegrationDriver'
         '400':
           $ref: '#/components/responses/Err400BadRequest'
         '401':
@@ -1220,6 +1268,8 @@ paths:
           $ref: '#/components/responses/Err403Forbidden'
         '404':
           $ref: '#/components/responses/Err404NotFound'
+        '409':
+          $ref: '#/components/responses/Err409Conflict'
         '503':
           $ref: '#/components/responses/Err503ServiceUnavailable'
   /intg/setup:
@@ -1249,15 +1299,15 @@ paths:
         - integrations
       summary: "\U0001F477 Start setting up a new integration driver."
       description: |
-        Create a new setup process for the given integration driver. The driver is either a local available driver, or a
-        newly discovered external driver through the `/api/intg/discover` endpoints.
+        Start a new setup process for the given integration driver and provided setup data.
 
-        There may only be one active setup process per driver, otherwise status code `409` is returned. 
+        - This operation immediately starts the driver communication and setup process.
+        - There may only be one active setup process per driver, otherwise status code `409` is returned.
 
         The returned `id` in the `IntegrationSetupInfo` response will be the identifier for the further setup operations
-        with the `/intg/setup/:id` endpoints. Once the setup process is successfully finished, an integration instance is
+        with the `/intg/setup/:driver_id` endpoints. Once the setup process is successfully finished, an integration instance is
         created. A setup process can be simple and fully automatic, but may also require user interaction and further
-        communication with the returned `/intg/setup/:id` endpoint.
+        communication with the returned `/intg/setup/:driver_id` endpoint.
 
         Emits the WebSocket event `integration_setup_change` with `event_type: START`.
 
@@ -1268,7 +1318,11 @@ paths:
         Response status codes:
         - `400`: invalid data in request body.
         - `404`: specified `driver_id` in request body does not exist.
-        - `409`: a setup process for the given `driver_id` already exists. Either continue or abort existing process. 
+        - `409`: a setup process for the given `driver_id` already exists. Either continue or abort existing process.
+        - `422`: the setup process cannot be used: either the integration is already configured or doesn't allow to be
+                 set up again.  
+                 ⚠️ At the moment the setup process is only implemented for new integration setups. This will be extended
+                    to re-run the setup process of an already configured integration.
         - `503`: integration driver communication error. Either driver is not reachable or communication failed.
       operationId: setupIntegration
       requestBody:
@@ -1294,6 +1348,8 @@ paths:
           $ref: '#/components/responses/Err404NotFound'
         '409':
           $ref: '#/components/responses/Err409Conflict'
+        '422':
+          $ref: '#/components/responses/Err422UnprocessableEntity'
         '503':
           $ref: '#/components/responses/Err503ServiceUnavailable'
     delete:
@@ -1303,6 +1359,8 @@ paths:
       description: |
         Stop all setup processes at the next possible operation and remove all setup process information.  
         Depending on the integration driver, a started setup process cannot be aborted.
+
+        ⚠️ This stops all setup processes, not just for the current session!
       operationId: stopAllIntegrationSetups
       responses:
         '200':
@@ -6368,20 +6426,30 @@ paths:
         - dock
       summary: Start setting up a new docking station.
       description: |
-        Create a new setup process for the given dock id. The required request data can be obtained from the
-        `/api/docks/discover` endpoints when searching for docking stations over Bluetooth or Ethernet. Simply provide the
-        returned `DockDiscovery` data object (which is a super set of the required data to start a setup process).
+        Create a new setup process from a discovered dock or from a manually provided dock address.
 
-        The returned `id` in the `DockSetupInfo` response will be the identifier for the further setup operations with the
-        `/docks/setup/:id` endpoints.
+        - If there's already a setup process running for the given dock id, status code `409` is returned.
+        - Emits the WebSocket event `dock_setup_change` with `event_type: START` when this operation returns `201`.
 
-        Emits the WebSocket event `dock_setup_change` with `event_type: START`.
+        Start setup from dock discovery:
+        - The required request data can be obtained from the `/api/docks/discover` endpoints when searching for docking
+          stations over Bluetooth or Ethernet. Simply provide the returned `DockDiscovery` data object (which is a super
+          set of the required data to start a setup process).
+        - The returned `id` in the `DockSetupInfo` response will be the identifier for the next `PUT /docks/setup/:id`
+          call to provide additional data.
 
-        If there's already a setup process running for the given dock id, it will be reset as soon as a currently running
-        operation can be aborted. However, using the `DELETE /docks/setup/:id` operation is preferred.
+        Manual setup:
+        - A dock identifier will automatically be created and returned in `DockSetupInfo`.
+        - The dock must be reachable on the network with the provided `custom_ws_url` and optional `token`. Otherwise,
+          status code `503` is returned.
+        - The setup process is automatically started after a successful POST request, no call to `PUT /docks/setup/:id`
+          is required.
 
         Response status codes:
-        - `400`: invalid data in request body
+        - `201`: setup process successfully started. Use `GET /docks/setup/:id` to poll for status updates, or listen to
+           WebSocket `dock_setup_change` event messages.
+        - `400`: invalid data in request body.
+        - `409`: a setup process is already running. Either wait until finished, or abort it.
         - `503`: service not available to setup docking station.  
            E.g. Bluetooth is disabled and therefore the docking station cannot be setup over Bluetooth. Either enable
            Bluetooth or setup the dock over Ethernet.
@@ -6391,13 +6459,31 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateDockSetup'
-            example:
-              id: UC-Dock-E831CDD012A8
-              friendly_name: 'null'
-              address: '192.168.1.106:946'
-              model: UCD2
-              version: 0.1.0
-              discovery_type: NET
+            examples:
+              From dock discovery:
+                value:
+                  discovery:
+                    id: UC-Dock-E831CDD012A8
+                    friendly_name: Living room
+                    address: '192.168.1.106:946'
+                    model: UCD2
+                    version: 0.1.0
+                    discovery_type: NET
+              Manually:
+                value:
+                  manually:
+                    name: Living room
+                    token: '0000'
+                    custom_ws_url: 192.168.1.106
+              Manually with WiFi:
+                value:
+                  manually:
+                    name: Living room
+                    token: '0000'
+                    custom_ws_url: 192.168.1.106
+                    wifi:
+                      ssid: My network
+                      password: don't tell anyone
         required: true
       responses:
         '201':
@@ -6409,7 +6495,6 @@ paths:
               example:
                 id: UC-Dock-E831CDD012A8
                 name: Living room
-                model: UCD2_VIRTUAL
                 discovery_type: NET
                 state: NEW
         '400':
@@ -6418,6 +6503,8 @@ paths:
           $ref: '#/components/responses/Err401Unauthorized'
         '403':
           $ref: '#/components/responses/Err403Forbidden'
+        '409':
+          $ref: '#/components/responses/Err409Conflict'
         '503':
           $ref: '#/components/responses/Err503ServiceUnavailable'
     delete:
@@ -6510,7 +6597,7 @@ paths:
               example:
                 id: UC-Dock-E831CDD012A8
                 name: Living room
-                model: UCD2_VIRTUAL
+                model: UCD2
                 discovery_type: NET
                 state: CONFIGURING
         '400':
@@ -7969,27 +8056,6 @@ components:
       description: 'Two letter country code according to [ISO-3166-1-alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).'
       type: string
       format: iso-3166
-    CreateDockSetup:
-      type: object
-      properties:
-        id:
-          $ref: '#/components/schemas/DockId'
-        friendly_name:
-          $ref: '#/components/schemas/DockName'
-        address:
-          description: Resolved device network address.
-          type: string
-        model:
-          description: Detected dock model.
-          type: string
-        version:
-          description: Detected firmware version.
-          type: string
-        discovery_type:
-          $ref: '#/components/schemas/DiscoveryType'
-      required:
-        - id
-        - discovery_type
     Description:
       type: string
       maxLength: 255
@@ -8253,6 +8319,21 @@ components:
       minLength: 1
       maxLength: 40
       description: User assignable friendly name to use instead of dock_id (service name).
+    CreateDockSetup:
+      type: object
+      oneOf:
+        - type: object
+          properties:
+            discovery:
+              $ref: '#/components/schemas/DockSetupFromDiscovery'
+          required:
+            - discovery
+        - type: object
+          properties:
+            manually:
+              $ref: '#/components/schemas/DockSetup'
+          required:
+            - manual
     DockSetup:
       type: object
       description: Dock setup data
@@ -8280,6 +8361,27 @@ components:
             - password
       required:
         - name
+    DockSetupFromDiscovery:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/DockId'
+        friendly_name:
+          $ref: '#/components/schemas/DockName'
+        address:
+          description: Resolved device network address.
+          type: string
+        model:
+          description: Detected dock model.
+          type: string
+        version:
+          description: Detected firmware version.
+          type: string
+        discovery_type:
+          $ref: '#/components/schemas/DiscoveryType'
+      required:
+        - id
+        - discovery_type
     DockSetupError:
       type: string
       enum:
@@ -8993,6 +9095,8 @@ components:
           type: boolean
         name:
           type: string
+        developer_name:
+          type: string
         address:
           description: Resolved driver network address.
           type: string
@@ -9043,7 +9147,7 @@ components:
         name:
           $ref: '#/components/schemas/LanguageText'
         driver_type:
-          type: string
+          $ref: '#/components/schemas/IntegrationDriverType'
         driver_url:
           description: WebSocket URL of the driver.
           type: string
@@ -9088,11 +9192,6 @@ components:
           description: Driver supports multi-device discovery. **Not yet supported**.
           type: boolean
         setup_data_schema:
-          description: |
-            Driver configuration metadata describing configuration parameters for the web-configurator.
-
-            **Not yet finalized**.
-          type: object
           $ref: '#/components/schemas/SettingsPage'
         release_date:
           description: Release date of the driver.
@@ -9115,10 +9214,7 @@ components:
         developer_name:
           type: string
         driver_type:
-          type: string
-          enum:
-            - LOCAL
-            - EXTERNAL
+          $ref: '#/components/schemas/IntegrationDriverType'
         driver_url:
           description: WebSocket URL of external driver
           type: string
@@ -9176,6 +9272,11 @@ components:
           type: boolean
       required:
         - driver_url
+    IntegrationDriverType:
+      type: string
+      enum:
+        - LOCAL
+        - EXTERNAL
     IntegrationDriverUpdate:
       type: object
       description: |
@@ -9278,7 +9379,7 @@ components:
         icon:
           $ref: '#/components/schemas/IconIdentifier'
         driver_type:
-          type: string
+          $ref: '#/components/schemas/IntegrationDriverType'
         state:
           type: string
       required:
@@ -10049,7 +10150,7 @@ components:
             $ref: '#/components/schemas/Setting'
       required:
         - title
-        - input
+        - settings
     Setting:
       description: |
         An input setting is of a specific type defined in `field.type` which defines how it is presented to the user.
