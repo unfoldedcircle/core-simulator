@@ -4503,6 +4503,12 @@ components:
         - RECONNECTING
         - ERROR
 
+    integrationDriverType:
+      type: string
+      enum:
+        - LOCAL
+        - EXTERNAL
+
     integrationDriverInfo:
       description: |
         Summary data of an integration driver intended for overview screens.
@@ -4512,6 +4518,10 @@ components:
           $ref: '#/components/schemas/driverId'
         name:
           $ref: '#/components/schemas/languageText'
+        developer_name:
+          type: string
+        driver_type:
+          $ref: '#/components/schemas/integrationDriverType'
         driver_url:
           description: WebSocket URL of the driver
           type: string
@@ -4526,7 +4536,7 @@ components:
       required:
         - driver_id
         - name
-        - driver_url
+        - driver_type
         - version
         - enabled
 
@@ -4547,6 +4557,8 @@ components:
           $ref: '#/components/schemas/driverId'
         name:
           $ref: '#/components/schemas/languageText'
+        driver_type:
+          $ref: '#/components/schemas/integrationDriverType'
         driver_url:
           description: WebSocket URL of the driver
           type: string
@@ -5037,7 +5049,7 @@ components:
             - START
             - STOP
             - DISCOVER
-        dock:
+        integration:
           $ref: '#/components/schemas/integrationDiscoveryInformation'
       required:
         - event_type
@@ -5051,8 +5063,12 @@ components:
           type: boolean
         name:
           type: string
-        address:
-          description: Resolved device network address.
+        icon:
+          type: string
+        developer_name:
+          type: string
+        driver_url:
+          description: Resolved driver url.
           type: string
         version:
           description: Detected driver version.
@@ -5064,6 +5080,9 @@ components:
       required:
         - id
         - configured
+        - name
+        - driver_url
+        - timestamp
 
     integrationSetupChange: # TODO finalize object
       type: object
@@ -5161,7 +5180,7 @@ components:
             $ref: '#/components/schemas/Setting'
       required:
         - title
-        - input
+        - settings
 
     Setting:
       description: |

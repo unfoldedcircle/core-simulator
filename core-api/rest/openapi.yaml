@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Remote Two REST API
-  version: 0.16.1
+  version: 0.16.2
   contact:
     name: API Support
     url: 'https://github.com/unfoldedcircle/core-api/issues'
@@ -1297,7 +1297,7 @@ paths:
     post:
       tags:
         - integrations
-      summary: "\U0001F477 Start setting up a new integration driver."
+      summary: Start setting up a new integration driver.
       description: |
         Start a new setup process for the given integration driver and provided setup data.
 
@@ -1338,6 +1338,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IntegrationSetupInfo'
+              example:
+                id: sim-test
+                state: SETUP
         '400':
           $ref: '#/components/responses/Err400BadRequest'
         '401':
@@ -1373,7 +1376,7 @@ paths:
     get:
       tags:
         - integrations
-      summary: "\U0001F477 Get integration driver setup status."
+      summary: Get integration driver setup status.
       description: |
         Poll operation to retrieve the current integration driver setup state. See the `state` and `error` fields in the
         response message. There are also WebSocket `integration_setup_change` event messages for state changes to avoid
@@ -1404,12 +1407,12 @@ paths:
     put:
       tags:
         - integrations
-      summary: "\U0001F477 Setup integration driver."
+      summary: Provide requested integration setup data.
       description: |
         Set required data to configure the integration driver or continue the setup process.
 
         Defined user actions to set in the request body `action` field:
-        - `input_result`: if the user was requested to enter settings, e.g. connection or credential parameters to a device
+        - `input_values`: if the user was requested to enter settings, e.g. connection or credential parameters to a device
           or service.
         - `confirm`: response to the user action `confirmation`. Set to `true` if the user had to perform an action like
           pressing a button on a device and then confirms the action with continuing the setup process.  
@@ -1425,22 +1428,19 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                action:
-                  oneOf:
-                    - type: object
-                      properties:
-                        input_result:
-                          $ref: '#/components/schemas/SettingsValues'
-                      required:
-                        - input_result
-                    - type: object
-                      properties:
-                        confirm:
-                          type: boolean
-                      required:
-                        - confirm
+              oneOf:
+                - type: object
+                  properties:
+                    input_values:
+                      $ref: '#/components/schemas/SettingsValues'
+                  required:
+                    - input_values
+                - type: object
+                  properties:
+                    confirm:
+                      type: boolean
+                  required:
+                    - confirm
         required: true
       responses:
         '200':
@@ -9030,7 +9030,7 @@ components:
         name:
           $ref: '#/components/schemas/LanguageText'
         setup_data:
-          type: object
+          $ref: '#/components/schemas/SettingsValues'
       required:
         - driver_id
     IntegrationSetupError:
@@ -9047,8 +9047,6 @@ components:
       description: Integration setup state
       properties:
         id:
-          type: string
-        name:
           type: string
         state:
           $ref: '#/components/schemas/IntegrationSetupState'
@@ -9097,8 +9095,10 @@ components:
           type: string
         developer_name:
           type: string
-        address:
-          description: Resolved driver network address.
+        icon:
+          $ref: '#/components/schemas/IconIdentifier'
+        driver_url:
+          description: Resolved driver url.
           type: string
         pwd_protected:
           description: Driver requires a connection password.
@@ -10173,16 +10173,6 @@ components:
             - $ref: '#/components/schemas/SettingTypeCheckbox'
             - $ref: '#/components/schemas/SettingTypeDropdown'
             - $ref: '#/components/schemas/SettingTypeLabel'
-          discriminator:
-            propertyName: type
-            mapping:
-              number: '#/SettingTypeNumber'
-              text: '#/SettingTypeText'
-              textarea: '#/SettingTypeTextArea'
-              password: '#/SettingTypePassword'
-              checkbox: '#/SettingTypeCheckbox'
-              dropdown: '#/SettingTypeDropdown'
-              label: '#/SettingTypeLabel'
       required:
         - id
         - label
@@ -10190,36 +10180,37 @@ components:
     SettingTypeNumber:
       description: |
         Number input with optional `min`, `max`, `steps` and `decimals` properties. The default value must be specified
-        in `value`. An optional unit of the number setting can be specified in `units`, which will be displayed next to
+        in `value`. An optional unit of the number setting can be specified in `unit`, which will be displayed next to
         the input field.
       type: object
       properties:
-        type:
-          description: Must be const `number` (const keyword not supported in OA 3.0).
-          type: string
-        value:
-          description: Default value for input field.
-          type: number
-        min:
-          description: 'Optional validation: minimum allowed value (inclusive).'
-          type: number
-        max:
-          description: 'Optional validation: maximum allowed value (inclusive).'
-          type: number
-        steps:
-          description: |
-            Optional validation: allowed step increment between values. Might also be used in the UI for input helpers.
-          type: number
-        decimals:
-          description: Number of decimal places. 0 = integer value
-          type: integer
-          minimum: 0
-          default: 0
-        units:
-          $ref: '#/components/schemas/LanguageText'
+        number:
+          type: object
+          properties:
+            value:
+              description: Default value for input field.
+              type: number
+            min:
+              description: 'Optional validation: minimum allowed value (inclusive).'
+              type: number
+            max:
+              description: 'Optional validation: maximum allowed value (inclusive).'
+              type: number
+            steps:
+              description: |
+                Optional validation: allowed step increment between values. Might also be used in the UI for input helpers.
+              type: number
+            decimals:
+              description: Number of decimal places. 0 = integer value
+              type: integer
+              minimum: 0
+              default: 0
+            unit:
+              $ref: '#/components/schemas/LanguageText'
+          required:
+            - value
       required:
-        - type
-        - value
+        - number
     SettingTypeText:
       description: |
         Single line of text input.
@@ -10227,111 +10218,110 @@ components:
         TODO: format specifier for e.g. email, url, date, datetime etc.?
       type: object
       properties:
-        type:
-          description: Must be const `text` (const keyword not supported in OA 3.0).
-          type: string
-        value:
-          description: Optional default value.
-          type: string
-        regex:
-          description: Optional regex validation pattern for the input value.
-          type: string
+        text:
+          type: object
+          properties:
+            value:
+              description: Optional default value.
+              type: string
+            regex:
+              description: Optional regex validation pattern for the input value.
+              type: string
       required:
-        - type
+        - text
     SettingTypeTextArea:
       description: 'Multi-line text input, e.g. for providing a description.'
       type: object
       properties:
-        type:
-          description: Must be const `textarea` (const keyword not supported in OA 3.0).
-          type: string
-        value:
-          description: Optional default value.
-          type: string
+        textarea:
+          type: object
+          properties:
+            value:
+              description: Optional default value.
+              type: string
       required:
-        - type
+        - textarea
     SettingTypePassword:
       description: |
         Password or pin entry field with the input text hidden from the user. Otherwise the same as text input.
       type: object
       properties:
-        type:
-          description: Must be const `password` (const keyword not supported in OA 3.0).
-          type: string
-        value:
-          description: Optional default value.
-          type: string
-          format: password
-        regex:
-          description: Optional regex validation pattern for the input value.
-          type: string
+        password:
+          type: object
+          properties:
+            value:
+              description: Optional default value.
+              type: string
+              format: password
+            regex:
+              description: Optional regex validation pattern for the input value.
+              type: string
       required:
-        - type
+        - password
     SettingTypeCheckbox:
       description: Checkbox setting with `true` / `false` values.
       type: object
       properties:
-        type:
-          description: Must be const `checkbox` (const keyword not supported in OA 3.0).
-          type: string
-        value:
-          description: Initial setting.
-          type: boolean
+        checkbox:
+          type: object
+          properties:
+            value:
+              description: Initial setting.
+              type: boolean
+          required:
+            - value
       required:
-        - type
-        - value
+        - checkbox
     SettingTypeDropdown:
       description: Dropdown setting to pick a single value from a list. All values must be strings.
       type: object
       properties:
-        type:
-          description: Must be const `dropdown` (const keyword not supported in OA 3.0).
-          type: string
-        value:
-          description: Pre-selected dropdown id
-          type: string
-        values:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                description: Selection identifier.
-                type: string
-              label:
-                $ref: '#/components/schemas/LanguageText'
+        dropdown:
+          type: object
+          properties:
+            value:
+              description: Pre-selected dropdown id
+              type: string
+            items:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    description: Selection identifier.
+                    type: string
+                  label:
+                    $ref: '#/components/schemas/LanguageText'
+                required:
+                  - id
+                  - label
+          required:
+            - value
+            - items
       required:
-        - type
-        - value
-        - values
+        - dropdown
     SettingTypeLabel:
       description: |
         Additional read-only text for information purpose between other settings.
       type: object
       properties:
-        type:
-          description: Must be const `label` (const keyword not supported in OA 3.0).
-          type: string
-        value:
-          $ref: '#/components/schemas/LanguageText'
+        label:
+          type: object
+          properties:
+            value:
+              $ref: '#/components/schemas/LanguageText'
+      required:
+        - label
     SettingsValues:
-      description: User input result of a SettingsPage.
-      type: array
-      items:
-        type: object
-        properties:
-          id:
-            description: Corresponding setting identifier
-            type: string
-          value:
-            description: |
-              Provided input value. This is either the entered text or number, selected checkbox state or the selected
-              dropdown item id.  
-              ⚠️ Non native string values as numbers or booleans are represented as string values!
-            type: string
-        required:
-          - id
-          - value
+      description: |
+        User input result of a SettingsPage as key values.
+        - key: id of the field
+        - value: entered user value as string. This is either the entered text or number, selected checkbox state or the
+          selected dropdown item id.  
+          ⚠️ Non native string values as numbers or booleans are represented as string values!
+      type: object
+      additionalProperties:
+        type: string
     Scopes:
       type: array
       items:
