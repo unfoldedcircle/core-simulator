@@ -4568,7 +4568,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"setup_data\": {\n        \"name\": \"Living room\",\n        \"token\": \"123\",\n        \"custom_ws_url2\": \"ws://test-station.local:1946\",\n        \"description\": \"Setup test\"\n    }\n}",
+											"raw": "{\n    \"input_values\": {\n        \"name\": \"Living room\",\n        \"token\": \"123\",\n        \"custom_ws_url2\": \"ws://test-station.local:1946\",\n        \"description\": \"Setup test\"\n    }\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4648,6 +4648,11 @@
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
 											"});",
+											"",
+											"const responseJson = pm.response.json();",
+											"if (responseJson) {",
+											"    postman.setEnvironmentVariable(\"intg_setup_id\", responseJson[0]);",
+											"}",
 											""
 										],
 										"type": "text/javascript"
@@ -4697,7 +4702,54 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"driver_id\": \"homey\",\n    \"name\": \"My \",\n    \"address\": \"172.1.1.106:946\",\n    \"version\": \"0.1.0\"\n}",
+									"raw": "{\n    \"driver_id\": \"homey\",\n    \"name\": {\n        \"en\": \"My test integration\"\n    },\n    \"setup_data\": {\n        \"url\": \"ws://test-station.local:1946\",\n        \"token\": \"123\",\n        \"ssl\": \"false\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVER}}/api/intg/setup",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"api",
+										"intg",
+										"setup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "setupIntegration sim-test",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"const responseJson = pm.response.json();",
+											"if (responseJson.id) {",
+											"    postman.setEnvironmentVariable(\"intg_setup_id\", responseJson.id);",
+											"}",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"driver_id\": \"sim-test\",\n    \"name\": {\n        \"en\": \"My test integration\"\n    },\n    \"setup_data\": {}\n}",
 									"options": {
 										"raw": {
 											"language": "json"
