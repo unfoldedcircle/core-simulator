@@ -10115,28 +10115,25 @@ components:
       description: Confirmation screen
       type: object
       properties:
-        confirm:
-          type: object
-          properties:
-            title:
-              $ref: '#/components/schemas/LanguageText'
-            message1:
-              description: Message to display between title and image (if supplied)
-              $ref: '#/components/schemas/LanguageText'
-            image:
-              description: |
-                Optional base64-encoded image.
+        title:
+          $ref: '#/components/schemas/LanguageText'
+        message1:
+          description: Message to display between title and image (if supplied). Supports Markdown formatting.
+          $ref: '#/components/schemas/LanguageText'
+        image:
+          description: |
+            Optional base64-encoded image.
 
-                TODO maximum encoded length to avoid WebSocket continuation frames, supported image formats
-                (png & svg?), max height & width
-              type: string
-              format: byte
-              maxLength: 32768
-            message2:
-              description: Message to display below message1 or image (if supplied)
-              $ref: '#/components/schemas/LanguageText'
-          required:
-            - title
+            TODO maximum encoded length to avoid WebSocket continuation frames, supported image formats
+            (png & svg?), max height & width
+          type: string
+          format: byte
+          maxLength: 32768
+        message2:
+          description: Message to display below message1 or image (if supplied). Supports Markdown formatting.
+          $ref: '#/components/schemas/LanguageText'
+      required:
+        - title
     SettingsPage:
       description: 'Settings definition page, e.g. to configure an integration driver.'
       type: object
@@ -10301,7 +10298,7 @@ components:
         - dropdown
     SettingTypeLabel:
       description: |
-        Additional read-only text for information purpose between other settings.
+        Additional read-only text for information purpose between other settings. Supports Markdown formatting.
       type: object
       properties:
         label:
