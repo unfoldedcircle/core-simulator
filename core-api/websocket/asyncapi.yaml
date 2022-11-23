@@ -8,7 +8,7 @@ asyncapi: 2.2.0
 id: 'urn:com:unfoldedcircle:core'
 info:
   title: Remote Two WebSocket Core-API
-  version: '0.12.0-alpha'
+  version: '0.12.1-alpha'
   contact:
     name: API Support
     url: https://github.com/unfoldedcircle/core-api/issues
@@ -5204,17 +5204,6 @@ components:
             - $ref: '#/components/schemas/SettingTypeCheckbox'
             - $ref: '#/components/schemas/SettingTypeDropdown'
             - $ref: '#/components/schemas/SettingTypeLabel'
-#          discriminator:
-#            propertyName: type
-#            mapping:
-#              number: '#/components/schemas/SettingTypeNumber'
-#              text: '#/components/schemas/SettingTypeText'
-#              textarea: '#/components/schemas/SettingTypeTextArea'
-#              password: '#/components/schemas/SettingTypePassword'
-#              checkbox: '#/components/schemas/SettingTypeCheckbox'
-#              dropdown: '#/components/schemas/SettingTypeDropdown'
-#              label: '#/components/schemas/SettingTypeLabel'
-
       required:
         - id
         - label
@@ -5227,33 +5216,33 @@ components:
         the input field.
       type: object
       properties:
-        type:
-#          description: Must be const `number` (const keyword not supported in OA 3.0).
-          type: string
-          const: number
-        value:
-          description: Default value for input field.
-          type: number
-        min:
-          description: "Optional validation: minimum allowed value (inclusive)."
-          type: number
-        max:
-          description: "Optional validation: maximum allowed value (inclusive)."
-          type: number
-        steps:
-          description: |
-            Optional validation: allowed step increment between values. Might also be used in the UI for input helpers.
-          type: number
-        decimals:
-          description: "Number of decimal places. 0 = integer value"
-          type: integer
-          minimum: 0
-          default: 0
-        units:
-          $ref: '#/components/schemas/languageText'
+        number:
+          type: object
+          properties:
+            value:
+              description: Default value for input field.
+              type: number
+            min:
+              description: "Optional validation: minimum allowed value (inclusive)."
+              type: number
+            max:
+              description: "Optional validation: maximum allowed value (inclusive)."
+              type: number
+            steps:
+              description: |
+                Optional validation: allowed step increment between values. Might also be used in the UI for input helpers.
+              type: number
+            decimals:
+              description: "Number of decimal places. 0 = integer value"
+              type: integer
+              minimum: 0
+              default: 0
+            unit:
+              $ref: '#/components/schemas/languageText'
+          required:
+            - value
       required:
-        - type
-        - value
+        - number
 
     SettingTypeText:
       description: |
@@ -5262,123 +5251,117 @@ components:
         TODO: format specifier for e.g. email, url, date, datetime etc.?
       type: object
       properties:
-        type:
-#          description: Must be const `text` (const keyword not supported in OA 3.0).
-          type: string
-          const: text
-        value:
-          description: Optional default value.
-          type: string
-        regex:
-          description: Optional regex validation pattern for the input value.
-          type: string
+        text:
+          type: object
+          properties:
+            value:
+              description: Optional default value.
+              type: string
+            regex:
+              description: Optional regex validation pattern for the input value.
+              type: string
       required:
-        - type
+        - text
 
     SettingTypeTextArea:
       description: Multi-line text input, e.g. for providing a description.
       type: object
       properties:
-        type:
-#          description: Must be const `textarea` (const keyword not supported in OA 3.0).
-          type: string
-          const: textarea
-        value:
-          description: Optional default value.
-          type: string
+        textarea:
+          type: object
+          properties:
+            value:
+              description: Optional default value.
+              type: string
       required:
-        - type
+        - textarea
 
     SettingTypePassword:
       description: |
         Password or pin entry field with the input text hidden from the user. Otherwise the same as text input.
       type: object
       properties:
-        type:
-#          description: Must be const `password` (const keyword not supported in OA 3.0).
-          type: string
-          const: password
-        value:
-          description: Optional default value.
-          type: string
-          format: password
-        regex:
-          description: Optional regex validation pattern for the input value.
-          type: string
+        password:
+          type: object
+          properties:
+            value:
+              description: Optional default value.
+              type: string
+              format: password
+            regex:
+              description: Optional regex validation pattern for the input value.
+              type: string
       required:
-        - type
+        - password
 
     SettingTypeCheckbox:
       description: Checkbox setting with `true` / `false` values.
       type: object
       properties:
-        type:
-#          description: Must be const `checkbox` (const keyword not supported in OA 3.0).
-          type: string
-          const: checkbox
-        value:
-          description: Initial setting.
-          type: boolean
+        checkbox:
+          type: object
+          properties:
+            value:
+              description: Initial setting.
+              type: boolean
+          required:
+            - value
       required:
-        - type
-        - value
+        - checkbox
 
     SettingTypeDropdown:
       description: Dropdown setting to pick a single value from a list. All values must be strings.
       type: object
       properties:
-        type:
-#          description: Must be const `dropdown` (const keyword not supported in OA 3.0).
-          type: string
-          const: dropdown
-        value:
-          description: Pre-selected dropdown id
-          type: string
-        values:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                description: Selection identifier.
-                type: string
-              label:
-                $ref: '#/components/schemas/languageText'
+        dropdown:
+          type: object
+          properties:
+            value:
+              description: Pre-selected dropdown id
+              type: string
+            items:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    description: Selection identifier.
+                    type: string
+                  label:
+                    $ref: '#/components/schemas/languageText'
+                required:
+                  - id
+                  - label
+          required:
+            - items
       required:
-        - type
-        - value
-        - values
+        - dropdown
 
     SettingTypeLabel:
       description: |
         Additional read-only text for information purpose between other settings.
       type: object
       properties:
-        type:
-#          description: Must be const `label` (const keyword not supported in OA 3.0).
-          type: string
-          const: label
-        value:
-          $ref: '#/components/schemas/languageText'
+        label:
+          type: object
+          properties:
+            value:
+              $ref: '#/components/schemas/languageText'
+          required:
+            - value
+      required:
+        - label
 
     SettingsValues:
-      description: User input result of a SettingsPage.
-      type: array
-      items:
-        type: object
-        properties:
-          id:
-            description: Corresponding setting identifier
-            type: string
-          value:
-            description: |
-              Provided input value. This is either the entered text or number, selected checkbox state or the selected
-              dropdown item id.  
-              ⚠️ Non native string values as numbers or booleans are represented as string values!
-            type: string
-        required:
-          - id
-          - value
+      description: |
+        User input result of a SettingsPage as key values.
+        - key: id of the field
+        - value: entered user value as string. This is either the entered text or number, selected checkbox state or the
+          selected dropdown item id.  
+          ⚠️ Non native string values as numbers or booleans are represented as string values!
+      type: object
+      additionalProperties:
+        type: string
 
     description:
       type: string
