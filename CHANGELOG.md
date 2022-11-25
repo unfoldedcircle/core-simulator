@@ -6,12 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 ### Added
-- REST Core-API v0.16 integration setup flow preview:
+- REST Core-API v0.16 integration setup flow:
   - Integration discovery with `/intg/discover` endpoints.
   - Integration setup with `/intg/setup` endpoints.
   - Integration driver connection test command.
-- WS Core-API v0.12 preview:
+  - State field in integration driver & instance data objects. The state was only returned in `GET /intg` until now.
+  - Demo integration drivers with setup data schemas & icons for simulator.
+- WS Core-API v0.12:
   - `integration_discovery` & `integration_setup_change` event messages.
+- Include a set of default icons for integrations and background images, accessible with `/resources/:type`.  
+  ⚠️ **Delete old Docker volume to enable the included resource files.**
 ### Changed
 - REST Core-API integration handling:
   - Refactored integration overview data returned in `GET /intg`:  common `state` property.
