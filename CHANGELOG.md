@@ -5,13 +5,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+---
+
+## v0.16.3-alpha - 2022-11-27
 ### Added
 - REST Core-API v0.16 integration setup flow:
   - Integration discovery with `/intg/discover` endpoints.
   - Integration setup with `/intg/setup` endpoints.
   - Integration driver connection test command.
   - State field in integration driver & instance data objects. The state was only returned in `GET /intg` until now.
-  - Demo integration drivers with setup data schemas & icons for simulator.
+- Demo integration setup flows in Simulator:
+  - The simulator defines a few integration drivers with setup data schemas & icons. See Postman collection examples
+    defined in `integrations/setup`.
+  - Defined external drivers in discovery:
+    - `sim-foobar`: requires driver setup data, without setup flow user interaction
+    - `sim-test`: no driver setup data, user input screen with single text input
+    - `sim-intg`: no driver setup data, user input screen during setup flow with dropdown, text, number inputs
+  - Defined local drivers:
+    - `uc:bo`: no driver setup data, without setup flow user interaction
+    - `uc:homey`: requires driver setup data, without setup flow user interaction
+    - `uc:hue`: no driver setup data, with user confirmation page in setup flow
+  - ⚠️ After a successful integration setup flow the integration instance is not yet persisted! This will be implemented
+       in a future release.
 - WS Core-API v0.12:
   - `integration_discovery` & `integration_setup_change` event messages.
 - Include a set of default icons for integrations and background images, accessible with `/resources/:type`.  
@@ -22,8 +38,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Manual driver registration now fetches metadata from running driver, instead of providing all data during registration.
   - Move `PUT /intg` operation to connect / disconnect integrations to `/intg/instances`.
   - Declare `enabled` flag for development use only.
-
----
 
 ## v0.15.6-alpha - 2022-11-15
 ### Changed
