@@ -5,12 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+---
+
+## v0.16.4-alpha - 2022-11-28
 ### Added
 - Save integration at end of integration setup flow. The setup flow cannot be started again if the integration already exists.
 ### Fixed
-- Docks of model `UCD2_VIRTUAL` are always connected and don't return errors when sending commands.
-
----
+- Virtual docks (model `UCD2_VIRTUAL`) are always connected and don't return errors when sending commands.
+- IntegrationState enum instead of untyped string
 
 ## v0.16.3-alpha - 2022-11-27
 ### Added
@@ -39,6 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - REST Core-API integration handling:
   - Refactored integration overview data returned in `GET /intg`:  common `state` property.
+    - Deprecated fields `driver_state` and `device_state`. They will soon be removed in the response.
   - Manual driver registration now fetches metadata from running driver, instead of providing all data during registration.
   - Move `PUT /intg` operation to connect / disconnect integrations to `/intg/instances`.
   - Declare `enabled` flag for development use only.
