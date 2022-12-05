@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.16.5-alpha - 2022-12-05
+### Added
+- IntegrationState enum instead of untyped string.
+- Add pwd_protected field to IntegrationDriver object.
+### Fixed
+- Clear integration driver discovery data only at discovery restart, not when stopping it.
+
 ## v0.16.4-alpha - 2022-11-28
 ### Added
 - Save integration at end of integration setup flow. The setup flow cannot be started again if the integration already exists.
