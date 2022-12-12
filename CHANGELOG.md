@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Validation error details for status code 400 in `ValidationErrorResponse`. If validation error details are available,
+  they are returned to the client, describing which field(s) are invalid, instead of a generic error description.
+### Fixed
+- Remote button mapping: assign a custom IR command is no longer rejected.
 
 ---
 
