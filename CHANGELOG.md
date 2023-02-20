@@ -6,9 +6,46 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-_None_
+### Added
+- Temporary, non-persistent UI access token to prevent lock-out when deleting user accounts or API tokens.
+
+### Changed
+- Enforce WS Core-API authentication and auto-disconnect after 15s.
 
 ---
+
+## v0.19.1-alpha - 2023-02-15
+### Added
+- Include web-configurator preview
+- Core API: system update check & installation
+
+### Changed
+- Disable Bluetooth handling in Simulator. Bt dock discovery is only simulated.
+
+### Fixed
+- Graceful shutdown
+- Missing dependencies in Simulator Docker image
+- Propagate disabled Bluetooth state in dock discovery
+
+## v0.18.0-alpha - 2023-01-11
+### Added
+- WiFi management with REST & WS Core-API
+- Dock handling with WS Core-API
+- Bluetooth dock setup flow on Linux
+
+## v0.17.0-alpha - 2022-12-23
+### Added
+- Full dock setup flow with physical docks.
+- WebSocket `dock_state` and `dock_change` event messages.
+
+### Changed
+- Remove dock configuration after dock factory reset.
+
+### Fixed
+- Clear dock device discovery only when starting a new discovery but not when manually stopping the discovery.
+- Propagate all dock configuration changes to physical dock device.
+- Reconnect to dock after cfg change (e.g. new WiFi settings or token change).
+- Dock URL handling from provided dock address, which can either be a hostname, IP address or WS URL.
 
 ## v0.16.6-alpha - 2022-12-12
 ### Added
