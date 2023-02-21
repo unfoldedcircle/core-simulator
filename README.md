@@ -1,43 +1,41 @@
-# Remote-Core simulator
+# Remote Two Core Simulator
 
 The remote-core simulator is a dedicated binary containing a subset of features of the remote-core.
 
 ## Core-API
 
-YAML specification files:
+API specification files in [OpenAPI](https://swagger.io/specification/) & [AsyncAPI](https://www.asyncapi.com/)
+YAML format:
 
 - [REST OpenAPI definition](core-api/rest/openapi.yaml)
 - [WebSocket AsyncAPI definition](core-api/websocket/asyncapi.yaml)
 
-The rendered html files are available from the built-in core-simulator webserver: <http://localhost:8080>
+The rendered html files are available from the built-in core-simulator webserver: <http://localhost:8080/docs>
 
-## Installation
+Please see our [Core APIs](https://github.com/unfoldedcircle/core-api) repository for more information.
+The Core-API definitions in this core-simulator repository will soon be migrated to the dedicated API repository.
 
-The Remote-Core simulator is a statically compiled binary with no external dependencies on macOS.  
+## Docker Compose Demo Setup
 
-### macOS
+See [docker](docker) directory for an all-in-one simulation setup using Docker Compose.
 
-Built for: macOS Monterey 12.4
+## Linux VM for Core-Simulator
 
-### Linux
+See [linux-vm](linux-vm) for a prepared Linux virtual machine containing the full Remote-Core simulator setup including
+a preview of the Qt based remote-ui application.
 
-On Ubuntu it requires avahi and the dns-sd compatibility library:
-```bash
-sudo apt install libavahi-compat-libdnssd-dev
-```
-
-## Run
+## Usage
 
 Extract the archive, change into the extracted directory and run the `core-simulator` binary.
 
 - Web page: <http://localhost:8080>
+- Web-Configurator preview: <http://localhost:8080/configurator>
 - Default REST API endpoints:
   - <http://localhost:8080/api>
   - <https://localhost:8443/api>
 - Default WebSocket API endpoints:
   - <http://localhost:8080/ws>
   - <https://localhost:8443/ws>
-- At first run it will create a user data subdirectory `./data`.
 
 ### User Accounts
 
@@ -75,54 +73,13 @@ The WebSocket API uses token based authentication sent in the header:
 
 Alternatively, the session cookie can be used from the REST login.
 
-## Configuration
+## License
 
-The Remote-Core simulator runs with pre-configured defaults.
+The API specifications and documentations are published under the [CC-BY-AS-4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+(Creative Commons Attribution-ShareAlike 4.0 International) license.  
+Please see [LICENSE file in core-api repository](https://github.com/unfoldedcircle/core-api/blob/main/LICENSE).  
 
-To change the web server ports, the following environment variables can be set:
-```
-UC_API_HTTP_PORT=8000
-UC_API_HTTPS_PORT=9000
-```
+All code examples in this repository are licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).  
 
-An optional configuration can be specified with the command line argument `--config FILE`.  
-See `simulator.yaml` in the extracted directory for supported configuration options.
-
-- The configuration file may only contain sub-sections. It's not required to uncomment and use the full configuration.
-  - Example with just re-defining the http settings:
-
-```
-api:
-  http:
-    enabled: true
-    port: 9000
-  https:
-    enabled: false
-    port: 8443
-```
-- `userdata` is an absolute directory if the path starts with `/`, otherwise it's a relative directory.
-
-### Certificates
-
-Certificates for the TLS connection can be specified with environment variables:
-
-```
-UC_CERTS_PUBLIC=./data/certs/public.pem
-UC_CERTS_PRIVATE=./data/certs/private.pem
-```
-
-Use [mkcert](https://github.com/FiloSottile/mkcert) for easy local development with self-signed certificates.
-
-### Logging
-
-The log level of the simulator can be changed through the environment variable `RUST_LOG=debug`.  
-Valid log levels are: debug, info, warn, error.
-
-## Docker Compose Demo Setup
-
-See [docker](docker) directory for an all-in-one simulation setup using Docker Compose.
-
-## Linux VM for Core-Simulator
-
-See [linux-vm](linux-vm) for a prepared Linux virtual machine containing the full Remote-Core simulator setup including
-the Qt based remote-ui application.
+Remote-core simulator and all graphics copyright © Unfolded Circle ApS 2022-2023.
+ 
