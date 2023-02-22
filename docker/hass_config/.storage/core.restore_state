@@ -1,28 +1,112 @@
 {
-    "version": 1,
-    "minor_version": 1,
-    "key": "core.restore_state",
-    "data": [
-        {
-            "state": {
-                "entity_id": "person.unfolded_simulator",
-                "state": "unknown",
-                "attributes": {
-                    "editable": false,
-                    "id": "unfolded_simulator",
-                    "user_id": "1571c1bbf7b443108b00f06a3c35de00",
-                    "friendly_name": "Unfolded Simulator"
-                },
-                "last_changed": "2022-06-28T18:09:27.899518+00:00",
-                "last_updated": "2022-06-28T18:09:30.383771+00:00",
-                "context": {
-                    "id": "01G6NR238F7QE7VN6XK58705GH",
-                    "parent_id": null,
-                    "user_id": null
-                }
-            },
-            "extra_data": null,
-            "last_seen": "2022-06-28T18:32:17.733544+00:00"
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.restore_state",
+  "data": [
+    {
+      "state": {
+        "entity_id": "person.unfolded_simulator",
+        "state": "unknown",
+        "attributes": {
+          "editable": true,
+          "id": "unfolded_simulator",
+          "user_id": "1571c1bbf7b443108b00f06a3c35de00",
+          "friendly_name": "Unfolded Simulator"
+        },
+        "last_changed": "2023-02-22T17:29:49.297277+00:00",
+        "last_updated": "2023-02-22T17:29:56.034661+00:00",
+        "context": {
+          "id": "01GSX2SDJ2PZ51A1TK5F2KZEG9",
+          "parent_id": null,
+          "user_id": null
         }
-    ]
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-22T18:59:00.160338+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "climate.study",
+        "state": "off",
+        "attributes": {
+          "hvac_modes": [
+            "heat",
+            "off"
+          ],
+          "min_temp": 7,
+          "max_temp": 35,
+          "target_temp_step": 0.1,
+          "current_temperature": null,
+          "temperature": 21.0,
+          "hvac_action": "off",
+          "friendly_name": "Study",
+          "supported_features": 1
+        },
+        "last_changed": "2023-02-22T17:29:49.938371+00:00",
+        "last_updated": "2023-02-22T18:42:17.989167+00:00",
+        "context": {
+          "id": "01GSX6XXR330A7B5AB6WDK5PCG",
+          "parent_id": null,
+          "user_id": "1571c1bbf7b443108b00f06a3c35de00"
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-22T18:59:00.160338+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "climate.living_room",
+        "state": "off",
+        "attributes": {
+          "hvac_modes": [
+            "heat",
+            "off"
+          ],
+          "min_temp": 15.0,
+          "max_temp": 21.0,
+          "target_temp_step": 0.1,
+          "preset_modes": [
+            "none",
+            "away"
+          ],
+          "current_temperature": null,
+          "temperature": 17.9,
+          "hvac_action": "off",
+          "preset_mode": "none",
+          "friendly_name": "Living room",
+          "supported_features": 17
+        },
+        "last_changed": "2023-02-22T17:29:49.939144+00:00",
+        "last_updated": "2023-02-22T18:42:15.210081+00:00",
+        "context": {
+          "id": "01GSX6XV184239DM11ZS43VPKH",
+          "parent_id": null,
+          "user_id": "1571c1bbf7b443108b00f06a3c35de00"
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-22T18:59:00.160338+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.non_existent",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2023-02-22T18:56:14.289154+00:00",
+          "mode": "single",
+          "current": 0,
+          "friendly_name": "Dummy action"
+        },
+        "last_changed": "2023-02-22T18:56:14.290121+00:00",
+        "last_updated": "2023-02-22T18:56:14.290121+00:00",
+        "context": {
+          "id": "01GSX7QEEE5JY8DTJFWP1277A2",
+          "parent_id": null,
+          "user_id": "1571c1bbf7b443108b00f06a3c35de00"
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-02-22T18:59:00.160338+00:00"
+    }
+  ]
 }
