@@ -1,0 +1,4 @@
+non_existent:
+  alias: Dummy action
+  sequence: []
+  mode: single
