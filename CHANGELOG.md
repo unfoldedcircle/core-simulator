@@ -6,22 +6,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+_Changes in the next release_
+
+---
+
+## v0.20.0-alpha - 2023-02-22
 ### Added
 - Temporary, non-persistent UI access token to prevent lock-out when deleting user accounts or API tokens.  
   Activated with ENV variable `UC_TOKEN_PATH` specifying an absolute file location to write the token.
+- Simulated factory reset and most system commands.
 
 ### Changed
-- From now on the Simulator is only distributed as Docker image.  
-- Enforce WS Core-API authentication and auto-disconnect after 15s if not authenticated.  
+- From now on the Simulator is only distributed as Docker image.
+- Enforce WS Core-API authentication and auto-disconnect after 15s if not authenticated.
 
 ### Fixed
 - Name clash of simulated IR emitter and simulated dock. Adding a simulated dock no longer overrides the IR emitter.
 - Dock discovery no longer returns the simulated Bluetooth dock if BT is disabled.
 - Simulated Bluetooth dock setup flow works again.
-- [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339#section-5) compliant date-time values. Certain timestamps didn't include the timezone. 
+- [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339#section-5) compliant date-time values. Certain timestamps didn't include the timezone.
 - Embed swagger js & css files in the Docker image Core-API OpenAPI packaging and don't rely on external downloads.
-
----
 
 ## v0.19.1-alpha - 2023-02-15
 ### Added
