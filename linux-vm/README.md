@@ -1,6 +1,6 @@
 # Linux VM for Core-Simulator
 
-Download link: <https://drive.google.com/drive/folders/1xIz2iwHZTM9RsKTXzhmAtTFlcb1iT7b2>  
+Download link: _updated version will be provided until the end of February 2023_  
 Note: downloading a full directory might not work, download the `.ova` & readme files one by one.  
 The `remote-ui` directory contains the UI binary only for manual updates of the ui app in `~/Remote-Two` without
 downloading a full VM image.
@@ -23,7 +23,7 @@ Installed applications & tools:
 - VirtualBox guest additions
 
 Installed Remote Two applications:
-- Remote-Core simulator
+- Remote-Core simulator with web-configurator
 - Home-Assistant integration
 - Remote-UI frontend
 

@@ -1,6 +1,17 @@
 # Remote Two Core Simulator
 
-The remote-core simulator is a dedicated binary containing a subset of features of the remote-core.
+The remote-core simulator is a developer tool to simplify developing integration drivers for the Remote Two.
+
+It simulates the functionality of the core services running on the embedded device and provides the same Core-APIs
+as a real device. The majority of the API functionality is identical (using the same code base) with most of the
+hardware functions simulated.
+
+The remote-core simulator is available as a Docker image and soon as a ready-made Linux VM.
+
+**Please note that this is a preview version and work-in-progress!**
+
+We will release more documentation and code examples.  
+The web-configurator and remote-ui projects will be released as open-source projects once we ship the devices.
 
 ## Core-API
 
@@ -10,10 +21,11 @@ YAML format:
 - [REST OpenAPI definition](core-api/rest/openapi.yaml)
 - [WebSocket AsyncAPI definition](core-api/websocket/asyncapi.yaml)
 
-The rendered html files are available from the built-in core-simulator webserver: <http://localhost:8080/docs>
+The rendered html files are available from the built-in core-simulator webserver: <http://localhost:8080/doc>
 
 Please see our [Core APIs](https://github.com/unfoldedcircle/core-api) repository for more information.
-The Core-API definitions in this core-simulator repository will soon be migrated to the dedicated API repository.
+
+⚠️ The Core-API definitions in this core-simulator repository will soon be migrated to the dedicated API repository.
 
 ## Docker Compose Demo Setup
 
@@ -50,9 +62,11 @@ endpoint for a session login with cookie.
 
 ##### User accounts
 
-Web configurator account (with admin rights):
+Web-configurator account (with admin rights):
 - user: `web-configurator`
 - password: `1234`
+
+The web-configurator account can be enabled & disabled in the remote-ui application. It also allows to create a new pin.
 
 Administrator account:
 - user: `admin`
