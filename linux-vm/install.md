@@ -100,20 +100,7 @@ sudo apt-get install docker-compose-plugin
 
 Depending on distribution, add `/usr/libexec/docker/cli-plugins` to your path.
 
-## Integrations
-
-### Home Assistant
-
-#### Container
-
-#### Host
-
-The remote-core simulator is a statically compiled binary with very little external dependencies:
-```bash
-sudo apt install libavahi-compat-libdnssd1
-```
-
-### Home Assistant Server
+## Home Assistant Server
 
 If you don't already have a [Home Assistant](https://www.home-assistant.io/) installation you can easily install one in
 a container to get started with the UC home-assistant integration for Remote Two.
@@ -129,7 +116,7 @@ docker run -d \
   --name homeassistant \
   --privileged \
   --restart=unless-stopped \
-  -e TZ=MY_TIME_ZONE \
+  -e TZ=$MY_TIME_ZONE \
   -v ~/hass_config:/config \
   --network=host \
   ghcr.io/home-assistant/home-assistant:stable

@@ -1,21 +1,15 @@
 # Docker Compose Setup with Home-Assistant Demo Server
 
 The pre-defined [docker-compose.yml](docker-compose.yml) is an all-in-one simulation setup including:
-- RemoteTwo Core-Simulator: [unfoldedcircle/core-simulator](https://hub.docker.com/r/unfoldedcircle/core-simulator)
+- Remote-core simulator: [unfoldedcircle/core-simulator](https://hub.docker.com/r/unfoldedcircle/core-simulator)
 - RemoteTwo Home-Assistant integration: [unfoldedcircle/integration-hass](https://hub.docker.com/r/unfoldedcircle/integration-hass)
 - [Home-Assistant server](https://www.home-assistant.io/): [ghcr.io/home-assistant/home-assistant:stable](https://github.com/home-assistant/core/pkgs/container/home-assistant)
 - The Home-Assistant data is persisted on the host in the [`hass_config`](hass_config) directory and bind-mounted into the container.
-- The core-simulator data is persisted in an anonymous Docker volume.
+- The remote-core simulator data is persisted in a Docker volume.
 
-Core-Simulator:
+## User Accounts
 
-- Web page: <http://localhost:8080>
-- Web configurator user account (with admin rights):
-  - user: `web-configurator`
-  - password: `1234`
-- Administrator user account:
-  - user: `admin`
-  - password: `remote2`
+See [README in parent directory](../README.md) for the remote-core simulator API accounts.  
 
 Home-Assistant:
 
@@ -57,7 +51,11 @@ See [Docker Compose documentation](https://docs.docker.com/compose/) for more in
 
 ## Configuration
 
-The Remote-Core simulator runs with pre-configured defaults and should not be changed. 
+The remote-core simulator runs with pre-configured defaults. Changing the configuration can have undesired effects and
+we cannot support custom configurations. 
+
+⚠️ The remote-core simulator uses a very simple built-in webserver to serve the static pages and the web-configurator.  
+The real remote device runs a dedicated webserver as reverse-proxy for the APIs and performs SSL termination.
 
 To change the web server ports, the following environment variables can be set:
 ```

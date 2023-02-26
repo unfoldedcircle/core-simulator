@@ -1,4 +1,4 @@
-# Core-API Changelog
+# Core-Simulator Changelog
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 _Changes in the next release_
 
 ---
+
+## v0.21.1-alpha - 2023-02-26
+### Added
+- Enable activity & macro execution in simulator.
+- Send `entity_change` events for all steps in an activity & macro sequence.
+
+### Changed
+- Public release of the simulator.
+- Update web-configurator.
 
 ## v0.20.0-alpha - 2023-02-22
 ### Added
