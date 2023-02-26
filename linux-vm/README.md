@@ -23,7 +23,7 @@ Installed applications & tools:
 - VirtualBox guest additions
 
 Installed Remote Two applications:
-- Remote-Core simulator with web-configurator
+- Remote-core simulator with web-configurator
 - Home-Assistant integration
 - Remote-UI frontend
 
@@ -36,7 +36,7 @@ Web page: <http://localhost:8080> / <https://localhost:8443>
 ## Docker Compose Setup with Home-Assistant Demo Server
 
 The pre-defined Docker Compose setup in `~/Remote-Two/docker-compose.yml` is an all-in-one simulation including:
-- Remote-Core simulator
+- Remote-core simulator
 - Home-Assistant integration: integration-homeassistant
 - [Home-Assistant server](https://www.home-assistant.io/)
 - The Home-Assistant data is persisted on the host in the `~/Remote-Two/hass_config` directory and bind-mounted into the container.
@@ -50,37 +50,7 @@ The pre-defined Docker Compose setup in `~/Remote-Two/docker-compose.yml` is an 
   - user: `unfolded`
   - password: `remotetwo`
 
-The Remote-Core simulator has the following predefined administrator accounts:
-
-#### REST API
-
-Endpoint: <http://localhost:8080/api>
-
-Web configurator account (with admin rights):
-- user: `web-configurator`
-- password: `1234`
-
-Administrator account:
-- user: `admin`
-- password: `remote2`
-
-Either use Basic Authentication for each request (when doing single tests or using OpenAPI), or use the `/api/pub/login`
-endpoint for a session login with cookie.
-
-ℹ️ Note: user account management will be added in a future release.
-
-#### WebSocket API
-
-Endpoint: <ws://localhost:8080/ws>
-
-The WebSocket API uses token based authentication sent in the header:
-
-- header: `API-KEY`
-- admin key: `BtlCEne.OWU2YzBhZjMyNmI2NDQ5YWI3N2NmMGExYWU5ZTNlNDEuZmIzOTNkM2FhOGY2NDA1N2FjNzQzNDdlOWE1YTU0OTc`
-
-Alternatively, the session cookie can be used from the REST login.
-
-Simple html test console: <http://localhost:8080/ws.html>
+See [README in parent directory](../README.md) for the remote-core simulator API accounts.
 
 ### Docker Compose Commands
 
