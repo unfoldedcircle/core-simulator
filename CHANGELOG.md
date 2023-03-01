@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Fixed
+- Integration driver authentication message handling if the session was already authenticated, e.g. header based authentication or multiple authentication messages.
+- Improved integration driver connect / disconnect error & reconnection handling.  
+  Return `ServiceUnavailable` in Core-API if integration driver connection is not established.
+- Send entity_subscribe & _unsubscribe messages to integration driver when a new entity is configured or removed with the Core-API.
+
 ---
 
 ## v0.21.2-alpha - 2023-02-28
