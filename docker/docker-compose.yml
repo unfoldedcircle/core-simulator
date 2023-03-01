@@ -5,6 +5,8 @@ services:
     image: unfoldedcircle/core-simulator
     container_name: core-simulator
     restart: "unless-stopped"
+#    environment:
+#      - UC_INTEGRATION_DISABLE_CERT_VERIFICATION=true
     ports:
       - "8080:8080"
       - "8443:8443"

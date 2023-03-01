@@ -8,9 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.21.2-alpha - 2023-02-28
+
 ### Added
 - ENV variable to disable certificate verification for integration TLS connections.  
-  Set `UC_INTEGRATION_DISABLE_CERT_VERIFICATION=true` to disable verification.
+  Set `UC_INTEGRATION_DISABLE_CERT_VERIFICATION=true` in the `core-simulator` container to disable verification.
 - ENV variable `UC_API_MSG_TRACING` to enable WebSocket Core-API message tracing:
   - `all`: enables incoming and outgoing message tracing
   - `in`: incoming messages only
@@ -21,8 +25,6 @@ _Changes in the next release_
   This fixes the Home Assistant sensors (and most likely other entities) to immediately show their current value.
 - Missing glibc error in Home Assistant integration Docker image ([#13](https://github.com/unfoldedcircle/core-simulator/issues/13)).
 - Swagger editor link in index pages for REST Core-API ([#8](https://github.com/unfoldedcircle/core-simulator/issues/8)).
-
----
 
 ## v0.21.1-alpha - 2023-02-26
 ### Added
