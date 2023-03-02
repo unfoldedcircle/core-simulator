@@ -26,6 +26,8 @@ The distributed remote-ui app in the simulator is a dynamically linked Qt5 appli
 [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) open source license.
 - Qt5 source code can be found on GitHub: <https://github.com/qt/qt5>
 - [Licenses Used in Qt](https://doc.qt.io/qt-5/licenses-used-in-qt.html).
+- Linked or embedded libraries:
+  - [QR Code generator library](https://github.com/nayuki/QR-Code-generator): MIT
 
 ### Web-Configurator
 
