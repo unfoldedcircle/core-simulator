@@ -27,6 +27,10 @@ The distributed remote-ui app in the simulator is a dynamically linked Qt5 appli
 - Qt5 source code can be found on GitHub: <https://github.com/qt/qt5>
 - [Licenses Used in Qt](https://doc.qt.io/qt-5/licenses-used-in-qt.html).
 
+### Web-Configurator
+
+- [Licenses of the web-configurator dependencies](web-configurator_licenses.md)
+
 ## Core-Simulator 3rd Party Components
 
 The Remote Two Core-Simulator packages the following 3rd party components in the Docker compose setup:
