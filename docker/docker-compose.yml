@@ -10,8 +10,12 @@ services:
     ports:
       - "8080:8080"
       - "8443:8443"
+    environment:
+      - UC_TOKEN_PATH=/tmp/ui-env/ws-token
     volumes:
       - simulator-data:/data
+      - ./ui-env:/tmp/ui-env
+      - ./media:/data/upload/media
 
   integration-hass:
     image: unfoldedcircle/integration-hass

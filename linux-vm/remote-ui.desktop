@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Remote-UI
+Comment=Remote-UI simulator for development
+Path=/home/unfolded/Remote-Two
+Exec=/home/unfolded/Remote-Two/remote-ui
+Icon=/home/unfolded/Pictures/remote-icon.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Development

@@ -13,21 +13,42 @@
           "user_id": "1571c1bbf7b443108b00f06a3c35de00",
           "friendly_name": "Unfolded Simulator"
         },
-        "last_changed": "2023-02-22T17:29:49.297277+00:00",
-        "last_updated": "2023-02-22T17:29:56.034661+00:00",
+        "last_changed": "2023-03-02T17:37:49.679253+00:00",
+        "last_updated": "2023-03-02T17:37:56.486482+00:00",
         "context": {
-          "id": "01GSX2SDJ2PZ51A1TK5F2KZEG9",
+          "id": "01GTHPDTR6FG0GZ0QGXE9AEFC0",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-22T18:59:00.160338+00:00"
+      "last_seen": "2023-03-02T17:39:09.718320+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.non_existent",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2023-03-01T17:45:27.784332+00:00",
+          "mode": "single",
+          "current": 0,
+          "friendly_name": "Dummy action"
+        },
+        "last_changed": "2023-03-02T17:37:50.370465+00:00",
+        "last_updated": "2023-03-02T17:37:50.370465+00:00",
+        "context": {
+          "id": "01GTHPDMS257ACC91S7VSWEGD5",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-03-02T17:39:09.718320+00:00"
     },
     {
       "state": {
         "entity_id": "climate.study",
-        "state": "off",
+        "state": "heat",
         "attributes": {
           "hvac_modes": [
             "heat",
@@ -38,20 +59,20 @@
           "target_temp_step": 0.1,
           "current_temperature": null,
           "temperature": 21.0,
-          "hvac_action": "off",
+          "hvac_action": "idle",
           "friendly_name": "Study",
           "supported_features": 1
         },
-        "last_changed": "2023-02-22T17:29:49.938371+00:00",
-        "last_updated": "2023-02-22T18:42:17.989167+00:00",
+        "last_changed": "2023-03-02T17:37:50.431298+00:00",
+        "last_updated": "2023-03-02T17:37:50.431298+00:00",
         "context": {
-          "id": "01GSX6XXR330A7B5AB6WDK5PCG",
+          "id": "01GTHPDMTZX3PPW6RFRQS6MJYG",
           "parent_id": null,
-          "user_id": "1571c1bbf7b443108b00f06a3c35de00"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-22T18:59:00.160338+00:00"
+      "last_seen": "2023-03-02T17:39:09.718320+00:00"
     },
     {
       "state": {
@@ -70,43 +91,22 @@
             "away"
           ],
           "current_temperature": null,
-          "temperature": 17.9,
+          "temperature": 17.0,
           "hvac_action": "off",
           "preset_mode": "none",
           "friendly_name": "Living room",
           "supported_features": 17
         },
-        "last_changed": "2023-02-22T17:29:49.939144+00:00",
-        "last_updated": "2023-02-22T18:42:15.210081+00:00",
+        "last_changed": "2023-03-02T17:37:50.431466+00:00",
+        "last_updated": "2023-03-02T17:37:50.431466+00:00",
         "context": {
-          "id": "01GSX6XV184239DM11ZS43VPKH",
+          "id": "01GTHPDMTZ4BZQYF5V41G17DAM",
           "parent_id": null,
-          "user_id": "1571c1bbf7b443108b00f06a3c35de00"
+          "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-02-22T18:59:00.160338+00:00"
-    },
-    {
-      "state": {
-        "entity_id": "script.non_existent",
-        "state": "off",
-        "attributes": {
-          "last_triggered": "2023-02-22T18:56:14.289154+00:00",
-          "mode": "single",
-          "current": 0,
-          "friendly_name": "Dummy action"
-        },
-        "last_changed": "2023-02-22T18:56:14.290121+00:00",
-        "last_updated": "2023-02-22T18:56:14.290121+00:00",
-        "context": {
-          "id": "01GSX7QEEE5JY8DTJFWP1277A2",
-          "parent_id": null,
-          "user_id": "1571c1bbf7b443108b00f06a3c35de00"
-        }
-      },
-      "extra_data": null,
-      "last_seen": "2023-02-22T18:59:00.160338+00:00"
+      "last_seen": "2023-03-02T17:39:09.718320+00:00"
     }
   ]
 }

@@ -80,8 +80,18 @@ UC_CERTS_PRIVATE=./data/certs/private.pem
 
 Use [mkcert](https://github.com/FiloSottile/mkcert) for easy local development with self-signed certificates.
 
+Set `UC_INTEGRATION_DISABLE_CERT_VERIFICATION=true` to disable verification.
+
 ### Logging
 
 The log level of the simulator can be changed through the environment variable `RUST_LOG=debug`.  
 Valid log levels are: `debug`, `info`, `warn`, `error`.
 
+#### WebSocket Core-API message tracing
+
+Set ENV variable `UC_API_MSG_TRACING` to enable full WebSocket Core-API message tracing as `debug` messages:
+- `all`: enables incoming and outgoing message tracing
+- `in`: incoming messages only
+- `out`: outgoing messages only
+
+⚠️ **Warning**: no message filtering is performed. Exchanged secrets like tokens or pins are exposed with this setting!

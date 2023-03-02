@@ -6,8 +6,8 @@ The `remote-ui` directory contains the UI binary only for manual updates of the 
 downloading a full VM image.
 
 Virtual machine:
-- VirtualBox 6.1
-- Ubuntu 22.04 minimal desktop
+- VirtualBox 7 (if the desktop keeps crashing, try another version or switch virtualization software)
+- Ubuntu 22.04 minimal desktop installation
 - user: `unfolded`
 - password: `remotetwo`
 - Configured with 2 cores & 4GB RAM: please adjust to your environment

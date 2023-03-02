@@ -1,5 +1,6 @@
 # Core-Simulator Changelog
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. The release version number relates to the 
+`unfoldedcircle/core-simulator` Docker image.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -8,19 +9,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.21.3-alpha - 2023-03-02
 ### Added
 - License information of used 3rd party components in the simulator.
 
+### Changed
+- Update HomeAssistant configuration to 2023.3.0
+
 ### Fixed
-- Integration driver authentication message handling if the session was already authenticated, e.g. header based authentication or multiple authentication messages.
+- Integration driver `authentication` message handling if the session was already authenticated, e.g. header based authentication or multiple authentication messages.
 - Improved integration driver connect / disconnect error & reconnection handling.  
   Return `ServiceUnavailable` in Core-API if integration driver connection is not established.
-- Send entity_subscribe & _unsubscribe messages to integration driver when a new entity is configured or removed with the Core-API.
-
----
+- Send `entity_subscribe` & `_unsubscribe` messages to integration driver when a new entity is configured or removed with the Core-API.
 
 ## v0.21.2-alpha - 2023-02-28
-
 ### Added
 - ENV variable to disable certificate verification for integration TLS connections.  
   Set `UC_INTEGRATION_DISABLE_CERT_VERIFICATION=true` in the `core-simulator` container to disable verification.
