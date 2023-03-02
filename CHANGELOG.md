@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Added
+- License information of used 3rd party components in the simulator.
+
 ### Fixed
 - Integration driver authentication message handling if the session was already authenticated, e.g. header based authentication or multiple authentication messages.
 - Improved integration driver connect / disconnect error & reconnection handling.  

@@ -100,3 +100,4 @@ Remote-core simulator and all graphics copyright © Unfolded Circle ApS 2022-202
 The remote-core simulator is provided for development use only. It is prohibited to use the remote-core simulator
 application as part of other products, services and like.
  
+See [3rd party license information](licenses) about used 3rd party libraries and technologies in our applications.
