@@ -87,6 +87,11 @@ Set `UC_INTEGRATION_DISABLE_CERT_VERIFICATION=true` to disable verification.
 The log level of the simulator can be changed through the environment variable `RUST_LOG=debug`.  
 Valid log levels are: `debug`, `info`, `warn`, `error`.
 
+Attention: `debug` logging is very verbose, especially mdns messages! Specific categories can be overridden or excluded.
+Examples:
+- Set debug logging only for integration module: `RUST_LOG=info,remote_core::intg=debug`
+- Exclude mdns: `RUST_LOG=debug,mdns_sd=info`
+
 #### WebSocket Core-API message tracing
 
 Set ENV variable `UC_API_MSG_TRACING` to enable full WebSocket Core-API message tracing as `debug` messages:
