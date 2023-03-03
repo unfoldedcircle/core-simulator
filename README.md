@@ -6,12 +6,14 @@ It simulates the functionality of the core services running on the embedded devi
 as a real device. The majority of the API functionality is identical (using the same code base) with most of the
 hardware functions simulated.
 
-The remote-core simulator is available as a Docker image and soon as a ready-made Linux VM.
+The remote-core simulator is available as a [Docker image](docker) and as a ready-made [Linux VM](linux-vm).
 
 **Please note that this is a preview version and work-in-progress!**
 
 We will release more documentation and code examples on how to develop for the Remote Two.  
 The web-configurator, Home Assistant integration and remote-ui projects will be released as open-source projects once we ship the devices.
+
+More information and contact links are on our [main GitHub page](https://github.com/unfoldedcircle).
 
 ## Core-API
 
