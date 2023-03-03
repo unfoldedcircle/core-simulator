@@ -11,6 +11,14 @@ _Changes in the next release_
 
 ---
 
+## v0.21.4-alpha - 2023-03-02
+### Added
+- Download link for Core-Simulator VM.
+
+### Fixed
+- Enabled entity command execution in REST Core-API: `PUT /api/entities/:entityId/command`
+- Typo in `execute_entity_command` WS Core-API.
+
 ## v0.21.3-alpha - 2023-03-02
 ### Added
 - License information of used 3rd party components in the simulator.

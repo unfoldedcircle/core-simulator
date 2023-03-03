@@ -1,9 +1,14 @@
 # Linux VM for Core-Simulator
 
-Download link: _updated version will be provided until the end of February 2023_  
-Note: downloading a full directory might not work, download the `.ova` & readme files one by one.  
-The `remote-ui` directory contains the UI binary only for manual updates of the ui app in `~/Remote-Two` without
+Download link: <https://drive.google.com/drive/folders/1IneoOAUBACs3L9Oq1anqye3Iru0v6_rI>
+
+- please [contact us](https://github.com/unfoldedcircle#contact-us-speech_balloon) if you get a download quota error,
+  we'll look for another download solution.  
+- downloading a full directory might not work, download the `.ova` & readme files one by one.
+- switch to list view for easier navigation and use incognito / private mode if it interferes with your existing Google account.
+- the `remote-ui` directory contains the UI binary only for manual updates of the ui app in `~/Remote-Two` without
 downloading a full VM image.
+- the other components can be updated with `docker-compose pull`, see [Docker Compose Commands](#docker-compose-commands).
 
 Virtual machine:
 - VirtualBox 7 (if the desktop keeps crashing, try another version or switch virtualization software)
