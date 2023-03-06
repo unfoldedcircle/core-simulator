@@ -11,6 +11,16 @@ _Changes in the next release_
 
 ---
 
+## v0.21.5-alpha - 2023-03-06
+### Added
+- WebSocket Core-API integration discovery & setup flow functionality as in REST API.
+
+### Changed
+- Increase integration driver reconnect count to 100.
+
+### Fixed
+- Integration driver `subscribe_events` message handling.
+
 ## v0.21.4-alpha - 2023-03-02
 ### Added
 - Download link for Core-Simulator VM.
