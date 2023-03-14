@@ -60,8 +60,8 @@ If you don't like 777: make the directory writeable for user id `10000` which is
 Copy default media resources from core-simulator container image into bind-mounted directory so the remote-ui can directly access it:
 ```bash
 docker run --rm -d --name temp-media  unfoldedcircle/core-simulator
-docker cp temp-media:/data/upload/media ~/Remote-Two/
-chmod -R 777 ~/Remote-Two/media
+docker cp temp-media:/data/upload ~/Remote-Two/
+chmod -R 777 ~/Remote-Two/upload
 docker stop temp-media
 ```
 
@@ -71,7 +71,7 @@ Define remote-ui environment variables in `~/.profile`:
 ```bash
 export UC_SOCKET_URL=ws://localhost:8080/ws
 export UC_TOKEN_PATH="$HOME/Remote-Two/ui-env/ws-token"
-export UC_RESOURCE_PATH="$HOME/Remote-Two/media"
+export UC_RESOURCE_PATH="$HOME/Remote-Two/upload/media"
 ```
 
 ## Install Qt

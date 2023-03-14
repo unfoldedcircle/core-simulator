@@ -15,7 +15,7 @@ services:
     volumes:
       - simulator-data:/data
       - ./ui-env:/tmp/ui-env
-      - ./media:/data/upload/media
+      - ./upload:/data/upload
 
   integration-hass:
     image: unfoldedcircle/integration-hass

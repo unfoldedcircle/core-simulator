@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Fixed
+- Mapped media folder in Core-Simulator container image for remote-ui.
+  Resource upload failed because of different filesystem devices.
+
 ---
 
 ## v0.21.5-alpha - 2023-03-06
