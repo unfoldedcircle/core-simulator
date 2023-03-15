@@ -9,11 +9,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
-### Fixed
-- Mapped media folder in Core-Simulator container image for remote-ui.
-  Resource upload failed because of different filesystem devices.
-
 ---
+
+## v0.22.1-alpha - 2023-03-15
+### Added
+- Integration driver discovery & setup flow for external integrations:
+  - Integration-API definitions and documentation with initial implementation in the core.
+  - POC example in the [Node integration library](https://github.com/unfoldedcircle/integration-node-library/tree/main/examples).
+- Remote-UI app v0.4.6:
+  - Integration setup
+  - Group switch to control the state of all entities in the group
+  - Tap area for button in main screen to directly push the button without opening the entity
+  - Initial loading screen during startup
+  - Add shuffle and repeat icons to media player
+
+### Changed
+- Web-configurator: disabled integrations are now hidden since this is a developer feature only.
+- Rust API models for integration setup flow.
+
+### Fixed
+- Docker: Mapped media folder in Core-Simulator container image for remote-ui.  
+  Resource upload failed because of different filesystem devices.
+- Core-simulator:
+  - reset integration reconnect timeout once connected.
+  - propagate button-entity state & fixed documentation.
+- Remote-UI app:
+  - remove entities when integration is deleted
+  - multiple entity handling and display fixes
+- Web-configurator:
+  - remove hard-coded `en` language text access
+  - search function searches all languages, not just the default and `en`
+  - integration driver connection test
+  - propagate setup process cancellation
+  - integration setup try again button restarts setup
+  - clear previously discovered integration drivers before starting setup
+  - refresh integration screen after driver creation
 
 ## v0.21.5-alpha - 2023-03-06
 ### Added
