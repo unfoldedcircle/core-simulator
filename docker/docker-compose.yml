@@ -12,6 +12,8 @@ services:
       - "8443:8443"
     environment:
       - UC_TOKEN_PATH=/tmp/ui-env/ws-token
+# To run the simulator on the same network as the host. Existing Docker integrations must be reconfigured!
+#    network_mode: "host"
     volumes:
       - simulator-data:/data
       - ./ui-env:/tmp/ui-env

@@ -107,6 +107,23 @@ Notes:
 - Most Qt modules are already included in the default installation and therefore not included in the module parameter.
 - See [aqtinstall docs](https://aqtinstall.readthedocs.io/en/latest/getting_started.html) for further information.
 
+### Ubuntu 22.04: downgrade OpenSSL to v1.1.1
+
+Ubuntu 22.04 comes with OpenSSL v3 which doesn't work with QNetworkManager in the aqtinstall version 5.15.2.
+Install OpenSSL v1.1.1:
+```bash
+wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.17_amd64.deb
+wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl-dev_1.1.1f-1ubuntu2.17_amd64.deb
+wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.17_amd64.deb
+
+sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.17_amd64.deb
+sudo dpkg -i libssl-dev_1.1.1f-1ubuntu2.17_amd64.deb
+sudo dpkg -i openssl_1.1.1f-1ubuntu2.17_amd64.deb
+```
+
+⚠️ only downgrade OpenSSL on a dedicated machine / VM and never in a shared or production environment!
+This will most likely break other apps!
+
 ### Configure Environment
 
 Some environment variables need to be set for the installed Qt runtime. `aqtinstall` will not set them automatically, to
@@ -216,3 +233,8 @@ Install Firecamp for WebSocket API testing:
 sudo snap install firecamp
 ```
 
+Install Node.js for integration driver development:
+```bash
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```

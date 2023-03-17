@@ -25,6 +25,7 @@ Installed applications & tools:
 - Home Assistant Server
 - mkcert
 - Qt 5.15.2
+- Node.js 18
 - VirtualBox guest additions
 
 Installed Remote Two applications:

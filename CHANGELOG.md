@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Fixed
+- Simulator-VM: https image loading in remote-ui. Required OpenSSL 1.1.1 libraries were missing.
+
 ---
 
 ## v0.22.1-alpha - 2023-03-15
