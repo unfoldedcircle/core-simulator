@@ -211,6 +211,16 @@ media_player:
     name: Kitchen speaker
     host: 192.168.1.52
 
+sensor:
+  - platform: simulated
+    name: "Relative humidity"
+    unit: "%"
+    amplitude: 0 # Turns off the periodic contribution
+    mean: 50
+    spread: 10
+    seed: 999
+    relative_to_epoch: false
+
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
