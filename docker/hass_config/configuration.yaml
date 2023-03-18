@@ -99,11 +99,11 @@ light:
           service: script.non_existent
           data:
             brightness: "{{ brightness }}"
-        set_white_value:
+        set_temperature:
           service: input_number.set_value
           data:
-            value: "{{ white_value }}"
-            entity_id: input_number.white_value_input
+            value: "{{ color_temp }}"
+            entity_id: input_number.temperature_input
         set_color:
           - service: input_number.set_value
             data:
@@ -113,13 +113,13 @@ light:
             data:
               value: "{{ s }}"
               entity_id: input_number.s_input
-          - service: light.turn_on
-            data_template:
-              entity_id:
-                - light.led_strip
-              hs_color:
-                - "{{ hs[0] }}"
-                - "{{ hs[1] }}"
+#          - service: light.turn_on
+#            data_template:
+#              entity_id:
+#                - light.led_strip
+#              hs_color:
+#                - "{{ hs[0] }}"
+#                - "{{ hs[1] }}"
 
   - platform: template
     lights:
