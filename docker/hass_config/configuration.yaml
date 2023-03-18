@@ -140,20 +140,25 @@ cover:
       living_room_blind:
         device_class: blind
         friendly_name: "Living room blinds"
-        value_template: 0
+        value_template: open
+        position_template: 50
+        optimistic: true # this keeps the internal state
         open_cover:
           service: script.non_existent
         close_cover:
           service: script.non_existent
         stop_cover:
           service: script.non_existent
+        set_cover_position:
+          service: script.non_existent
+          data:
+            position: "{{position}}"
 
   - platform: template
     covers:
       kitchen_shades:
         device_class: blind
         friendly_name: "Kitchen shades"
-        value_template: 50
         open_cover:
           service: script.non_existent
         close_cover:
@@ -166,7 +171,6 @@ cover:
       bedroom_shades:
         device_class: blind
         friendly_name: "Bedroom shades"
-        value_template: 50
         open_cover:
           service: script.non_existent
         close_cover:
