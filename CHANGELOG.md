@@ -9,8 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Added
+- Web-configurator: improved full text search for entities and commands.
+
 ### Fixed
 - Simulator-VM: https image loading in remote-ui. Required OpenSSL 1.1.1 libraries were missing.
+- Core-simulator: activity entity commands return all available commands.  
+  - The parameterized commands like setting brightness on a light were missing.
+  - Note: parameterized commands are not yet working in the web-configurator, except the delay command!
+
+### Changed
+- **Breaking change** WebSocket Core-API: `get_entity_commands` returns mapping command identifiers for `GET /api/cfg/entity/commands`
 
 ---
 
