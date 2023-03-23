@@ -22,6 +22,9 @@ Home-Assistant:
 The setup defines `latest` images. Check <https://hub.docker.com/u/unfoldedcircle> for new releases.  
 ℹ️ Official documentation on Docker Hub will be provided later.
 
+⚠️ if you are using Linux or macOS, please make sure the subdirectories `ui-env` and `upload` are world-writeable.  
+If you get permission errors: `chmod 777 ui-env upload`.
+
 Start in foreground:
 ```shell
 docker-compose up
