@@ -95,11 +95,25 @@ Examples:
 - Set debug logging only for integration module: `RUST_LOG=info,remote_core::intg=debug`
 - Exclude mdns: `RUST_LOG=debug,mdns_sd=info`
 
-#### WebSocket Core-API message tracing
+#### Core-Simulator WebSocket Core-API message tracing
 
-Set ENV variable `UC_API_MSG_TRACING` to enable full WebSocket Core-API message tracing as `debug` messages:
+Container `core-simulator`:
+- Set ENV variable `UC_API_MSG_TRACING` to enable Core-API WebSocket message tracing.
+- Set ENV variable `UC_INTG_MSG_TRACING` to enable WebSocket Dock and Integration-API message tracing.
+
+Message tracing is logged as `debug` level.
+
+Values:
 - `all`: enables incoming and outgoing message tracing
 - `in`: incoming messages only
 - `out`: outgoing messages only
 
 ⚠️ **Warning**: no message filtering is performed. Exchanged secrets like tokens or pins are exposed with this setting!
+
+#### Home Assistant integration WebSocket message tracing
+
+Container `integration-hass`:
+- Set ENV variable `UC_API_MSG_TRACING` to enable Core-API WebSocket message tracing.
+- Set ENV variable `UC_HASS_MSG_TRACING` to enable Home Assistant WS message tracing.
+
+The same values are used as above.

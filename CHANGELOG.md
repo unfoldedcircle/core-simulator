@@ -9,8 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.22.2-alpha - 2023-03-23
 ### Added
 - Web-configurator: improved full text search for entities and commands.
+- Core-simulator: configure Dock & Integration-API WS message tracing with `UC_INTG_MSG_TRACING` env variable: `all` | `in` | `out`
+- Home Assistant integration v0.2.0:
+  - driver mDNS advertising and setup flow
+  - initial TLS WebSocket support
+  - configurable WebSocket message tracing with `UC_API_MSG_TRACING` and `UC_HASS_MSG_TRACING` env variables
+- Docker: add sample background images and integration icons
 
 ### Fixed
 - Simulator-VM: https image loading in remote-ui. Required OpenSSL 1.1.1 libraries were missing.
@@ -20,8 +29,6 @@ _Changes in the next release_
 
 ### Changed
 - **Breaking change** WebSocket Core-API: `get_entity_commands` returns mapping command identifiers for `GET /api/cfg/entity/commands`
-
----
 
 ## v0.22.1-alpha - 2023-03-15
 ### Added
