@@ -32,6 +32,8 @@ services:
     # Port exposure is not really required, only for testing
     ports:
       - "8000:8000"
+    volumes:
+      - ./integration-hass:/config
 
   hassio:
     image: ghcr.io/home-assistant/home-assistant:stable
