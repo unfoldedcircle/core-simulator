@@ -9,6 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Added
+- Core-API:
+  - New force dock firmware update check operation.
+  - Retrieve battery status and WebSocket `battery_status` event.
+  - Get current system power mode, set a power mode, and WebSocket `power_mode_change` event.
+  - Get current ambient light reading from light sensor and WebSocket `ambient_light_change` event during normal power mode.
+  - WebSocket warning event for important system events like low battery or shutdown.
+- The force system update check `PUT /api/system/update` will now contact an Unfolded Circle cloud update server.
+  - Auto-update checks & installation are not active in the Simulator. Only the manual force check connects to an external server.
+  - The `GET` operation only returns already downloaded information.
+  - The simulator cannot be updated with our update server.
+### Fixed
+- REST Core-API:
+  - Proper object definition of `IrEmitterLearnStatus`
+### Changed
+- REST Core-API 0.21.0 / WS Core-API 0.19.0-alpha:
+  - Remove not required `cmd` parameter in integration driver connection test: `PUT /intg/discover/{driverId}`
+  - Update system: new response message indicating if the update is being downloaded or installed. 
+
 ---
 
 ## v0.22.2-alpha - 2023-03-23
