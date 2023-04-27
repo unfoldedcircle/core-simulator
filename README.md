@@ -11,7 +11,11 @@ The remote-core simulator is available as a [Docker image](docker) and as a read
 **Please note that this is a preview version and work-in-progress!**
 
 We will release more documentation and code examples on how to develop for the Remote Two.  
-The web-configurator, Home Assistant integration and remote-ui projects will be released as open-source projects once we ship the devices.
+The web-configurator and remote-ui projects will be released as open-source projects once we ship the devices.
+
+Additional resources:
+- Rust based [Home Assistant integration](https://github.com/unfoldedcircle/integration-home-assistant)
+- [Node.js library wrapping the Integration API](https://github.com/unfoldedcircle/integration-node-library)
 
 More information and contact links are on our [main GitHub page](https://github.com/unfoldedcircle).
 
