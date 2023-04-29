@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.23.1-alpha - 2023-04-29
+
 ### Added
 - Core-API:
   - New force dock firmware update check operation.
@@ -20,15 +24,16 @@ _Changes in the next release_
   - Auto-update checks & installation are not active in the Simulator. Only the manual force check connects to an external server.
   - The `GET` operation only returns already downloaded information.
   - The simulator cannot be updated with our update server.
+- Web-configurator: sequence command parameters, e.g. setting light brightness
 ### Fixed
 - REST Core-API:
   - Proper object definition of `IrEmitterLearnStatus`
+- Web-configurator: many little improvements and fixes
+- Docker image: missing libssl dependency in pulled 0.23.0 release. Sorry about that!
 ### Changed
-- REST Core-API 0.21.0 / WS Core-API 0.19.0-alpha:
+- REST Core-API 0.21.1 / WS Core-API 0.19.0-alpha:
   - Remove not required `cmd` parameter in integration driver connection test: `PUT /intg/discover/{driverId}`
-  - Update system: new response message indicating if the update is being downloaded or installed. 
-
----
+  - Update system: new response message indicating if the update is being downloaded or installed.
 
 ## v0.22.2-alpha - 2023-03-23
 ### Added
