@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.23.2-alpha - 2023-05-08
 ### Added
 - Core-API:
   - Enhanced software update configuration with OTA update window & channel.
@@ -18,13 +21,10 @@ _Changes in the next release_
 - Web-configurator 0.5.0: design fixes, esc key, filtering entities from lists where not required / usable, version information.
 ### Changed
 - Home Assistant demo server:
-  - Update to 2023.5.2 
+  - Update to 2023.5.2
   - Remove non-working San Francisco Intl FAA Delays integration
 
----
-
 ## v0.23.1-alpha - 2023-04-29
-
 ### Added
 - Core-API:
   - New force dock firmware update check operation.
