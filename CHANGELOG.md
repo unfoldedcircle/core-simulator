@@ -14,6 +14,12 @@ _Changes in the next release_
   - Enhanced software update configuration with OTA update window & channel.
   - Returning next scheduled auto-update check date in available system updates response.
   - Returning `restart_required` flag in configuration response.
+### Fixed
+- Web-configurator 0.5.0: design fixes, esc key, filtering entities from lists where not required / usable, version information.
+### Changed
+- Home Assistant demo server:
+  - Update to 2023.5.2 
+  - Remove non-working San Francisco Intl FAA Delays integration
 
 ---
 

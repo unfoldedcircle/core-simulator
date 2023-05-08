@@ -2,3 +2,11 @@ non_existent:
   alias: Dummy action
   sequence: []
   mode: single
+
+position_cover:
+  alias: Simulate cover position
+  sequence:
+    - variables:
+        blind_state_message: "The blind is {{ states('cover.blind') }}."
+  mode: single
+

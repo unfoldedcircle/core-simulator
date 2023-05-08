@@ -80,21 +80,6 @@
         "disabled_by": null
       },
       {
-        "entry_id": "8011efe4a95fa94b550b4f6db15383b5",
-        "version": 1,
-        "domain": "faa_delays",
-        "title": "San Francisco Intl",
-        "data": {
-          "id": "SFO"
-        },
-        "options": {},
-        "pref_disable_new_entities": false,
-        "pref_disable_polling": false,
-        "source": "user",
-        "unique_id": "SFO",
-        "disabled_by": null
-      },
-      {
         "entry_id": "fd22c62754b0f5ebe13acac8c66b8637",
         "version": 1,
         "domain": "forecast_solar",
