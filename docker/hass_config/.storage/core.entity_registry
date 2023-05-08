@@ -19,7 +19,11 @@
         "id": "1b3cd46d9d7c64e85b571110f0352e2d",
         "has_entity_name": false,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": null,
         "original_icon": null,
         "original_name": "Unfolded Simulator",
@@ -44,7 +48,11 @@
         "id": "235fdcf76d3d82b651c7fd7bd9e9e539",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": "timestamp",
         "original_icon": null,
         "original_name": null,
@@ -69,7 +77,11 @@
         "id": "6259606f951c4d6f321032af423b3f7c",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": null,
         "original_icon": "mdi:web",
         "original_name": null,
@@ -96,7 +108,11 @@
         "id": "fe7d6e7cfe32ee43f89df90d8ba112e0",
         "has_entity_name": false,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": null,
         "original_icon": null,
         "original_name": "A6 Bridge Water Level Stage",
@@ -105,131 +121,6 @@
         "translation_key": null,
         "unique_id": "http://environment.data.gov.uk/flood-monitoring/id/measures/720215-level-stage-i-15_min-m",
         "unit_of_measurement": "m"
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": null,
-        "config_entry_id": "8011efe4a95fa94b550b4f6db15383b5",
-        "device_class": null,
-        "device_id": null,
-        "disabled_by": null,
-        "entity_category": null,
-        "entity_id": "binary_sensor.sfo_ground_delay",
-        "hidden_by": null,
-        "icon": null,
-        "id": "17ffd15c0ec5d1f094383641b00498ad",
-        "has_entity_name": false,
-        "name": null,
-        "options": {},
-        "original_device_class": null,
-        "original_icon": "mdi:airport",
-        "original_name": "SFO Ground Delay",
-        "platform": "faa_delays",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "SFO_GROUND_DELAY",
-        "unit_of_measurement": null
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": null,
-        "config_entry_id": "8011efe4a95fa94b550b4f6db15383b5",
-        "device_class": null,
-        "device_id": null,
-        "disabled_by": null,
-        "entity_category": null,
-        "entity_id": "binary_sensor.sfo_ground_stop",
-        "hidden_by": null,
-        "icon": null,
-        "id": "be98e3e58f90cdc27a659c344db8ad41",
-        "has_entity_name": false,
-        "name": null,
-        "options": {},
-        "original_device_class": null,
-        "original_icon": "mdi:airport",
-        "original_name": "SFO Ground Stop",
-        "platform": "faa_delays",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "SFO_GROUND_STOP",
-        "unit_of_measurement": null
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": null,
-        "config_entry_id": "8011efe4a95fa94b550b4f6db15383b5",
-        "device_class": null,
-        "device_id": null,
-        "disabled_by": null,
-        "entity_category": null,
-        "entity_id": "binary_sensor.sfo_departure_delay",
-        "hidden_by": null,
-        "icon": null,
-        "id": "37e0e15020b3ae1e4b7e62d266278aeb",
-        "has_entity_name": false,
-        "name": null,
-        "options": {},
-        "original_device_class": null,
-        "original_icon": "mdi:airplane-takeoff",
-        "original_name": "SFO Departure Delay",
-        "platform": "faa_delays",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "SFO_DEPART_DELAY",
-        "unit_of_measurement": null
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": null,
-        "config_entry_id": "8011efe4a95fa94b550b4f6db15383b5",
-        "device_class": null,
-        "device_id": null,
-        "disabled_by": null,
-        "entity_category": null,
-        "entity_id": "binary_sensor.sfo_arrival_delay",
-        "hidden_by": null,
-        "icon": null,
-        "id": "bbae084df140cac7e487d34797a40aed",
-        "has_entity_name": false,
-        "name": null,
-        "options": {},
-        "original_device_class": null,
-        "original_icon": "mdi:airplane-landing",
-        "original_name": "SFO Arrival Delay",
-        "platform": "faa_delays",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "SFO_ARRIVE_DELAY",
-        "unit_of_measurement": null
-      },
-      {
-        "aliases": [],
-        "area_id": null,
-        "capabilities": null,
-        "config_entry_id": "8011efe4a95fa94b550b4f6db15383b5",
-        "device_class": null,
-        "device_id": null,
-        "disabled_by": null,
-        "entity_category": null,
-        "entity_id": "binary_sensor.sfo_closure",
-        "hidden_by": null,
-        "icon": null,
-        "id": "a600fd1e4ee4e307c208b51cf47413c4",
-        "has_entity_name": false,
-        "name": null,
-        "options": {},
-        "original_device_class": null,
-        "original_icon": "mdi:airplane:off",
-        "original_name": "SFO Closure",
-        "platform": "faa_delays",
-        "supported_features": 0,
-        "translation_key": null,
-        "unique_id": "SFO_CLOSURE",
-        "unit_of_measurement": null
       },
       {
         "aliases": [],
@@ -246,7 +137,17 @@
         "id": "33889f4d80cbc4908603608582af126d",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          },
+          "sensor.private": {
+            "suggested_unit_of_measurement": "kWh"
+          },
+          "sensor": {
+            "suggested_display_precision": 1
+          }
+        },
         "original_device_class": "energy",
         "original_icon": null,
         "original_name": "Estimated energy production - today",
@@ -271,7 +172,17 @@
         "id": "57b4b622a78257982c51fbe59da75789",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          },
+          "sensor.private": {
+            "suggested_unit_of_measurement": "kWh"
+          },
+          "sensor": {
+            "suggested_display_precision": 1
+          }
+        },
         "original_device_class": "energy",
         "original_icon": null,
         "original_name": "Estimated energy production - tomorrow",
@@ -296,7 +207,11 @@
         "id": "3cb4ac7dbc664be499bd6a8cd77aac8f",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": "timestamp",
         "original_icon": null,
         "original_name": "Highest power peak time - today",
@@ -321,7 +236,11 @@
         "id": "cb6c04e6a2f2958dd3bed25cdd15e11c",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": "timestamp",
         "original_icon": null,
         "original_name": "Highest power peak time - tomorrow",
@@ -348,7 +267,11 @@
         "id": "84abbf013b4e85044e582196339bf762",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": "power",
         "original_icon": null,
         "original_name": "Estimated power production - now",
@@ -373,7 +296,11 @@
         "id": "68c4bc4dedad2bede51627e2fb4ac11a",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": "power",
         "original_icon": null,
         "original_name": "Estimated power production - next hour",
@@ -398,7 +325,11 @@
         "id": "42d26f4214f00eaee4919b8141eec7b1",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": "power",
         "original_icon": null,
         "original_name": "Estimated power production - next 12 hours",
@@ -423,7 +354,11 @@
         "id": "1cadb31be14d136f2f3333225bf70f10",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": "power",
         "original_icon": null,
         "original_name": "Estimated power production - next 24 hours",
@@ -448,7 +383,17 @@
         "id": "5535c57b475595671d1488bb5a77b458",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          },
+          "sensor.private": {
+            "suggested_unit_of_measurement": "kWh"
+          },
+          "sensor": {
+            "suggested_display_precision": 1
+          }
+        },
         "original_device_class": "energy",
         "original_icon": null,
         "original_name": "Estimated energy production - this hour",
@@ -473,7 +418,17 @@
         "id": "83b210717991fd1b6bcb037b829eb54e",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          },
+          "sensor.private": {
+            "suggested_unit_of_measurement": "kWh"
+          },
+          "sensor": {
+            "suggested_display_precision": 1
+          }
+        },
         "original_device_class": "energy",
         "original_icon": null,
         "original_name": "Estimated energy production - next hour",
@@ -498,7 +453,11 @@
         "id": "6e64e562d1bfd3e499fd5e3369fcb816",
         "has_entity_name": false,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": null,
         "original_icon": "mdi:ip",
         "original_name": "Local IP",
@@ -534,9 +493,13 @@
         "id": "c60ac83883fefad8dc5504a4a1e68d19",
         "has_entity_name": true,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
         "original_device_class": "enum",
-        "original_icon": "mdi:moon-waxing-gibbous",
+        "original_icon": "mdi:moon-waning-gibbous",
         "original_name": "Phase",
         "platform": "moon",
         "supported_features": 0,
@@ -559,7 +522,11 @@
         "id": "2960fa15ae76e89a221bd735846fb4db",
         "has_entity_name": false,
         "name": null,
-        "options": {},
+        "options": {
+          "conversation": {
+            "should_expose": true
+          }
+        },
         "original_device_class": null,
         "original_icon": null,
         "original_name": "Dummy action",
@@ -568,6 +535,306 @@
         "translation_key": null,
         "unique_id": "non_existent",
         "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": null,
+        "device_class": null,
+        "device_id": null,
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "script.position_cover",
+        "hidden_by": null,
+        "icon": null,
+        "id": "2cb56202f36299b67cfa755a14c46ddd",
+        "has_entity_name": false,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": true
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Simulate cover position",
+        "platform": "script",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "position_cover",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "299c0d6d76eb5e40d6f3e60ec194e1ca",
+        "device_class": null,
+        "device_id": "b5ff826cf475b423d890aac8e31845fe",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.sun_next_dawn",
+        "hidden_by": null,
+        "icon": null,
+        "id": "0f586db23c34ca69573e3d2d17754af2",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": "mdi:sun-clock",
+        "original_name": "Next dawn",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_dawn",
+        "unique_id": "299c0d6d76eb5e40d6f3e60ec194e1ca-next_dawn",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "299c0d6d76eb5e40d6f3e60ec194e1ca",
+        "device_class": null,
+        "device_id": "b5ff826cf475b423d890aac8e31845fe",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.sun_next_dusk",
+        "hidden_by": null,
+        "icon": null,
+        "id": "1b42bca8e8418e7fc853f449430b8e07",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": "mdi:sun-clock",
+        "original_name": "Next dusk",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_dusk",
+        "unique_id": "299c0d6d76eb5e40d6f3e60ec194e1ca-next_dusk",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "299c0d6d76eb5e40d6f3e60ec194e1ca",
+        "device_class": null,
+        "device_id": "b5ff826cf475b423d890aac8e31845fe",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.sun_next_midnight",
+        "hidden_by": null,
+        "icon": null,
+        "id": "df7038b2d11f3e997587ebfb44ac6d03",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": "mdi:sun-clock",
+        "original_name": "Next midnight",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_midnight",
+        "unique_id": "299c0d6d76eb5e40d6f3e60ec194e1ca-next_midnight",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "299c0d6d76eb5e40d6f3e60ec194e1ca",
+        "device_class": null,
+        "device_id": "b5ff826cf475b423d890aac8e31845fe",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.sun_next_noon",
+        "hidden_by": null,
+        "icon": null,
+        "id": "9b9d0289c24c897c3e63b1374d2dceff",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": "mdi:sun-clock",
+        "original_name": "Next noon",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_noon",
+        "unique_id": "299c0d6d76eb5e40d6f3e60ec194e1ca-next_noon",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "299c0d6d76eb5e40d6f3e60ec194e1ca",
+        "device_class": null,
+        "device_id": "b5ff826cf475b423d890aac8e31845fe",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.sun_next_rising",
+        "hidden_by": null,
+        "icon": null,
+        "id": "d82428d4197ab97f939e9bac7f1ed3ee",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": "mdi:sun-clock",
+        "original_name": "Next rising",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_rising",
+        "unique_id": "299c0d6d76eb5e40d6f3e60ec194e1ca-next_rising",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "299c0d6d76eb5e40d6f3e60ec194e1ca",
+        "device_class": null,
+        "device_id": "b5ff826cf475b423d890aac8e31845fe",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.sun_next_setting",
+        "hidden_by": null,
+        "icon": null,
+        "id": "eee1c0788005b79c4391792c00026662",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": "mdi:sun-clock",
+        "original_name": "Next setting",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_setting",
+        "unique_id": "299c0d6d76eb5e40d6f3e60ec194e1ca-next_setting",
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "299c0d6d76eb5e40d6f3e60ec194e1ca",
+        "device_class": null,
+        "device_id": "b5ff826cf475b423d890aac8e31845fe",
+        "disabled_by": "integration",
+        "entity_category": null,
+        "entity_id": "sensor.sun_solar_elevation",
+        "hidden_by": null,
+        "icon": null,
+        "id": "f9826ce90b36fbc50f8deb8343570626",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": "mdi:theme-light-dark",
+        "original_name": "Solar elevation",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "solar_elevation",
+        "unique_id": "299c0d6d76eb5e40d6f3e60ec194e1ca-solar_elevation",
+        "unit_of_measurement": "°"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "299c0d6d76eb5e40d6f3e60ec194e1ca",
+        "device_class": null,
+        "device_id": "b5ff826cf475b423d890aac8e31845fe",
+        "disabled_by": "integration",
+        "entity_category": null,
+        "entity_id": "sensor.sun_solar_azimuth",
+        "hidden_by": null,
+        "icon": null,
+        "id": "51981f62d79d3d9fadb35529be2d76c2",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": "mdi:sun-angle",
+        "original_name": "Solar azimuth",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "solar_azimuth",
+        "unique_id": "299c0d6d76eb5e40d6f3e60ec194e1ca-solar_azimuth",
+        "unit_of_measurement": "°"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "fd22c62754b0f5ebe13acac8c66b8637",
+        "device_class": null,
+        "device_id": "6fa1bfdbc213b04705b2489758f3050e",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "sensor.energy_production_today_remaining",
+        "hidden_by": null,
+        "icon": null,
+        "id": "2c86477917ed32d4f9caa31ebd2c0e4e",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "sensor.private": {
+            "suggested_unit_of_measurement": "kWh"
+          },
+          "sensor": {
+            "suggested_display_precision": 1
+          },
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "energy",
+        "original_icon": null,
+        "original_name": "Estimated energy production - remaining today",
+        "platform": "forecast_solar",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "fd22c62754b0f5ebe13acac8c66b8637_energy_production_today_remaining",
+        "unit_of_measurement": "kWh"
       }
     ]
   }

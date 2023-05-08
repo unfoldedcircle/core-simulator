@@ -11,39 +11,61 @@
           "editable": true,
           "id": "unfolded_simulator",
           "user_id": "1571c1bbf7b443108b00f06a3c35de00",
+          "device_trackers": [],
           "friendly_name": "Unfolded Simulator"
         },
-        "last_changed": "2023-03-02T17:37:49.679253+00:00",
-        "last_updated": "2023-03-02T17:37:56.486482+00:00",
+        "last_changed": "2023-05-08T13:17:15.671055+00:00",
+        "last_updated": "2023-05-08T13:17:18.411752+00:00",
         "context": {
-          "id": "01GTHPDTR6FG0GZ0QGXE9AEFC0",
+          "id": "01GZXR4R6BFCS836DRMGVW5Q7X",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-03-02T17:39:09.718320+00:00"
+      "last_seen": "2023-05-08T13:34:28.979899+00:00"
     },
     {
       "state": {
         "entity_id": "script.non_existent",
         "state": "off",
         "attributes": {
-          "last_triggered": "2023-03-01T17:45:27.784332+00:00",
+          "last_triggered": "2023-03-19T10:54:24.881669+00:00",
           "mode": "single",
           "current": 0,
           "friendly_name": "Dummy action"
         },
-        "last_changed": "2023-03-02T17:37:50.370465+00:00",
-        "last_updated": "2023-03-02T17:37:50.370465+00:00",
+        "last_changed": "2023-05-08T13:17:16.343591+00:00",
+        "last_updated": "2023-05-08T13:17:16.343591+00:00",
         "context": {
-          "id": "01GTHPDMS257ACC91S7VSWEGD5",
+          "id": "01GZXR4P5Q06277HRES2VDQCJY",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-03-02T17:39:09.718320+00:00"
+      "last_seen": "2023-05-08T13:34:28.979899+00:00"
+    },
+    {
+      "state": {
+        "entity_id": "script.position_cover",
+        "state": "off",
+        "attributes": {
+          "last_triggered": "2023-03-18T22:50:38.696924+00:00",
+          "mode": "single",
+          "current": 0,
+          "friendly_name": "Simulate cover position"
+        },
+        "last_changed": "2023-05-08T13:17:16.343653+00:00",
+        "last_updated": "2023-05-08T13:17:16.343653+00:00",
+        "context": {
+          "id": "01GZXR4P5QR3H3Y6D9BC60JEJX",
+          "parent_id": null,
+          "user_id": null
+        }
+      },
+      "extra_data": null,
+      "last_seen": "2023-05-08T13:34:28.979899+00:00"
     },
     {
       "state": {
@@ -63,16 +85,16 @@
           "friendly_name": "Study",
           "supported_features": 1
         },
-        "last_changed": "2023-03-02T17:37:50.431298+00:00",
-        "last_updated": "2023-03-02T17:37:50.431298+00:00",
+        "last_changed": "2023-05-08T13:17:16.398505+00:00",
+        "last_updated": "2023-05-08T13:17:16.398505+00:00",
         "context": {
-          "id": "01GTHPDMTZX3PPW6RFRQS6MJYG",
+          "id": "01GZXR4P7EM8Z2QN9Y09MFAXF6",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-03-02T17:39:09.718320+00:00"
+      "last_seen": "2023-05-08T13:34:28.979899+00:00"
     },
     {
       "state": {
@@ -97,16 +119,16 @@
           "friendly_name": "Living room",
           "supported_features": 17
         },
-        "last_changed": "2023-03-02T17:37:50.431466+00:00",
-        "last_updated": "2023-03-02T17:37:50.431466+00:00",
+        "last_changed": "2023-05-08T13:17:16.398811+00:00",
+        "last_updated": "2023-05-08T13:17:16.398811+00:00",
         "context": {
-          "id": "01GTHPDMTZ4BZQYF5V41G17DAM",
+          "id": "01GZXR4P7EC9DD7PYHPBPJZ43S",
           "parent_id": null,
           "user_id": null
         }
       },
       "extra_data": null,
-      "last_seen": "2023-03-02T17:39:09.718320+00:00"
+      "last_seen": "2023-05-08T13:34:28.979899+00:00"
     }
   ]
 }

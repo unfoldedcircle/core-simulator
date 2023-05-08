@@ -148,6 +148,30 @@
         "name": "myip",
         "sw_version": null,
         "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "299c0d6d76eb5e40d6f3e60ec194e1ca"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "b5ff826cf475b423d890aac8e31845fe",
+        "identifiers": [
+          [
+            "sun",
+            "299c0d6d76eb5e40d6f3e60ec194e1ca"
+          ]
+        ],
+        "manufacturer": null,
+        "model": null,
+        "name_by_user": null,
+        "name": "Sun",
+        "sw_version": null,
+        "via_device_id": null
       }
     ],
     "deleted_devices": []
