@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Added
+- Core-API:
+  - Enhanced software update configuration with OTA update window & channel.
+  - Returning next scheduled auto-update check date in available system updates response.
+  - Returning `restart_required` flag in configuration response.
+
 ---
 
 ## v0.23.1-alpha - 2023-04-29
