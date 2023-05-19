@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Added
+- Core-API:
+  - WebSocket event `wifi_change` to notify about WiFi events like connected / disconnected from network.
+  - Enhance NetworkState with `OUT_OF_RANGE`. 
+  - Provide WiFi network signal level and secured flag in saved networks, if they are in range.
+### Fixed
+- Initial workaround for mDNS `openthread.thread.home.arpa.` request flooding if a newer Apple TV is on the network
+  (and probably other devices as well).
+- Web-configurator 0.5.0: showing errors on form elements, 
+### Changed
+- Core-API:
+  - IR code key now also allows lower case letters.
+
 ---
 
 ## v0.23.2-alpha - 2023-05-08
