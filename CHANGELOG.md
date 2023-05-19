@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.24.0-alpha - 2023-05-18
 ### Added
 - Core-API:
   - WebSocket event `wifi_change` to notify about WiFi events like connected / disconnected from network.
@@ -21,8 +24,6 @@ _Changes in the next release_
 ### Changed
 - Core-API:
   - IR code key now also allows lower case letters.
-
----
 
 ## v0.23.2-alpha - 2023-05-08
 ### Added
