@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Added
+- REST Core-API:
+  - bulk CSV import of custom IR datasets.
+  - IR code search: return custom flag for user code sets.
+### Fixed
+- Removing a custom Dock URL will reconnect to the default service URL. Service restart is no longer required.
+- OpenAPI definition of the HealthStatus object reference.
+### Changed
+- Core-API:
+  - Updating a dock with an empty `custom_ws_url` value will remove the custom URL.
+  - IR device query requires at least 2 characters.
+  - Allow more custom characters in IR key. 
+
 ---
 
 ## v0.24.0-alpha - 2023-05-18
