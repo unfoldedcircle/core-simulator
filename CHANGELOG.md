@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.25.0-alpha - 2023-05-23
 ### Added
 - REST Core-API:
   - bulk CSV import of custom IR datasets.
@@ -20,9 +23,7 @@ _Changes in the next release_
 - Core-API:
   - Updating a dock with an empty `custom_ws_url` value will remove the custom URL.
   - IR device query requires at least 2 characters.
-  - Allow more custom characters in IR key. 
-
----
+  - Allow more custom characters in IR key.
 
 ## v0.24.0-alpha - 2023-05-18
 ### Added
