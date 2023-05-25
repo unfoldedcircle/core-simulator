@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Added
+- REST Core-API: bulk CSV export of custom IR datasets.
+
 ---
 
 ## v0.25.1-alpha - 2023-05-24
