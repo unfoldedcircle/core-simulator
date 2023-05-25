@@ -11,6 +11,11 @@ _Changes in the next release_
 
 ---
 
+## v0.25.1-alpha - 2023-05-24
+### Fixed
+- Filter invalid characters in manufacturer search to prevent internal server errors.
+- web-configurator 0.7.0: many small fixes and enhancements with focus on IR remotes.
+
 ## v0.25.0-alpha - 2023-05-23
 ### Added
 - REST Core-API:
