@@ -9,10 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.25.2-alpha - 2023-05-25
+
 ### Added
 - REST Core-API: bulk CSV export of custom IR datasets.
-
----
+### Fixed
+- web-configurator 0.8.0:
+  - general fixes, dock state update handling.
+  - IR device search now properly searches in the core and doesn't just show generic code sets.  
+    Note: the Simulator only includes a few dummy manufacturer & device entries!
 
 ## v0.25.1-alpha - 2023-05-24
 ### Fixed
