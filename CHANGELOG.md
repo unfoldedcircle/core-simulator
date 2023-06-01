@@ -11,6 +11,10 @@ _Changes in the next release_
 
 ---
 
+## v0.25.3-alpha - 2023-05-31
+### Fixed
+- Add content-disposition to CORS exposed headers for CSV file download in web-configurator.
+
 ## v0.25.2-alpha - 2023-05-25
 
 ### Added
