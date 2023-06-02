@@ -11,6 +11,17 @@ _Changes in the next release_
 
 ---
 
+## v0.26.0-alpha - 2023-06-01
+### Added
+- web-configurator 0.10.1:
+  - Custom IR code dataset CSV upload & download.
+  - Force re-load entities from an integration.
+### Fixed
+- Don't expose integration setup password field values in Core API.
+- web-configurator: many small fixes again.
+### Changed
+- Service discovery, using OS services for mDNS resolving. Simulator version still uses 3rd party application library. 
+
 ## v0.25.3-alpha - 2023-05-31
 ### Fixed
 - Add content-disposition to CORS exposed headers for CSV file download in web-configurator.
