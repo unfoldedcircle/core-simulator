@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Added
+- Core-API: add `power_supply` flag in BatteryStatus to indicate if the remote is connected to a charger.  
+  The `status` field is not sufficient. The battery may still temporarily discharge, even if it is in the docking station.
+- Provide Bluetooth MAC address in `GET /api/cfg/network`.
+### Fixed
+- Add `jpeg` to resource upload metadata field `file_formats` for Firefox & Safari to be able to upload .jpeg files in
+  the web-configurator. Only Chrome treats jpeg files automatically as jpg.
+
 ---
 
 ## v0.26.0-alpha - 2023-06-01
