@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-_Changes in the next release_
+---
+
+## v0.26.1-alpha - 2023-06-05
 
 ### Added
 - Core-API: add `power_supply` flag in BatteryStatus to indicate if the remote is connected to a charger.  
@@ -16,8 +18,7 @@ _Changes in the next release_
 ### Fixed
 - Add `jpeg` to resource upload metadata field `file_formats` for Firefox & Safari to be able to upload .jpeg files in
   the web-configurator. Only Chrome treats jpeg files automatically as jpg.
-
----
+- Only connect configured integration drivers and during setup.
 
 ## v0.26.0-alpha - 2023-06-01
 ### Added
