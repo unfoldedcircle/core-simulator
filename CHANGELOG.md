@@ -9,8 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## v0.26.1-alpha - 2023-06-05
+## v0.28.0-alpha - 2023-06-14
+### Added
+- Initial IR codeset UI page mappings in IR entity
+- web-configurator 0.10.3
+### Fixed
+- Map power toggle in IR remote entity to physical button
+- Update icon mapping metadata
 
+## v0.27.0-alpha - 2023-06-11
+### Added
+- Core-API: expert network settings for reconnect handling
+- web-configurator 0.10.2
+### Changed
+- Physical device only:
+  - mDNS hostname lookup & IP caching
+  - Reconnection logic for docks & external integrations
+
+## v0.26.1-alpha - 2023-06-05
 ### Added
 - Core-API: add `power_supply` flag in BatteryStatus to indicate if the remote is connected to a charger.  
   The `status` field is not sufficient. The battery may still temporarily discharge, even if it is in the docking station.
