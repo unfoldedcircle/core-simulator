@@ -6,21 +6,42 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- Configure multiple entities from an integration
+- Configure all available entities from an integration
+- Remove multiple configured entities
+- Remove all configured entities from an integration
+- Filter available and configured entities by multiple entity types
+- Filter configured entities by multiple integration IDs
+- Full text search for available and configured entities.
+  - Available entities: search in entity name, entity identifier and area.
+  - Configured entities: search in entity name, entity identifier and integration name.
+
+### Breaking changes
+- `entity_change` event message doesn't require `entity_id` anymore and is now optional!
+- The following Core WS message fields and REST query parameters were renamed:
+  - WS: entityFilter fields have changed to `integration_ids` & `entity_types`
+  - WS: availableEntityFilter `entity_type` field has been renamed to `entity_types`
+  - REST: available & configured entities query parameter `entity_type` renamed to `entity_types`
+  - REST: configured entities query parameter `intg_id` renamed to `intg_ids`
 
 ---
 
 ## v0.28.0-alpha - 2023-06-14
 ### Added
 - Initial IR codeset UI page mappings in IR entity
-- web-configurator 0.10.3
 ### Fixed
+- web-configurator 0.10.3
+  - load max 100 remote entities instead of 10
+  - language texts without an english entry
 - Map power toggle in IR remote entity to physical button
 - Update icon mapping metadata
 
 ## v0.27.0-alpha - 2023-06-11
 ### Added
 - Core-API: expert network settings for reconnect handling
-- web-configurator 0.10.2
+### Fixed
+- web-configurator 0.10.2: handle all integration states
 ### Changed
 - Physical device only:
   - mDNS hostname lookup & IP caching
