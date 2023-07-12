@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- WS Core-API: 
+  - IR repeat support for remote-entity to use new continuous IR repeat feature.
+    - new `cmd_id: stop_send` command to stop an active IR repeat command
+    - optional `repeat` parameter for `cmd_id: send`
+  - `get_entity_command_metadata` message to retrieve meta-information about the entity commands. This is equivalent to
+    `GET /api/cfg/entity/commands`.
+- REST Core-API: enhance IR emitters with repeat option and `stop_send` endpoint.
 ### Changed
 - Core-API: more metadata information in `DockFirmwareUpdate` and `DockConfiguration` objects like revision and serial.
 
