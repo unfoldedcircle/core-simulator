@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `get_entity_command_metadata` message to retrieve meta-information about the entity commands. This is equivalent to
     `GET /api/cfg/entity/commands`.
 - REST Core-API: enhance IR emitters with repeat option and `stop_send` endpoint.
+### Breaking changes
+- Profile pin refactoring in Core-API:
+  - There are no longer "protected" profiles with individual pins, but "restricted" profiles intended for guests and children.
+  - Restricted profiles require the admin pin to switch to other profiles.
+  - The configuration settings has now a profile setting for the admin pin (web-configurator implementation will follow soon).
 ### Changed
 - Core-API: more metadata information in `DockFirmwareUpdate` and `DockConfiguration` objects like revision and serial.
 
