@@ -6,8 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+---
+
+## v0.30.0-alpha - 2023-07-13
 ### Added
-- WS Core-API: 
+- WS Core-API:
   - IR repeat support for remote-entity to use new continuous IR repeat feature.
     - new `cmd_id: stop_send` command to stop an active IR repeat command
     - optional `repeat` parameter for `cmd_id: send`
@@ -21,8 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - The configuration settings has now a profile setting for the admin pin (web-configurator implementation will follow soon).
 ### Changed
 - Core-API: more metadata information in `DockFirmwareUpdate` and `DockConfiguration` objects like revision and serial.
-
----
 
 ## v0.29.1-alpha - 2023-07-04
 ### Added
