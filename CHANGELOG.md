@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.30.3-alpha - 2023-07-17
+### Fixed
+- Entity search with query string and integration identifiers always returned an empty result set.
+- Disabled unavailable features in Simulator as Bluetooth & WiFi scanning to reduce error log output.
+
+## v0.30.2-alpha - 2023-07-17
+### Fixed
+- Media-player entity: DPad feature serialization
+
+## v0.30.1-alpha - 2023-07-16
+### Added
+- Media-player entity: add support for navigation & menu support, channel switching, and color buttons. [Core-API changes](https://github.com/unfoldedcircle/core-api/pull/27).
+
 ## v0.30.0-alpha - 2023-07-13
 ### Added
 - WS Core-API:
