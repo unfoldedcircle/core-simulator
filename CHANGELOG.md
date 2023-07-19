@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.30.4-alpha - 2023-07-19
+### Fixed
+- Return new media-player commands in entity metadata endpoint `/api/cfg/entity/commands`.
+- Clean up unfinished OTA downloads at startup.
+
 ## v0.30.3-alpha - 2023-07-17
 ### Fixed
 - Entity search with query string and integration identifiers always returned an empty result set.
