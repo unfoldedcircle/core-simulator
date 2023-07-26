@@ -9,6 +9,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.31.0-alpha - 2023-07-25
+### Added
+- REST Core-API: custom Remote-UI app upload & installation.
+  - Endpoints for a custom web-configurator are also defined, but only the UI functionality has been implemented so far.
+  - Upload and installation does not work in the Simulator.
+
+### Fixed
+- Renew integration driver metadata if driver version changed.
+
+### Changed
+- The Web Configurator is undergoing a big update and bug fixing round. This is the first part of that overhaul and
+  contains many improvements to the user experience and usability. Still a few areas are in progress, so bear with us.
+  - The look and feel have been updated to be easier on the eye and give a clearer structure
+  - All entity lists got filtering and search options
+  - Multiple entities can be selected to add to integrations, groups, activities, macros and more
+  - Integrations: Refined integration setup flow: entities can be added at the end of a successful setup
+  - Integrations: Configured entities can be edited from the integration edit screen
+  - Activities and macros: entities can be selected at creation to include in the activity or macro
+  - Remotes: Option to give a custom name at new IR remote creation
+  - Remotes: IR commands can be tested not just when creating a remote, but anytime under the Edit IR dataset panel
+  - Remotes: IR learning has been updated, but few more improvements are on the way
+
 ## v0.30.4-alpha - 2023-07-19
 ### Fixed
 - Return new media-player commands in entity metadata endpoint `/api/cfg/entity/commands`.
