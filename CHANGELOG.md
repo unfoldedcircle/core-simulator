@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.32.0-alpha - 2023-07-28
+### Added
+- REST Core-API: log access for local integrations, ui, core and other services.
+  - The API endpoints are exposed on the Simulator, but don't return any log data.
+  - Logs can be queried by one or multiple parameters:
+    - One or more services
+    - Minimum priority, e.g. only WARNING and higher (= ERROR etc)
+    - Maximum number of returned log entries. Default = 100, Maximum = 10'000
+    - From and / or To-timestamps
+    - Search text which must match the log message
+    - One or more boot identifiers. E.g. only return log from last boot.
+  - Logs can be retrieved as plain text (default), or in json format if the `Content-Type: application/json` header is set.
+
 ## v0.31.0-alpha - 2023-07-25
 ### Added
 - REST Core-API: custom Remote-UI app upload & installation.
