@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.33.0-beta - 2023-08-13 - it's a Beta 🥳
+### Added
+- REST Core-API: custom web-configurator upload & installation.
+  - Upload and installation does not work in the Simulator.
+
+### Changed
+- Big web-configurator update 0.13.0 with lots of fixes and a few new features like log downloads.  
+  Note: there are no exposed logs in the Simulator.
+
 ## v0.32.0-alpha - 2023-07-28
 ### Added
 - REST Core-API: log access for local integrations, ui, core and other services.
