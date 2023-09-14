@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.34.1-beta - 2023-09-14
+### Fixed
+- Button entities will now show up in the activity & macro command list and are working in the activity button mappings & UI elements.  
+  Note: already configured buttons in an activity might have to be reconfigured.
+- Set default IR output in a new remote entity, if a single dock is available.  
+  If multiple docks are available, no default output is set.
+- Switching profiles after the active profile was deleted.
+
+### Changed
+- WebSocket reconnect handling: retry multiple times with old resolved IP address after disconnect or system resume.
+- Improved Core-API documentation for entity command handling.
+
 ## v0.33.0-beta - 2023-08-13 - it's a Beta 🥳
 ### Added
 - REST Core-API: custom web-configurator upload & installation.
