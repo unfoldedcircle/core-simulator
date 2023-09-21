@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.34.2-beta - 2023-09-14
+### Added
+- Load and display existing IR code when editing custom codes in web-configurator.
+### Fixed
+- Bigger web-configurator bug fix update for activities and macros.
+
 ## v0.34.1-beta - 2023-09-14
 ### Fixed
 - Button entities will now show up in the activity & macro command list and are working in the activity button mappings & UI elements.  
