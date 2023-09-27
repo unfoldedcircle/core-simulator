@@ -9,6 +9,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.35.1-beta - 2023-09-27
+### Added
+- Activity "prevent sleep" option.
+- Remote `send` & `send_sequence` commands. This will allow to send simple IR command sequences without using macros.
+  - Example: "DIGIT_1,DIGIT_2,DIGIT_3,CURSOR_ENTER" to change to TV channel 123.
+  - Not yet fully functional and currently being implemented in the web-configurator!
+- Enhanced entity command metadata with default parameter values.
+  - This is currently being implemented in the web-configurator.  
+    Instead of setting the max value when adding a command with a numeric parameters, this will allow to use better defaults, especially for setting volume.
+### Fixed
+- Light brightness commands in activities and macros. New command to set brightness in percent.
+- Return the correct max icon resource count in `max_count` for Icon resources in `GET /api/resources/Icon` metadata.
+- Headers not shown on iPad in the Web Configurator.
+- Multiple error messages could show up once the remote disconnected from the Web Configurator.
+### Changed
+- Improved Web Configurator connection detection and automatic re-login.
+
 ## v0.34.2-beta - 2023-09-14
 ### Added
 - Load and display existing IR code when editing custom codes in web-configurator.
