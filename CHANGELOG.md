@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.35.5-beta - 2023-09-30
+### Changed
+- Integration icons have been removed to avoid confusion of nominative fair trademark use. You’ll be able to upload your own after a future update.
+
 ## v0.35.1-beta - 2023-09-27
 ### Added
 - Activity "prevent sleep" option.
