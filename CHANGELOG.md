@@ -9,14 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.36.0-beta - 2023-10-06
+### Added
+- Simulator support for dynamic UI page grid size. Not yet implemented in Web-configurator. ([#66](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/66))
+- Simulator support for media-player user interface item. Not yet implemented in Web-configurator. ([#68](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/68))
+- Prepare for backup and restore configuration. Not yet enabled in Web-configurator. ([#60](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/60))
+
+### Fixed
+- Send IR commands with multiple IR codes ([#26](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/26), [#89](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/89)) 
+- Update stored integration driver metadata if changed in integration driver. Version information is now correctly shown in web-configurator.
+
 ## v0.35.5-beta - 2023-09-30
 ### Changed
 - Integration icons have been removed to avoid confusion of nominative fair trademark use. You’ll be able to upload your own after a future update.
 
 ## v0.35.1-beta - 2023-09-27
 ### Added
-- Activity "prevent sleep" option.
-- Remote `send` & `send_sequence` commands. This will allow to send simple IR command sequences without using macros.
+- Activity "prevent sleep" option. ([#61](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/61))
+- Remote `send` & `send_sequence` commands. This will allow to send simple IR command sequences without using macros. ([#67](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/67))
   - Example: "DIGIT_1,DIGIT_2,DIGIT_3,CURSOR_ENTER" to change to TV channel 123.
   - Not yet fully functional and currently being implemented in the web-configurator!
 - Enhanced entity command metadata with default parameter values.
