@@ -202,6 +202,22 @@ climate:
     away_temp: 16
     precision: 0.1
 
+input_boolean:
+  receiver_on:
+    name: Virtual receiver power switch
+    icon: mdi:power
+  receiver_playing:
+    name: Virtual receiver playing
+    icon: mdi:play
+
+input_text:
+  receiver_source:
+    name: Source
+    initial: Radio
+  receiver_sound_mode:
+    name: Sound mode
+    initial: Stereo
+
 media_player:
   - platform: channels
     name: Family Room Speaker
@@ -214,6 +230,98 @@ media_player:
   - platform: channels
     name: Kitchen speaker
     host: 192.168.1.52
+
+  - platform: media_player_template
+    media_players:
+      receiver:
+        friendly_name: Receiver
+        value_template: >
+          {% if is_state("input_boolean.receiver_on", "off") -%}
+            off
+          {% elif is_state("input_boolean.receiver_playing", "on") -%}
+            playing
+          {%- else -%}
+            paused
+          {%- endif %}
+        turn_on:
+          service: input_boolean.turn_on
+          target:
+            entity_id: input_boolean.receiver_on
+          data_template:
+            entity_id: input_boolean.receiver_on
+        turn_off:
+          service: input_boolean.turn_off
+          target:
+            entity_id: input_boolean.receiver_on
+          data_template:
+            entity_id: input_boolean.receiver_on
+        volume_up:
+          service: script.non_existent
+        volume_down:
+          service: script.non_existent
+        play:
+          service: input_boolean.turn_on
+          target:
+            entity_id: input_boolean.receiver_playing
+        pause:
+          service: input_boolean.turn_off
+          target:
+            entity_id: input_boolean.receiver_playing
+        next:
+          service: script.non_existent
+        previous:
+          service: script.non_existent
+        mute:
+          service: script.non_existent
+        title_template: "Dummy Title"
+        album_template: "Foobar Album"
+        artist_template: "My Favourite Artist"
+        current_source_template: "{{ states('input_text.receiver_source') }}"
+        inputs:
+          Radio:
+            service: input_text.set_value
+            data:
+              value: Radio
+            target:
+              entity_id: input_text.receiver_source
+          TV:
+            service: input_text.set_value
+            data:
+              value: TV
+            target:
+              entity_id: input_text.receiver_source
+          Streaming:
+            service: input_text.set_value
+            data:
+              value: Streaming
+            target:
+              entity_id: input_text.receiver_source
+          CD:
+            service: input_text.set_value
+            data:
+              value: CD
+            target:
+              entity_id: input_text.receiver_source
+        current_sound_mode_template: "{{ states('input_text.receiver_sound_mode') }}"
+        sound_modes:
+          Stereo:
+            service: input_text.set_value
+            data:
+              value: Stereo
+            target:
+              entity_id: input_text.receiver_sound_mode
+          Mono:
+            service: input_text.set_value
+            data:
+              value: Mono
+            target:
+              entity_id: input_text.receiver_sound_mode
+          Surround:
+            service: input_text.set_value
+            data:
+              value: Surround
+            target:
+              entity_id: input_text.receiver_sound_mode
 
 sensor:
   - platform: simulated
