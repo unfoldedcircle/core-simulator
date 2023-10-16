@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.36.1-beta - 2023-10-16
+### Breaking changes
+- Web-configurator: media-player input source & sound mode dropdown selection in activity sequences is fixed and selected item is persisted.  
+  ❗️This requires to reconfigure or even remove & re-add existing `select_source` and `select_sound_mode` commands in
+    sequences, UI components and button mappings.
+
+### Added
+- Home Assistant demo server: new virtual media-player `Receiver` for testing input sources and sound modes.  
+
+### Changed
+- Increased activity entity & sequence step limits from 50 to 100.
+- Stricter validation of media-player commands. Missing or invalid entity command parameters are no longer accepted.
+
 ## v0.36.0-beta - 2023-10-06
 ### Added
 - Simulator support for dynamic UI page grid size. Not yet implemented in Web-configurator. ([#66](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/66))
