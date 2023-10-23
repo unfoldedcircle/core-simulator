@@ -6,10 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
-### Added
-- REST Core-API: backup & restore documentation.
 
 ---
+
+## v0.36.2-beta - 2023-10-19
+### Added
+- Initial set of French and Italian translations. A very big thank you to all Crowdin contributors!
+  - Web-configurator contains almost all translated texts, the UI app only a partial set.
+  - We'll continue updating the translations and start fixing the UI where texts don't fit.
+- Support for dynamic UI page grid size in web-configurator ([#66](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/66)).
+- Support for media-player user interface item in web-configurator ([#68](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/68)).
+- Edit integration icons ([#105](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/105)).
+- REST Core-API: backup & restore documentation.
+
+### Fixed
+- Provide Activity Off command ([#125](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/125)).
+
+### Changed
+- Increased max activity sequence timeout from 30 to 60s ([#137](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/137)).
 
 ## v0.36.1-beta - 2023-10-16
 ### Breaking changes
