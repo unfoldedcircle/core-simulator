@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.37.0-beta - 2023-10-23
+### Added
+- REST Core-API: activity group management endpoints ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).  
+  This does not yet include the entity power state logic, when switching between activities within a group.
+
 ## v0.36.2-beta - 2023-10-19
 ### Added
 - Initial set of French and Italian translations. A very big thank you to all Crowdin contributors!
