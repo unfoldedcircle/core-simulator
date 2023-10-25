@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.37.1-beta - 2023-10-25
+### Added
+- REST Core-API: search query parameter for activities, returning activity state in activity groups.  
+
 ## v0.37.0-beta - 2023-10-23
 ### Added
 - REST Core-API: activity group management endpoints ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).  
