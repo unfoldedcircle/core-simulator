@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.37.2-beta - 2023-10-25
+### Added
+- Activity group change events.
+
+### Fixed
+- Remote-entity state handling for power-on and -off commands. 
+
 ## v0.37.1-beta - 2023-10-25
 ### Added
 - REST Core-API: search query parameter for activities, returning activity state in activity groups.  
