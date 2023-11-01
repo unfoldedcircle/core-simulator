@@ -9,6 +9,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.37.3-beta - 2023-11-01
+### Added
+- Core-API: enhance WiFi information with `ssid_hex` field ([#158](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/158)).
+  - The new ssid_hex field is a hexstring of the native SSID byte buffer.
+  - The normal ssid field is a lossy UTF-8 friendly name representation of the native SSID.
+- Web-configurator: activity group management endpoints ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).  
+  This does not yet include the entity power state logic, when switching between activities within a group.
+
+### Fixed
+- Missing button icon mapping definitions for web-configurator.
+- WebSocket `activity_group_change` event message contains updated activities when adding or removing included activities.
+- Web-configurator:
+  - Entity commands with bool parameter ([133](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/133)).
+  - Media-player `select_source` command editor with source selection in UI component and button mapping.
+  - Edit IR codes after import.
+  - Reload data if activity couldn't be saved.
+  - Improved layout for non-english texts.
+
+### Changed
+- Remote-entity responds with BAD_REQUEST for `remote.on` & `.off` commands without having the `POWER_ON` & `POWER_OFF` IR codes.
+
 ## v0.37.2-beta - 2023-10-25
 ### Added
 - Activity group change events.
