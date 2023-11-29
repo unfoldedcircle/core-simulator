@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+### Added
+- WS Core-API: entity-type & activity-group specific change-event channels for `subscribe_events`.
 
 ---
 
@@ -14,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Core-API: enhance WiFi information with `ssid_hex` field ([#158](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/158)).
   - The new ssid_hex field is a hexstring of the native SSID byte buffer.
   - The normal ssid field is a lossy UTF-8 friendly name representation of the native SSID.
-- Web-configurator: activity group management endpoints ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).  
+- Web-configurator: activity group management ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).  
   This does not yet include the entity power state logic, when switching between activities within a group.
 
 ### Fixed
