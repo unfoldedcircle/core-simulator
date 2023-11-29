@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 ### Added
 - WS Core-API: entity-type & activity-group specific change-event channels for `subscribe_events`.
+- REST Core-API: allow setting the overall IR command repeat for a remote-entity.  
+  This is useful for certain PRONTO codes which must be sent twice, e.g. for Sony devices.
 
 ---
 
