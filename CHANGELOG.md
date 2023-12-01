@@ -6,12 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+
+---
+
+## v0.38.1-beta - 2023-12-01
 ### Added
+- Initial test version of activity groups ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).
 - WS Core-API: entity-type & activity-group specific change-event channels for `subscribe_events`.
 - REST Core-API: allow setting the overall IR command repeat for a remote-entity.  
   This is useful for certain PRONTO codes which must be sent twice, e.g. for Sony devices.
-
----
+### Fixed
+- WS Core-API: don't auto-subscribe new clients to all events.
 
 ## v0.37.3-beta - 2023-11-01
 ### Added
