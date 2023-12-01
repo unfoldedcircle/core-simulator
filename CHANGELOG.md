@@ -9,12 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.38.1-beta - 2023-12-01
+### Added
+- Initial test version of activity groups ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).
+- WS Core-API: entity-type & activity-group specific change-event channels for `subscribe_events`.
+- REST Core-API: allow setting the overall IR command repeat for a remote-entity.  
+  This is useful for certain PRONTO codes which must be sent twice, e.g. for Sony devices.
+### Fixed
+- WS Core-API: don't auto-subscribe new clients to all events.
+
 ## v0.37.3-beta - 2023-11-01
 ### Added
 - Core-API: enhance WiFi information with `ssid_hex` field ([#158](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/158)).
   - The new ssid_hex field is a hexstring of the native SSID byte buffer.
   - The normal ssid field is a lossy UTF-8 friendly name representation of the native SSID.
-- Web-configurator: activity group management endpoints ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).  
+- Web-configurator: activity group management ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).  
   This does not yet include the entity power state logic, when switching between activities within a group.
 
 ### Fixed
