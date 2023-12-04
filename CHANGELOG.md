@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## v0.39.0-beta - 2023-12-04
+### Added
+- Core-API: feature flag settings.
+- Initial internal IR emitter for web-configurator development. Disabled by default with feature flag `internal_ir`.
+### Changed
+- REST Core-API: enhance IrEmitterType enum with variant `INTERNAL`. This will be used for the internal IR blaster in the remote.
+
 ## v0.38.1-beta - 2023-12-01
 ### Added
 - Initial test version of activity groups ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).
