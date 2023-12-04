@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Core-API: feature flag settings.
+### Changed
+- REST Core-API: enhance IrEmitterType enum with variant `INTERNAL`. This will be used for the internal IR blaster in the remote.
 
 ---
 
