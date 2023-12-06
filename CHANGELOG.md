@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Core-API: reconfigure integration driver. Add `reconfigure` flag in `CreateIntegrationSetup` to reconfigure an already configured driver.
+
 ---
 
 ## v0.39.0-beta - 2023-12-04
