@@ -59,6 +59,59 @@ docker-compose rm -v
 
 See [Docker Compose documentation](https://docs.docker.com/compose/) for more information.
 
+## Optional Python integration library example
+
+The [docker-compose.yml](docker-compose.yml) file contains a commented out service named `python-example` which starts
+the [Python integration library setup_flow example](https://github.com/unfoldedcircle/integration-python-library).
+This example is meant as a template for custom development or quickly trying out a Python based integration.
+
+The Docker image will automatically be built when starting the services. It can also be built manually with
+`docker-compose build`.
+
+1. Uncomment the `python-example` service
+2. Start as usual: `docker-compose up` 
+3. Register the driver manually, if auto-discovery doesn't work:
+
+```shell
+curl 'http://localhost:8080/api/intg/drivers' \
+  --header 'Content-Type: application/json' \
+  -u "web-configurator:1234" \
+  --data '{
+    "driver_id": "python_flow",
+    "name": {
+        "en": "Python flow"
+    },
+    "driver_type": "EXTERNAL",
+    "driver_url": "ws://python-example:9081",
+    "version": "0.1",
+    "icon": "uc:cool",
+    "enabled": true,
+    "device_discovery": false,
+    "setup_data_schema": {
+    "title": {
+      "en": "Example settings",
+      "de": "Beispiel Konfiguration",
+      "fr": "Exemple de configuration"
+    },
+    "settings": [
+      {
+        "id": "expert",
+        "label": {
+          "en": "Configure enhanced options",
+          "de": "Erweiterte Optionen konfigurieren",
+          "fr": "Configurer les options avancées"
+        },
+        "field": {
+          "checkbox": {
+            "value": false
+          }
+        }
+      }
+    ]
+    }
+  }'
+```
+
 ## Configuration
 
 The remote-core simulator runs with pre-configured defaults. Changing the configuration can have undesired effects,
@@ -67,8 +120,8 @@ and we cannot support custom configurations.
 ### Networking
 
 This docker-compose setup has been configured with a bridged network, to easily connect to the provided Home Assistant
-integration and demo server. It requires a minimal set of mapped host ports and will in every environment, even if the
-mapped ports are changed, if for example port 8080 is already used by another service on your machine.
+integration and demo server. It requires a minimal set of mapped host ports and will work in every environment, even if
+the mapped ports are changed, if for example port 8080 is already used by another service on your machine.
 
 The downside is, that mDNS discovery for custom integrations won't work (unless they also run in a container and are
 added to the docker-compose setup).

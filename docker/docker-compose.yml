@@ -49,5 +49,11 @@ services:
       - ./hass_config:/config
     privileged: true
 
+# Python integration library example
+#  python-example:
+#    build: python-intg-example
+#    container_name: python-example
+#    hostname: python-example
+
 volumes:
   simulator-data:
