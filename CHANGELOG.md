@@ -7,10 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-### Changed
-- Core-API: reconfigure integration driver. Add `reconfigure` flag in `CreateIntegrationSetup` to reconfigure an already configured driver.
+_Changes in the next release_
 
 ---
+
+## v0.39.1-beta - 2023-12-06
+### Added
+- Preview feature settings in web-configurator. Allows to enable the internal Remote Two IR blaster ([#75](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/75)).
+- Python integration example in an optional Docker container.
+### Changed
+- Core-API: reconfigure integration driver. Add `reconfigure` flag in `CreateIntegrationSetup` to reconfigure an already configured driver.
 
 ## v0.39.0-beta - 2023-12-04
 ### Added
