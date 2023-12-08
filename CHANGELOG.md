@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Added
+- REST Core-API: IR code conversion endpoint to convert HEX and PRONTO codes into RAW timings.
+
 ---
 
 ## v0.39.1-beta - 2023-12-06
