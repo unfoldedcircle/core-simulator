@@ -11,6 +11,11 @@ _Changes in the next release_
 
 ---
 
+## v0.39.3-beta - 2023-12-10
+### Added
+- REST Core-API: IR code conversion endpoint to convert HEX and PRONTO codes into RAW timings.
+- Preview feature settings in web-configurator.
+
 ## v0.39.1-beta - 2023-12-06
 ### Added
 - Preview feature settings in web-configurator. Allows to enable the internal Remote Two IR blaster ([#75](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/75)).
