@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Breaking changes
+- REST Core-API: refactor IR code format for toggle & sequence codes
+  - The | separator is used for two PRONTO toggle codes
+  - The + separator is used for IR sequences of 2 or more codes
+
 ---
 
 ## v0.39.3-beta - 2023-12-10
