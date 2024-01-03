@@ -9,12 +9,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.39.7-beta - 2024-01-03
 ### Breaking changes
 - REST Core-API: refactor IR code format for toggle & sequence codes
-  - The | separator is used for two PRONTO toggle codes
+  - The | separator is now used for two PRONTO toggle codes
   - The + separator is used for IR sequences of 2 or more codes
-
----
+### Fixed
+- New IR toggle-bit support logic for RC-5, RC-6 & RC-MM 32bit (Nokia32) protocols ([#126](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/126), [#129](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/129), [#148](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/148), [#234](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/234)).
+  - This is a preview feature and requires further testing.
+- Allow saving of activities and macros containing deleted entities ([#208](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/208)).
+- Clear activity cache when editing activity group ([#225](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/225)).
+- Home Assistant integration: reconnect to HA server after changing driver configuration, improved reconnection logic ([#243](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/243)).
+### Changed
+- Home-Assistant integration: unlimited reconnection attempts by default.
+- Web-configurator:
+  - Disable entity configuration if integration is disconnected.
+  - Reconfiguration of integration drivers without removing and adding the driver again.  
+    Note: this might not yet work for all drivers!
 
 ## v0.39.3-beta - 2023-12-10
 ### Added
