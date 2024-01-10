@@ -11,6 +11,9 @@ _Changes in the next release_
 
 ---
 
+## v0.39.9-beta - 2024-01-10
+- Core-API: retrieve dock status and ethernet LED brightness settings.
+
 ## v0.39.7-beta - 2024-01-03
 ### Breaking changes
 - REST Core-API: refactor IR code format for toggle & sequence codes
