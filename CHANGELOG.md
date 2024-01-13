@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Added
+- REST Core-API: New option for switching activities: `run_off_sequence`.  
+  Run the original off-sequence of the old activity and dynamically filter out power-off commands.
+
 ---
 
 ## v0.39.9-beta - 2024-01-10
