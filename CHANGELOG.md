@@ -9,11 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
-### Added
-- REST Core-API: New option for switching activities: `run_off_sequence`.  
-  Run the original off-sequence of the old activity and dynamically filter out power-off commands.
-
 ---
+
+## v0.39.10-beta - 2024-01-14
+### Added
+- Activity groups: New option for switching activities: `run_off_sequence` ([#64](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/64)).  
+  Run the original off-sequence of the old activity and dynamically filter out power-off commands.
+- Web-configurator: configure, check and install remote software updates ([#274](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/274)).
+
+### Fixed
+- Web-configurator:
+  - Show correct dock brightness value ([#178](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/178)).
+  - Available entities not shown in last setup-flow step.
+  - Show busy indicators for backup & restore operations.
+- Integration drivers: `subscribe_events` message sequence after integration authentication ([#272](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/272)).
 
 ## v0.39.9-beta - 2024-01-10
 - Core-API: retrieve dock status and ethernet LED brightness settings.
