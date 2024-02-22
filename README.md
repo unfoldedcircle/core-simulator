@@ -21,17 +21,8 @@ More information and contact links are on our [main GitHub page](https://github.
 
 ## Core-API
 
-API specification files in [OpenAPI](https://swagger.io/specification/) & [AsyncAPI](https://www.asyncapi.com/)
-YAML format:
-
-- [REST OpenAPI definition](core-api/rest/openapi.yaml)
-- [WebSocket AsyncAPI definition](core-api/websocket/asyncapi.yaml)
-
-The rendered html files are available from the built-in core-simulator webserver: <http://localhost:8080/doc>
-
-Please see our [Core APIs](https://github.com/unfoldedcircle/core-api) repository for more information.
-
-⚠️ The Core-API definitions in this core-simulator repository will soon be migrated to the dedicated API repository.
+Please see our [core-api](https://github.com/unfoldedcircle/core-api) repository for more information, including the
+AsyncAPI and OpenAPI definitions.
 
 ## Docker Compose Demo Setup
 

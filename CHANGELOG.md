@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Changed
+- Core-API definitions are now in the [core-api](https://github.com/unfoldedcircle/core-api) repository.
+
 ---
 
 ## v0.39.10-beta - 2024-01-14
