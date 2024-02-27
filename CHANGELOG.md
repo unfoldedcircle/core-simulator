@@ -9,10 +9,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.41.0-beta - 2024-02-27
+### Added
+- Long- and short-press button mappings in the web-configurator
+  ([feature-and-bug-tracker#56](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/56),
+  [feature-and-bug-tracker#90](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/90),
+  [feature-and-bug-tracker#94](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/94)).
+- New media-player entity features and simple command option ([core-api#32](https://github.com/unfoldedcircle/core-api/issues/32)).
+- Propagate entity feature- and option-changes to already configured entities.
+  - This is triggered if the integration driver version changes, or the user requests the available entities.
+- REST Core-API: 
+  - add hostname & mac address to version information ([core-api#33](https://github.com/unfoldedcircle/core-api/issues/33)).
+  - add individual button press endpoints to retrieve mapped command or delete a mapping.
+- Dynamic power toggle feature for remote-entities only having ON/OFF feature.
+### Fixed
+- REST Core-API: set UI version in version information (if remote-ui handles `get_localization_languages` request).
+- Immediately close HA WS connection in case of a protocol error.
+- Activity group off-sequence order ([feature-and-bug-tracker#286](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/286)).
 ### Changed
 - Core-API definitions are now in the [core-api](https://github.com/unfoldedcircle/core-api) repository.
-
----
 
 ## v0.39.10-beta - 2024-01-14
 ### Added
