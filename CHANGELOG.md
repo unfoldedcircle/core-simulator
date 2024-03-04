@@ -11,6 +11,12 @@ _Changes in the next release_
 
 ---
 
+## v0.41.1-beta - 2024-03-04
+### Added
+- New media-player features: context_menu, settings
+### Changed
+- Update 3rd party licenses
+
 ## v0.41.0-beta - 2024-02-27
 ### Added
 - Long- and short-press button mappings in the web-configurator
@@ -26,7 +32,7 @@ _Changes in the next release_
 - Dynamic power toggle feature for remote-entities only having ON/OFF feature.
 ### Fixed
 - REST Core-API: set UI version in version information (if remote-ui handles `get_localization_languages` request).
-- Immediately close HA WS connection in case of a protocol error.
+- Immediately close WebSocket connections in case of a protocol error.
 - Activity group off-sequence order ([feature-and-bug-tracker#286](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/286)).
 ### Changed
 - Core-API definitions are now in the [core-api](https://github.com/unfoldedcircle/core-api) repository.
