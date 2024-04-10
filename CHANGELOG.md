@@ -11,6 +11,12 @@ _Changes in the next release_
 
 ---
 
+## v0.42.0-beta - 2024-03-25
+### Added
+- Core-API: standby inhibitor functions to prevent standby and to clear currently active standby inhibitors.
+### Fixed
+- Remove activity inhibitor in activity group ([feature-and-bug-tracker#281](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/281))
+
 ## v0.41.1-beta - 2024-03-04
 ### Added
 - New media-player features: context_menu, settings
