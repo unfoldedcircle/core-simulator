@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   core-simulator:
-    image: unfoldedcircle/core-simulator:0.43.0-beta
+    image: unfoldedcircle/core-simulator
     container_name: core-simulator
     restart: "unless-stopped"
 #    environment:
@@ -20,7 +20,7 @@ services:
       - ./upload:/data/upload
 
   integration-hass:
-    image: unfoldedcircle/integration-hass:0.9.0
+    image: unfoldedcircle/integration-hass
     container_name: integration-hass
     restart: "unless-stopped"
     # configure Home Assistant demo server defined below

@@ -19,6 +19,9 @@ _Changes in the next release_
 - Web-configurator:
   - Removed entities from a profile group do not appear in the list again ([feature-and-bug-tracker#345](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/345)).
   - Editing of activity GUI is not working after some added commands ([feature-and-bug-tracker#369](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/369)).
+### Changed
+- Docker compose setup: use versioned Core Simulator and Home Assistant images by default.  
+  The separate `docker-compose-latest.yaml` file uses the latest versions.
 
 ## v0.42.0-beta - 2024-03-25
 ### Added

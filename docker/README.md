@@ -26,7 +26,11 @@ Home-Assistant:
 
 ## Docker Compose Commands
 
-The setup defines `latest` images. Check <https://hub.docker.com/u/unfoldedcircle> for new releases.  
+The default docker-compose file uses versioned images for the Core Simulator and the Home Assistant integration.
+To use the `latest` images, uses `docker-compose-latest` configuration by adding the `-f docker-compose-latest.yml`
+argument.
+
+Check <https://hub.docker.com/u/unfoldedcircle> for new releases.  
 ℹ️ Official documentation on Docker Hub will be provided later.
 
 ⚠️ if you are using Linux or macOS, please make sure the subdirectories `ui-env` and `upload` are world-writeable.  
