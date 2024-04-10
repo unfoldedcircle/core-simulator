@@ -593,7 +593,7 @@ END OF TERMS AND CONDITIONS
 Apache License 2.0
 
 #### Used by
-- [uc_api]( https://github.com/unfoldedcircle/api-model-rs ) 0.9.3-beta
+- [uc_api]( https://github.com/unfoldedcircle/api-model-rs ) 0.10.0-beta
 
 #### License
 ```
@@ -1888,13 +1888,21 @@ MIT License
 - [windows-sys]( https://github.com/microsoft/windows-rs ) 0.48.0
 - [windows-sys]( https://github.com/microsoft/windows-rs ) 0.52.0
 - [windows-targets]( https://github.com/microsoft/windows-rs ) 0.48.5
+- [windows-targets]( https://github.com/microsoft/windows-rs ) 0.52.3
 - [windows_aarch64_gnullvm]( https://github.com/microsoft/windows-rs ) 0.48.5
+- [windows_aarch64_gnullvm]( https://github.com/microsoft/windows-rs ) 0.52.3
 - [windows_aarch64_msvc]( https://github.com/microsoft/windows-rs ) 0.48.5
+- [windows_aarch64_msvc]( https://github.com/microsoft/windows-rs ) 0.52.3
 - [windows_i686_gnu]( https://github.com/microsoft/windows-rs ) 0.48.5
+- [windows_i686_gnu]( https://github.com/microsoft/windows-rs ) 0.52.3
 - [windows_i686_msvc]( https://github.com/microsoft/windows-rs ) 0.48.5
+- [windows_i686_msvc]( https://github.com/microsoft/windows-rs ) 0.52.3
 - [windows_x86_64_gnu]( https://github.com/microsoft/windows-rs ) 0.48.5
+- [windows_x86_64_gnu]( https://github.com/microsoft/windows-rs ) 0.52.3
 - [windows_x86_64_gnullvm]( https://github.com/microsoft/windows-rs ) 0.48.5
+- [windows_x86_64_gnullvm]( https://github.com/microsoft/windows-rs ) 0.52.3
 - [windows_x86_64_msvc]( https://github.com/microsoft/windows-rs ) 0.48.5
+- [windows_x86_64_msvc]( https://github.com/microsoft/windows-rs ) 0.52.3
 
 #### License
 ```
@@ -1966,9 +1974,9 @@ MIT License
 MIT License
 
 #### Used by
-- [peg]( https://github.com/kevinmehall/rust-peg ) 0.8.2
 - [peg-macros]( https://github.com/kevinmehall/rust-peg ) 0.8.2
 - [peg-runtime]( https://github.com/kevinmehall/rust-peg ) 0.8.2
+- [peg]( https://github.com/kevinmehall/rust-peg ) 0.8.2
 
 #### License
 ```
@@ -2116,8 +2124,8 @@ DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [core-foundation]( https://github.com/servo/core-foundation-rs ) 0.9.4
 - [core-foundation-sys]( https://github.com/servo/core-foundation-rs ) 0.8.6
+- [core-foundation]( https://github.com/servo/core-foundation-rs ) 0.9.4
 
 #### License
 ```
@@ -2256,8 +2264,8 @@ MIT License
 
 #### Used by
 - [backtrace]( https://github.com/rust-lang/backtrace-rs ) 0.3.69
-- [bzip2]( https://github.com/alexcrichton/bzip2-rs ) 0.4.4
 - [bzip2-sys]( https://github.com/alexcrichton/bzip2-rs ) 0.1.11+1.0.8
+- [bzip2]( https://github.com/alexcrichton/bzip2-rs ) 0.4.4
 - [cfg-if]( https://github.com/alexcrichton/cfg-if ) 0.1.10
 - [cfg-if]( https://github.com/alexcrichton/cfg-if ) 1.0.0
 - [filetime]( https://github.com/alexcrichton/filetime ) 0.2.23
@@ -2269,12 +2277,12 @@ MIT License
 - [rustc-demangle]( https://github.com/alexcrichton/rustc-demangle ) 0.1.23
 - [socket2]( https://github.com/rust-lang/socket2 ) 0.4.10
 - [socket2]( https://github.com/rust-lang/socket2 ) 0.5.6
-- [wasm-bindgen]( https://github.com/rustwasm/wasm-bindgen ) 0.2.91
 - [wasm-bindgen-backend]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/backend ) 0.2.91
 - [wasm-bindgen-futures]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/futures ) 0.4.41
-- [wasm-bindgen-macro]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro ) 0.2.91
 - [wasm-bindgen-macro-support]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro-support ) 0.2.91
+- [wasm-bindgen-macro]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro ) 0.2.91
 - [wasm-bindgen-shared]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/shared ) 0.2.91
+- [wasm-bindgen]( https://github.com/rustwasm/wasm-bindgen ) 0.2.91
 - [web-sys]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/web-sys ) 0.3.68
 
 #### License
@@ -2410,7 +2418,6 @@ MIT License
 - [bitflags]( https://github.com/bitflags/bitflags ) 2.4.2
 - [env_logger]( https://github.com/env-logger-rs/env_logger/ ) 0.8.4
 - [log]( https://github.com/rust-lang/log ) 0.4.20
-- [num]( https://github.com/rust-num/num ) 0.4.1
 - [num-bigint]( https://github.com/rust-num/num-bigint ) 0.4.4
 - [num-complex]( https://github.com/rust-num/num-complex ) 0.4.5
 - [num-derive]( https://github.com/rust-num/num-derive ) 0.4.2
@@ -2419,10 +2426,11 @@ MIT License
 - [num-rational]( https://github.com/rust-num/num-rational ) 0.4.1
 - [num-traits]( https://github.com/rust-num/num-traits ) 0.1.43
 - [num-traits]( https://github.com/rust-num/num-traits ) 0.2.18
-- [regex]( https://github.com/rust-lang/regex ) 1.10.3
+- [num]( https://github.com/rust-num/num ) 0.4.1
 - [regex-automata]( https://github.com/rust-lang/regex/tree/master/regex-automata ) 0.4.5
 - [regex-syntax]( https://github.com/rust-lang/regex ) 0.6.29
 - [regex-syntax]( https://github.com/rust-lang/regex/tree/master/regex-syntax ) 0.8.2
+- [regex]( https://github.com/rust-lang/regex ) 1.10.3
 - [serde_plain]( https://github.com/mitsuhiko/serde-plain ) 1.0.2
 
 #### License
@@ -2560,9 +2568,9 @@ THE SOFTWARE.
 MIT License
 
 #### Used by
-- [dbus]( https://github.com/diwic/dbus-rs ) 0.9.7
 - [dbus-crossroads]( https://github.com/diwic/dbus-rs/ ) 0.5.2
 - [dbus-tokio]( https://github.com/diwic/dbus-rs ) 0.7.6
+- [dbus]( https://github.com/diwic/dbus-rs ) 0.9.7
 - [libdbus-sys]( https://github.com/diwic/dbus-rs ) 0.2.5
 
 #### License
@@ -3251,7 +3259,6 @@ THE SOFTWARE.
 MIT License
 
 #### Used by
-- [futures]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-channel]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-core]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-executor]( https://github.com/rust-lang/futures-rs ) 0.3.30
@@ -3260,6 +3267,7 @@ MIT License
 - [futures-sink]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-task]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-util]( https://github.com/rust-lang/futures-rs ) 0.3.30
+- [futures]( https://github.com/rust-lang/futures-rs ) 0.3.30
 
 #### License
 ```
@@ -3368,9 +3376,9 @@ DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
+- [rustls-pemfile]( https://github.com/rustls/pemfile ) 1.0.4
 - [rustls]( https://github.com/ctz/rustls ) 0.19.1
 - [rustls]( https://github.com/rustls/rustls ) 0.20.9
-- [rustls-pemfile]( https://github.com/rustls/pemfile ) 1.0.4
 - [sct]( https://github.com/ctz/sct.rs ) 0.6.1
 - [sct]( https://github.com/rustls/sct.rs ) 0.7.1
 
@@ -4126,11 +4134,11 @@ DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [foreign-types]( https://github.com/sfackler/foreign-types ) 0.3.2
-- [foreign-types]( https://github.com/sfackler/foreign-types ) 0.5.0
 - [foreign-types-macros]( https://github.com/sfackler/foreign-types ) 0.2.3
 - [foreign-types-shared]( https://github.com/sfackler/foreign-types ) 0.1.1
 - [foreign-types-shared]( https://github.com/sfackler/foreign-types ) 0.3.1
+- [foreign-types]( https://github.com/sfackler/foreign-types ) 0.3.2
+- [foreign-types]( https://github.com/sfackler/foreign-types ) 0.5.0
 
 #### License
 ```
@@ -4330,9 +4338,9 @@ DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [signal-hook]( https://github.com/vorner/signal-hook ) 0.3.17
 - [signal-hook-registry]( https://github.com/vorner/signal-hook ) 1.4.1
 - [signal-hook-tokio]( https://github.com/vorner/signal-hook ) 0.3.1
+- [signal-hook]( https://github.com/vorner/signal-hook ) 0.3.17
 
 #### License
 ```
@@ -4371,17 +4379,17 @@ MIT License
 - [actix-files]( https://github.com/actix/actix-web ) 0.6.5
 - [actix-http]( https://github.com/actix/actix-web ) 3.6.0
 - [actix-macros]( https://github.com/actix/actix-net.git ) 0.2.4
-- [actix-multipart]( https://github.com/actix/actix-web.git ) 0.6.1
 - [actix-multipart-derive]( https://github.com/actix/actix-web.git ) 0.6.1
+- [actix-multipart]( https://github.com/actix/actix-web.git ) 0.6.1
 - [actix-router]( https://github.com/actix/actix-web ) 0.5.2
 - [actix-rt]( https://github.com/actix/actix-net.git ) 2.9.0
 - [actix-server]( https://github.com/actix/actix-net.git ) 2.3.0
 - [actix-service]( https://github.com/actix/actix-net ) 2.0.2
 - [actix-tls]( https://github.com/actix/actix-net.git ) 3.3.0
 - [actix-utils]( https://github.com/actix/actix-net ) 3.0.1
-- [actix-web]( https://github.com/actix/actix-web ) 4.5.1
 - [actix-web-actors]( https://github.com/actix/actix-web ) 4.3.0
 - [actix-web-codegen]( https://github.com/actix/actix-web.git ) 4.2.2
+- [actix-web]( https://github.com/actix/actix-web ) 4.5.1
 - [awc]( https://github.com/actix/actix-web ) 3.4.0
 - [bytestring]( https://github.com/actix/actix-net.git ) 1.3.1
 - [local-channel]( https://github.com/actix/actix-net ) 0.1.5
@@ -4869,8 +4877,8 @@ DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [async-stream]( https://github.com/tokio-rs/async-stream ) 0.3.5
 - [async-stream-impl]( https://github.com/tokio-rs/async-stream ) 0.3.5
+- [async-stream]( https://github.com/tokio-rs/async-stream ) 0.3.5
 
 #### License
 ```
@@ -5271,7 +5279,6 @@ MIT License
 
 #### Used by
 - [tokio-native-tls]( https://github.com/tokio-rs/tls ) 0.3.1
-- [tracing]( https://github.com/tokio-rs/tracing ) 0.1.40
 - [tracing-appender]( https://github.com/tokio-rs/tracing ) 0.2.3
 - [tracing-attributes]( https://github.com/tokio-rs/tracing ) 0.1.27
 - [tracing-core]( https://github.com/tokio-rs/tracing ) 0.1.32
@@ -5280,6 +5287,7 @@ MIT License
 - [tracing-log]( https://github.com/tokio-rs/tracing ) 0.1.4
 - [tracing-log]( https://github.com/tokio-rs/tracing ) 0.2.0
 - [tracing-subscriber]( https://github.com/tokio-rs/tracing ) 0.3.18
+- [tracing]( https://github.com/tokio-rs/tracing ) 0.1.40
 
 #### License
 ```
@@ -5419,8 +5427,8 @@ DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [iana-time-zone]( https://github.com/strawlab/iana-time-zone ) 0.1.60
 - [iana-time-zone-haiku]( https://github.com/strawlab/iana-time-zone ) 0.1.2
+- [iana-time-zone]( https://github.com/strawlab/iana-time-zone ) 0.1.60
 
 #### License
 ```
@@ -5958,9 +5966,9 @@ SOFTWARE.
 MIT License
 
 #### Used by
-- [tokio]( https://github.com/tokio-rs/tokio ) 1.36.0
 - [tokio-stream]( https://github.com/tokio-rs/tokio ) 0.1.14
 - [tokio-util]( https://github.com/tokio-rs/tokio ) 0.7.10
+- [tokio]( https://github.com/tokio-rs/tokio ) 1.36.0
 
 #### License
 ```
@@ -6052,8 +6060,8 @@ SOFTWARE.
 MIT License
 
 #### Used by
-- [libswupdate]( https://github.com/unfoldedcircle/libswupdate-rs ) 0.1.0
 - [libswupdate-sys]( https://github.com/unfoldedcircle/libswupdate-rs ) 0.1.0
+- [libswupdate]( https://github.com/unfoldedcircle/libswupdate-rs ) 0.1.0
 
 #### License
 ```
@@ -6088,8 +6096,8 @@ DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [time]( https://github.com/time-rs/time ) 0.3.34
 - [time-macros]( https://github.com/time-rs/time ) 0.2.17
+- [time]( https://github.com/time-rs/time ) 0.3.34
 
 #### License
 ```
@@ -6965,8 +6973,8 @@ SOFTWARE.
 MIT License
 
 #### Used by
-- [proc-macro-error]( https://gitlab.com/CreepySkeleton/proc-macro-error ) 1.0.4
 - [proc-macro-error-attr]( https://gitlab.com/CreepySkeleton/proc-macro-error ) 1.0.4
+- [proc-macro-error]( https://gitlab.com/CreepySkeleton/proc-macro-error ) 1.0.4
 
 #### License
 ```
@@ -7183,31 +7191,31 @@ SOFTWARE.
 MIT License
 
 #### Used by
+- [cir]( https://github.com/seanyoung/cir ) 0.1.2
+- [irp]( https://github.com/seanyoung/cir ) 0.3.2
+- [hawkbit]( https://github.com/collabora/hawkbit-rs ) 0.7.0
+- [desk-logind]( https://github.com/bnavetta/desk.git ) 1.1.1
 - [actix-grants-proc-macro]( https://github.com/DDtKey/actix-web-grants ) 2.0.2
 - [actix-web-lab-derive]( https://github.com/robjtede/actix-web-lab ) 0.20.0
 - [aya]( https://github.com/aya-rs/aya ) 0.11.0
-- [brotli]( https://github.com/dropbox/rust-brotli ) 3.4.0
 - [brotli-decompressor]( https://github.com/dropbox/rust-brotli-decompressor ) 2.5.1
+- [brotli]( https://github.com/dropbox/rust-brotli ) 3.4.0
 - [chrono-tz]( https://github.com/chronotope/chrono-tz ) 0.8.6
-- [cir]( https://github.com/seanyoung/cir ) 0.1.2
 - [convert_case]( https://github.com/rutrum/convert-case ) 0.4.0
 - [custom_debug]( https://github.com/panicbit/custom_debug ) 0.6.1
 - [custom_debug_derive]( https://github.com/panicbit/custom_debug ) 0.6.1
 - [derive_setters]( https://github.com/Lymia/derive_setters ) 0.1.6
-- [desk-logind]( https://github.com/bnavetta/desk.git ) 1.1.1
 - [dotenv]( https://github.com/dotenv-rs/dotenv ) 0.15.0
-- [hawkbit]( https://github.com/collabora/hawkbit-rs ) 0.7.0
-- [irp]( https://github.com/seanyoung/cir ) 0.3.2
 - [macaddr]( https://github.com/svartalf/rust-macaddr ) 1.0.1
-- [rust-fsm]( https://github.com/eugene-babichenko/rust-fsm ) 0.6.1
 - [rust-fsm-dsl]( https://github.com/eugene-babichenko/rust-fsm ) 0.6.1
+- [rust-fsm]( https://github.com/eugene-babichenko/rust-fsm ) 0.6.1
 - [sanitize-filename]( https://github.com/kardeiz/sanitize-filename ) 0.5.0
 - [siphasher]( https://github.com/jedisct1/rust-siphash ) 0.3.11
 - [sqlx-core]( https://github.com/launchbadge/sqlx ) 0.5.13
 - [sqlx-macros]( https://github.com/launchbadge/sqlx ) 0.5.13
 - [sqlx-rt]( https://github.com/launchbadge/sqlx ) 0.5.13
-- [system-configuration]( https://github.com/mullvad/system-configuration-rs ) 0.5.1
 - [system-configuration-sys]( https://github.com/mullvad/system-configuration-rs ) 0.5.0
+- [system-configuration]( https://github.com/mullvad/system-configuration-rs ) 0.5.1
 - [utf8-cstr]( https://github.com/jmesmon/utf8-cstr ) 0.1.6
 - [validator]( https://github.com/Keats/validator ) 0.16.1
 - [validator_derive]( https://github.com/Keats/validator ) 0.16.0
@@ -7216,14 +7224,6 @@ MIT License
 - [void]( https://github.com/reem/rust-void.git ) 1.0.2
 - [winapi-i686-pc-windows-gnu]( https://github.com/retep998/winapi-rs ) 0.4.0
 - [winapi-x86_64-pc-windows-gnu]( https://github.com/retep998/winapi-rs ) 0.4.0
-- [windows-targets]( https://github.com/microsoft/windows-rs ) 0.52.3
-- [windows_aarch64_gnullvm]( https://github.com/microsoft/windows-rs ) 0.52.3
-- [windows_aarch64_msvc]( https://github.com/microsoft/windows-rs ) 0.52.3
-- [windows_i686_gnu]( https://github.com/microsoft/windows-rs ) 0.52.3
-- [windows_i686_msvc]( https://github.com/microsoft/windows-rs ) 0.52.3
-- [windows_x86_64_gnu]( https://github.com/microsoft/windows-rs ) 0.52.3
-- [windows_x86_64_gnullvm]( https://github.com/microsoft/windows-rs ) 0.52.3
-- [windows_x86_64_msvc]( https://github.com/microsoft/windows-rs ) 0.52.3
 
 #### License
 ```
@@ -7436,9 +7436,9 @@ MIT License
 - [once_cell]( https://github.com/matklad/once_cell ) 1.19.0
 - [paste]( https://github.com/dtolnay/paste ) 1.0.14
 - [pathdiff]( https://github.com/Manishearth/pathdiff ) 0.2.1
-- [pin-project]( https://github.com/taiki-e/pin-project ) 1.1.4
 - [pin-project-internal]( https://github.com/taiki-e/pin-project ) 1.1.4
 - [pin-project-lite]( https://github.com/taiki-e/pin-project-lite ) 0.2.13
+- [pin-project]( https://github.com/taiki-e/pin-project ) 1.1.4
 - [proc-macro-crate]( https://github.com/bkchr/proc-macro-crate ) 3.1.0
 - [proc-macro2]( https://github.com/dtolnay/proc-macro2 ) 1.0.78
 - [quote]( https://github.com/dtolnay/quote ) 1.0.35
@@ -7452,8 +7452,8 @@ MIT License
 - [sqlformat]( https://github.com/shssoichiro/sqlformat-rs ) 0.1.8
 - [syn]( https://github.com/dtolnay/syn ) 1.0.109
 - [syn]( https://github.com/dtolnay/syn ) 2.0.51
-- [thiserror]( https://github.com/dtolnay/thiserror ) 1.0.57
 - [thiserror-impl]( https://github.com/dtolnay/thiserror ) 1.0.57
+- [thiserror]( https://github.com/dtolnay/thiserror ) 1.0.57
 - [tracing-actix-web]( https://github.com/LukeMathWalker/tracing-actix-web ) 0.7.9
 - [unicode-ident]( https://github.com/dtolnay/unicode-ident ) 1.0.12
 - [wasi]( https://github.com/bytecodealliance/wasi ) 0.11.0+wasi-snapshot-preview1
@@ -8099,8 +8099,8 @@ MIT License
 #### Used by
 - [aho-corasick]( https://github.com/BurntSushi/aho-corasick ) 1.1.2
 - [byteorder]( https://github.com/BurntSushi/byteorder ) 1.5.0
-- [csv]( https://github.com/BurntSushi/rust-csv ) 1.3.0
 - [csv-core]( https://github.com/BurntSushi/rust-csv ) 0.1.11
+- [csv]( https://github.com/BurntSushi/rust-csv ) 1.3.0
 - [memchr]( https://github.com/BurntSushi/memchr ) 2.7.1
 - [regex-automata]( https://github.com/BurntSushi/regex-automata ) 0.1.10
 - [termcolor]( https://github.com/BurntSushi/termcolor ) 1.4.1
@@ -8328,8 +8328,8 @@ SOFTWARE.
 MIT License
 
 #### Used by
-- [security-framework]( https://github.com/kornelski/rust-security-framework ) 2.9.2
 - [security-framework-sys]( https://github.com/kornelski/rust-security-framework ) 2.9.1
+- [security-framework]( https://github.com/kornelski/rust-security-framework ) 2.9.2
 
 #### License
 ```
@@ -8587,11 +8587,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [zstd]( https://github.com/gyscos/zstd-rs ) 0.11.2+zstd.1.5.2
-- [zstd]( https://github.com/gyscos/zstd-rs ) 0.13.0
 - [zstd-safe]( https://github.com/gyscos/zstd-rs ) 5.0.2+zstd.1.5.2
 - [zstd-safe]( https://github.com/gyscos/zstd-rs ) 7.0.0
 - [zstd-sys]( https://github.com/gyscos/zstd-rs ) 2.0.9+zstd.1.5.5
+- [zstd]( https://github.com/gyscos/zstd-rs ) 0.11.2+zstd.1.5.2
+- [zstd]( https://github.com/gyscos/zstd-rs ) 0.13.0
 
 #### License
 ```
@@ -8641,8 +8641,8 @@ MIT License
 #### Used by
 - [aho-corasick]( https://github.com/BurntSushi/aho-corasick ) 1.1.2
 - [byteorder]( https://github.com/BurntSushi/byteorder ) 1.5.0
-- [csv]( https://github.com/BurntSushi/rust-csv ) 1.3.0
 - [csv-core]( https://github.com/BurntSushi/rust-csv ) 0.1.11
+- [csv]( https://github.com/BurntSushi/rust-csv ) 1.3.0
 - [memchr]( https://github.com/BurntSushi/memchr ) 2.7.1
 - [regex-automata]( https://github.com/BurntSushi/regex-automata ) 0.1.10
 - [same-file]( https://github.com/BurntSushi/same-file ) 1.0.6

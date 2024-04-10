@@ -861,8 +861,8 @@ Apache License 2.0
 Apache License 2.0
 
 #### Used by
-- [time]( https://github.com/time-rs/time ) 0.3.34
 - [time-macros]( https://github.com/time-rs/time ) 0.2.17
+- [time]( https://github.com/time-rs/time ) 0.3.34
 
 #### License
 ```
@@ -2363,7 +2363,6 @@ Apache License 2.0
 Apache License 2.0
 
 #### Used by
-- [actix]( https://github.com/actix/actix ) 0.13.3
 - [actix-codec]( https://github.com/actix/actix-net ) 0.5.2
 - [actix-http]( https://github.com/actix/actix-web ) 3.6.0
 - [actix-macros]( https://github.com/actix/actix-net.git ) 0.2.4
@@ -2373,9 +2372,10 @@ Apache License 2.0
 - [actix-service]( https://github.com/actix/actix-net ) 2.0.2
 - [actix-tls]( https://github.com/actix/actix-net.git ) 3.3.0
 - [actix-utils]( https://github.com/actix/actix-net ) 3.0.1
-- [actix-web]( https://github.com/actix/actix-web ) 4.5.1
 - [actix-web-actors]( https://github.com/actix/actix-web ) 4.3.0
 - [actix-web-codegen]( https://github.com/actix/actix-web.git ) 4.2.2
+- [actix-web]( https://github.com/actix/actix-web ) 4.5.1
+- [actix]( https://github.com/actix/actix ) 0.13.3
 - [actix_derive]( https://github.com/actix/actix ) 0.6.1
 - [awc]( https://github.com/actix/actix-web ) 3.4.0
 - [bytestring]( https://github.com/actix/actix-net.git ) 1.3.1
@@ -3015,9 +3015,9 @@ Apache License 2.0
 
 #### Used by
 - [anstream]( https://github.com/rust-cli/anstyle.git ) 0.6.13
-- [anstyle]( https://github.com/rust-cli/anstyle.git ) 1.0.6
 - [anstyle-query]( https://github.com/rust-cli/anstyle ) 1.0.2
 - [anstyle-wincon]( https://github.com/rust-cli/anstyle.git ) 3.0.2
+- [anstyle]( https://github.com/rust-cli/anstyle.git ) 1.0.6
 - [clap]( https://github.com/clap-rs/clap ) 4.5.1
 - [colorchoice]( https://github.com/rust-cli/anstyle ) 1.0.0
 - [crc32fast]( https://github.com/srijs/rust-crc32fast ) 1.4.0
@@ -3647,7 +3647,6 @@ END OF TERMS AND CONDITIONS
 Apache License 2.0
 
 #### Used by
-- [futures]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-channel]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-core]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-executor]( https://github.com/rust-lang/futures-rs ) 0.3.30
@@ -3656,6 +3655,7 @@ Apache License 2.0
 - [futures-sink]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-task]( https://github.com/rust-lang/futures-rs ) 0.3.30
 - [futures-util]( https://github.com/rust-lang/futures-rs ) 0.3.30
+- [futures]( https://github.com/rust-lang/futures-rs ) 0.3.30
 
 #### License
 ```
@@ -5766,8 +5766,8 @@ limitations under the License.
 Apache License 2.0
 
 #### Used by
-- [iana-time-zone]( https://github.com/strawlab/iana-time-zone ) 0.1.60
 - [iana-time-zone-haiku]( https://github.com/strawlab/iana-time-zone ) 0.1.2
+- [iana-time-zone]( https://github.com/strawlab/iana-time-zone ) 0.1.60
 
 #### License
 ```
@@ -5978,7 +5978,7 @@ limitations under the License.
 Apache License 2.0
 
 #### Used by
-- [uc_api]( https://github.com/unfoldedcircle/api-model-rs ) 0.9.3-beta
+- [uc_api]( https://github.com/unfoldedcircle/api-model-rs ) 0.10.0-beta
 
 #### License
 ```
@@ -6224,12 +6224,12 @@ Apache License 2.0
 - [parking_lot]( https://github.com/Amanieu/parking_lot ) 0.12.1
 - [parking_lot_core]( https://github.com/Amanieu/parking_lot ) 0.9.9
 - [percent-encoding]( https://github.com/servo/rust-url/ ) 2.3.1
-- [regex]( https://github.com/rust-lang/regex ) 1.10.3
 - [regex-automata]( https://github.com/rust-lang/regex/tree/master/regex-automata ) 0.4.6
 - [regex-syntax]( https://github.com/rust-lang/regex/tree/master/regex-syntax ) 0.8.2
+- [regex]( https://github.com/rust-lang/regex ) 1.10.3
 - [rustc-demangle]( https://github.com/alexcrichton/rustc-demangle ) 0.1.23
-- [rustls]( https://github.com/rustls/rustls ) 0.21.10
 - [rustls-pemfile]( https://github.com/rustls/pemfile ) 1.0.4
+- [rustls]( https://github.com/rustls/rustls ) 0.21.10
 - [scopeguard]( https://github.com/bluss/scopeguard ) 1.2.0
 - [sct]( https://github.com/rustls/sct.rs ) 0.7.1
 - [serde_with]( https://github.com/jonasbb/serde_with/ ) 3.6.1
@@ -6244,11 +6244,11 @@ Apache License 2.0
 - [url]( https://github.com/servo/rust-url ) 2.5.0
 - [uuid]( https://github.com/uuid-rs/uuid ) 1.7.0
 - [wasi]( https://github.com/bytecodealliance/wasi ) 0.11.0+wasi-snapshot-preview1
-- [wasm-bindgen]( https://github.com/rustwasm/wasm-bindgen ) 0.2.92
 - [wasm-bindgen-backend]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/backend ) 0.2.92
-- [wasm-bindgen-macro]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro ) 0.2.92
 - [wasm-bindgen-macro-support]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro-support ) 0.2.92
+- [wasm-bindgen-macro]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/macro ) 0.2.92
 - [wasm-bindgen-shared]( https://github.com/rustwasm/wasm-bindgen/tree/master/crates/shared ) 0.2.92
+- [wasm-bindgen]( https://github.com/rustwasm/wasm-bindgen ) 0.2.92
 - [yaml-rust]( https://github.com/chyh1990/yaml-rust ) 0.4.5
 
 #### License
@@ -8862,7 +8862,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [h2]( https://github.com/hyperium/h2 ) 0.3.24
+- [h2]( https://github.com/hyperium/h2 ) 0.3.26
 
 #### License
 ```
@@ -8967,8 +8967,8 @@ DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [tracing]( https://github.com/tokio-rs/tracing ) 0.1.40
 - [tracing-core]( https://github.com/tokio-rs/tracing ) 0.1.32
+- [tracing]( https://github.com/tokio-rs/tracing ) 0.1.40
 
 #### License
 ```
@@ -9003,8 +9003,8 @@ DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [tokio]( https://github.com/tokio-rs/tokio ) 1.36.0
 - [tokio-util]( https://github.com/tokio-rs/tokio ) 0.7.10
+- [tokio]( https://github.com/tokio-rs/tokio ) 1.36.0
 
 #### License
 ```
@@ -9154,11 +9154,11 @@ SOFTWARE.
 MIT License
 
 #### Used by
-- [brotli]( https://github.com/dropbox/rust-brotli ) 3.4.0
 - [brotli-decompressor]( https://github.com/dropbox/rust-brotli-decompressor ) 2.5.1
+- [brotli]( https://github.com/dropbox/rust-brotli ) 3.4.0
 - [convert_case]( https://github.com/rutrum/convert-case ) 0.4.0
-- [rust-fsm]( https://github.com/eugene-babichenko/rust-fsm ) 0.6.1
 - [rust-fsm-dsl]( https://github.com/eugene-babichenko/rust-fsm ) 0.6.1
+- [rust-fsm]( https://github.com/eugene-babichenko/rust-fsm ) 0.6.1
 - [validator]( https://github.com/Keats/validator ) 0.16.1
 - [validator_derive]( https://github.com/Keats/validator ) 0.16.0
 - [validator_types]( https://github.com/Keats/validator ) 0.16.0
@@ -9400,7 +9400,7 @@ You may use this code under the terms of either license.
 Mozilla Public License 2.0
 
 #### Used by
-- [uc-intg-hass]( https://github.com/unfoldedcircle/integration-home-assistant ) 0.8.2
+- [uc-intg-hass]( https://github.com/unfoldedcircle/integration-home-assistant ) 0.9.0
 
 #### License
 ```
