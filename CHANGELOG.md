@@ -11,6 +11,15 @@ _Changes in the next release_
 
 ---
 
+## v0.43.0-beta - 2024-04-10
+### Added
+- Support remote-entity in integrations ([core-api#44](https://github.com/unfoldedcircle/core-api/pull/44)).
+### Fixed
+- German translations for media-player commands "back" and "previous" ([feature-and-bug-tracker#366](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/366)).
+- Web-configurator:
+  - Removed entities from a profile group do not appear in the list again ([feature-and-bug-tracker#345](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/345)).
+  - Editing of activity GUI is not working after some added commands ([feature-and-bug-tracker#369](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/369)).
+
 ## v0.42.0-beta - 2024-03-25
 ### Added
 - Core-API: standby inhibitor functions to prevent standby and to clear currently active standby inhibitors.
