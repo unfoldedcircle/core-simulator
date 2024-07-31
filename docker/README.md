@@ -1,11 +1,11 @@
 # Docker Compose Setup with Home-Assistant Demo Server
 
 The pre-defined [docker-compose.yml](docker-compose.yml) is an all-in-one simulation setup including:
-- Remote-core simulator: [unfoldedcircle/core-simulator](https://hub.docker.com/r/unfoldedcircle/core-simulator)
-- RemoteTwo Home-Assistant integration: [unfoldedcircle/integration-hass](https://hub.docker.com/r/unfoldedcircle/integration-hass)
+- Remote-core Simulator: [unfoldedcircle/core-simulator](https://hub.docker.com/r/unfoldedcircle/core-simulator)
+- UC Remote Home-Assistant integration: [unfoldedcircle/integration-hass](https://hub.docker.com/r/unfoldedcircle/integration-hass)
 - [Home-Assistant server](https://www.home-assistant.io/): [ghcr.io/home-assistant/home-assistant:stable](https://github.com/home-assistant/core/pkgs/container/home-assistant)
 - The Home-Assistant data is persisted on the host in the [`hass_config`](hass_config) directory and bind-mounted into the container.
-- The remote-core simulator data is persisted in a Docker volume.
+- The remote-core Simulator data is persisted in a Docker volume.
 
 Important restrictions when used for developing custom integrations:
 - The Simulator runs in a bridged Docker network. Therefore, mDNS discovery won't work for detecting drivers on the host!  
@@ -13,10 +13,28 @@ Important restrictions when used for developing custom integrations:
 - There is no suspend mode as with a real remote device.  
   Depending on integration driver, suspend events must be handled and special actions be taken when the remote connects
   again.
+- Custom integrations cannot be run in the Simulator.
+  - Custom integration archives can be uploaded. They will be extracted, validated, and an integration driver registered.
+  - The installation is performed in the volatile temp folder and is removed after the container is stopped.
+  - The registered custom integration driver must be deleted manually in the web-configurator or with a Core-API call.
+- Bluetooth is not available.
+  - BT-remote entities cannot be created in the web-configurator.
+
+## UC Remote Device Model
+
+The Simulator acts as a Remote Two device by default. To enable Remote 3 specific features, the following environment
+variable needs to be set in the `core-simulator` service:
+```
+UC_MODEL=UCR3
+```
+
+⚠️ When enabling the Remote 3 model, the web-configurator still shows the Remote Two image and is using an invalid
+button layout mapping!  
+The upcoming web-configurator 2.0 will support Remote 3 (ETA: end of summer 2024).
 
 ## User Accounts
 
-See [README in parent directory](../README.md) for the remote-core simulator API accounts.  
+See [README in parent directory](../README.md) for the remote-core Simulator API accounts.  
 
 Home-Assistant:
 
@@ -118,7 +136,7 @@ curl 'http://localhost:8080/api/intg/drivers' \
 
 ## Configuration
 
-The remote-core simulator runs with pre-configured defaults. Changing the configuration can have undesired effects,
+The remote-core Simulator runs with pre-configured defaults. Changing the configuration can have undesired effects,
 and we cannot support custom configurations. 
 
 ### Networking
@@ -161,7 +179,7 @@ See [driver registration](https://github.com/unfoldedcircle/core-api/blob/main/d
 in the core-api repository for a registration example with curl.
 
 ### Web Server
-⚠️ The remote-core simulator uses a very simple built-in webserver to serve the static pages and the web-configurator.  
+⚠️ The remote-core Simulator uses a very simple built-in webserver to serve the static pages and the web-configurator.  
 The real remote device runs a dedicated webserver as reverse-proxy for the APIs and performs SSL termination.
 
 To change the web server ports, the following environment variables can be set:
@@ -191,7 +209,7 @@ Set `UC_INTEGRATION_DISABLE_CERT_VERIFICATION=true` to disable verification.
 
 ### Logging
 
-The log level of the simulator can be changed through the environment variable `RUST_LOG=debug`.  
+The log level of the Simulator can be changed through the environment variable `RUST_LOG=debug`.  
 Valid log levels are: `debug`, `info`, `warn`, `error`.
 
 Attention: `debug` logging is very verbose, especially mdns messages! Specific categories can be overridden or excluded.

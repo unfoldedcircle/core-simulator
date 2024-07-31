@@ -5,13 +5,13 @@ services:
     image: unfoldedcircle/core-simulator
     container_name: core-simulator
     restart: "unless-stopped"
-#    environment:
-#      - UC_INTEGRATION_DISABLE_CERT_VERIFICATION=true
     ports:
       - "8080:8080"
       - "8443:8443"
     environment:
       - UC_TOKEN_PATH=/tmp/ui-env/ws-token
+#      - UC_MODEL=UCR3
+#      - UC_INTEGRATION_DISABLE_CERT_VERIFICATION=true
 # To run the simulator on the same network as the host. Existing Docker integrations must be reconfigured!
 #    network_mode: "host"
     volumes:
