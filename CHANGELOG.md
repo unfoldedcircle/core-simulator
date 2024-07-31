@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Breaking Changes
+- Update Home Assistant configuration to 2024.7.4. The home-assistant Docker image must be updated with `docker-compose pull`!
+
 ---
 
 ## v0.43.0-beta - 2024-04-10

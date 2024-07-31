@@ -4,131 +4,54 @@
   "key": "core.restore_state",
   "data": [
     {
-      "state": {
-        "entity_id": "person.unfolded_simulator",
-        "state": "unknown",
-        "attributes": {
-          "editable": true,
-          "id": "unfolded_simulator",
-          "user_id": "1571c1bbf7b443108b00f06a3c35de00",
-          "device_trackers": [],
-          "friendly_name": "Unfolded Simulator"
-        },
-        "last_changed": "2023-05-08T13:17:15.671055+00:00",
-        "last_updated": "2023-05-08T13:17:18.411752+00:00",
-        "context": {
-          "id": "01GZXR4R6BFCS836DRMGVW5Q7X",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
+      "state": {"entity_id":"person.unfolded_simulator","state":"unknown","attributes":{"editable":true,"id":"unfolded_simulator","device_trackers":[],"user_id":"1571c1bbf7b443108b00f06a3c35de00","friendly_name":"Unfolded Simulator"},"last_changed":"2024-07-31T07:10:26.067924+00:00","last_reported":"2024-07-31T07:10:33.029464+00:00","last_updated":"2024-07-31T07:10:33.029464+00:00","context":{"id":"01J43T0MJ547QZHR4B9ZNC23ZX","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2023-05-08T13:34:28.979899+00:00"
+      "last_seen": "2024-07-31T07:16:56.729965+00:00"
     },
     {
-      "state": {
-        "entity_id": "script.non_existent",
-        "state": "off",
-        "attributes": {
-          "last_triggered": "2023-03-19T10:54:24.881669+00:00",
-          "mode": "single",
-          "current": 0,
-          "friendly_name": "Dummy action"
-        },
-        "last_changed": "2023-05-08T13:17:16.343591+00:00",
-        "last_updated": "2023-05-08T13:17:16.343591+00:00",
-        "context": {
-          "id": "01GZXR4P5Q06277HRES2VDQCJY",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
+      "state": {"entity_id":"script.non_existent","state":"off","attributes":{"last_triggered":"2023-10-16T07:48:26.051156+00:00","mode":"single","current":0,"friendly_name":"Dummy action"},"last_changed":"2024-07-31T07:10:26.706579+00:00","last_reported":"2024-07-31T07:10:26.706579+00:00","last_updated":"2024-07-31T07:10:26.706579+00:00","context":{"id":"01J43T0ECJCXTTSY4MAZG2JYC7","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2023-05-08T13:34:28.979899+00:00"
+      "last_seen": "2024-07-31T07:16:56.729965+00:00"
     },
     {
-      "state": {
-        "entity_id": "script.position_cover",
-        "state": "off",
-        "attributes": {
-          "last_triggered": "2023-03-18T22:50:38.696924+00:00",
-          "mode": "single",
-          "current": 0,
-          "friendly_name": "Simulate cover position"
-        },
-        "last_changed": "2023-05-08T13:17:16.343653+00:00",
-        "last_updated": "2023-05-08T13:17:16.343653+00:00",
-        "context": {
-          "id": "01GZXR4P5QR3H3Y6D9BC60JEJX",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
+      "state": {"entity_id":"script.position_cover","state":"off","attributes":{"last_triggered":"2023-03-18T22:50:38.696924+00:00","mode":"single","current":0,"friendly_name":"Simulate cover position"},"last_changed":"2024-07-31T07:10:26.706648+00:00","last_reported":"2024-07-31T07:10:26.706648+00:00","last_updated":"2024-07-31T07:10:26.706648+00:00","context":{"id":"01J43T0ECJRJGB43VE7X2F0NNF","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2023-05-08T13:34:28.979899+00:00"
+      "last_seen": "2024-07-31T07:16:56.729965+00:00"
     },
     {
-      "state": {
-        "entity_id": "climate.study",
-        "state": "heat",
-        "attributes": {
-          "hvac_modes": [
-            "heat",
-            "off"
-          ],
-          "min_temp": 7,
-          "max_temp": 35,
-          "target_temp_step": 0.1,
-          "current_temperature": null,
-          "temperature": 21.0,
-          "hvac_action": "idle",
-          "friendly_name": "Study",
-          "supported_features": 1
-        },
-        "last_changed": "2023-05-08T13:17:16.398505+00:00",
-        "last_updated": "2023-05-08T13:17:16.398505+00:00",
-        "context": {
-          "id": "01GZXR4P7EM8Z2QN9Y09MFAXF6",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
+      "state": {"entity_id":"input_boolean.receiver_on","state":"on","attributes":{"editable":false,"icon":"mdi:power","friendly_name":"Virtual receiver power switch"},"last_changed":"2024-07-31T07:10:26.706982+00:00","last_reported":"2024-07-31T07:10:26.706982+00:00","last_updated":"2024-07-31T07:10:26.706982+00:00","context":{"id":"01J43T0ECJYV3JD3JEQK2MG0J4","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2023-05-08T13:34:28.979899+00:00"
+      "last_seen": "2024-07-31T07:16:56.729965+00:00"
     },
     {
-      "state": {
-        "entity_id": "climate.living_room",
-        "state": "off",
-        "attributes": {
-          "hvac_modes": [
-            "heat",
-            "off"
-          ],
-          "min_temp": 15.0,
-          "max_temp": 21.0,
-          "target_temp_step": 0.1,
-          "preset_modes": [
-            "none",
-            "away"
-          ],
-          "current_temperature": null,
-          "temperature": 17.0,
-          "hvac_action": "off",
-          "preset_mode": "none",
-          "friendly_name": "Living room",
-          "supported_features": 17
-        },
-        "last_changed": "2023-05-08T13:17:16.398811+00:00",
-        "last_updated": "2023-05-08T13:17:16.398811+00:00",
-        "context": {
-          "id": "01GZXR4P7EC9DD7PYHPBPJZ43S",
-          "parent_id": null,
-          "user_id": null
-        }
-      },
+      "state": {"entity_id":"input_boolean.receiver_playing","state":"on","attributes":{"editable":false,"icon":"mdi:play","friendly_name":"Virtual receiver playing"},"last_changed":"2024-07-31T07:10:26.707024+00:00","last_reported":"2024-07-31T07:10:26.707024+00:00","last_updated":"2024-07-31T07:10:26.707024+00:00","context":{"id":"01J43T0ECK5QHGN1AANA5P25PS","parent_id":null,"user_id":null}},
       "extra_data": null,
-      "last_seen": "2023-05-08T13:34:28.979899+00:00"
+      "last_seen": "2024-07-31T07:16:56.729965+00:00"
+    },
+    {
+      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant"},"last_changed":"2024-07-31T07:10:26.968630+00:00","last_reported":"2024-07-31T07:10:26.968630+00:00","last_updated":"2024-07-31T07:10:26.968630+00:00","context":{"id":"01J43T0EMRD1MKFXJZTTKZ8CRX","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2024-07-31T07:16:56.729965+00:00"
+    },
+    {
+      "state": {"entity_id":"input_text.receiver_source","state":"Radio","attributes":{"editable":false,"min":0,"max":100,"pattern":null,"mode":"text","friendly_name":"Source"},"last_changed":"2024-07-31T07:10:27.005807+00:00","last_reported":"2024-07-31T07:10:27.005807+00:00","last_updated":"2024-07-31T07:10:27.005807+00:00","context":{"id":"01J43T0ENXS5B586JJ7VFH10SX","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2024-07-31T07:16:56.729965+00:00"
+    },
+    {
+      "state": {"entity_id":"input_text.receiver_sound_mode","state":"Stereo","attributes":{"editable":false,"min":0,"max":100,"pattern":null,"mode":"text","friendly_name":"Sound mode"},"last_changed":"2024-07-31T07:10:27.005950+00:00","last_reported":"2024-07-31T07:10:27.005950+00:00","last_updated":"2024-07-31T07:10:27.005950+00:00","context":{"id":"01J43T0ENXFTSZR1M5XAK7XSR8","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2024-07-31T07:16:56.729965+00:00"
+    },
+    {
+      "state": {"entity_id":"climate.study","state":"off","attributes":{"hvac_modes":["heat","off"],"min_temp":7,"max_temp":35,"target_temp_step":0.1,"current_temperature":null,"temperature":35.0,"hvac_action":"off","friendly_name":"Study","supported_features":385},"last_changed":"2024-07-31T07:10:27.505743+00:00","last_reported":"2024-07-31T07:10:27.505743+00:00","last_updated":"2024-07-31T07:10:27.505743+00:00","context":{"id":"01J43T0F5HESZTDYE09FR2V740","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2024-07-31T07:16:56.729965+00:00"
+    },
+    {
+      "state": {"entity_id":"climate.living_room","state":"off","attributes":{"hvac_modes":["heat","off"],"min_temp":15.0,"max_temp":21.0,"target_temp_step":0.1,"preset_modes":["none","away"],"current_temperature":null,"temperature":17.0,"hvac_action":"off","preset_mode":"none","friendly_name":"Living room","supported_features":401},"last_changed":"2024-07-31T07:10:27.505978+00:00","last_reported":"2024-07-31T07:10:27.505978+00:00","last_updated":"2024-07-31T07:10:27.505978+00:00","context":{"id":"01J43T0F5H88WH9STDQ2Q3QKG6","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2024-07-31T07:16:56.729965+00:00"
     }
   ]
 }
