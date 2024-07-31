@@ -1,129 +1,141 @@
 {
   "version": 1,
-  "minor_version": 1,
+  "minor_version": 2,
   "key": "core.config_entries",
   "data": {
     "entries": [
       {
-        "entry_id": "299c0d6d76eb5e40d6f3e60ec194e1ca",
-        "version": 1,
-        "domain": "sun",
-        "title": "Sun",
         "data": {},
+        "disabled_by": null,
+        "domain": "sun",
+        "entry_id": "299c0d6d76eb5e40d6f3e60ec194e1ca",
+        "minor_version": 1,
         "options": {},
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "import",
+        "title": "Sun",
         "unique_id": null,
-        "disabled_by": null
+        "version": 1
       },
       {
-        "entry_id": "8868e04d99c88b6f154d8653652ab878",
-        "version": 1,
-        "domain": "radio_browser",
-        "title": "Radio Browser",
         "data": {},
+        "disabled_by": null,
+        "domain": "radio_browser",
+        "entry_id": "8868e04d99c88b6f154d8653652ab878",
+        "minor_version": 1,
         "options": {},
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "onboarding",
+        "title": "Radio Browser",
         "unique_id": null,
-        "disabled_by": null
+        "version": 1
       },
       {
-        "entry_id": "7e524aefe98c8c4d3e235de064e9c892",
-        "version": 1,
-        "domain": "uptime",
-        "title": "Uptime",
         "data": {},
+        "disabled_by": null,
+        "domain": "uptime",
+        "entry_id": "7e524aefe98c8c4d3e235de064e9c892",
+        "minor_version": 1,
         "options": {},
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "user",
+        "title": "Uptime",
         "unique_id": null,
-        "disabled_by": null
+        "version": 1
       },
       {
-        "entry_id": "77bdcd37d504e3ea13eb02504e128a6f",
-        "version": 1,
-        "domain": "dnsip",
-        "title": "myip",
         "data": {
           "hostname": "myip.opendns.com",
           "name": "myip",
           "ipv4": true,
           "ipv6": false
         },
+        "disabled_by": null,
+        "domain": "dnsip",
+        "entry_id": "77bdcd37d504e3ea13eb02504e128a6f",
+        "minor_version": 2,
         "options": {
           "resolver": "208.67.222.222",
-          "resolver_ipv6": "2620:0:ccc::2"
+          "resolver_ipv6": "2620:0:ccc::2",
+          "port": 53,
+          "port_ipv6": 53
         },
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "user",
+        "title": "myip",
         "unique_id": "myip.opendns.com",
-        "disabled_by": null
+        "version": 1
       },
       {
-        "entry_id": "81080ce1926fe6bcb84df4bac1e6eb7e",
-        "version": 1,
-        "domain": "eafm",
-        "title": "A6 Bridge",
         "data": {
           "station": "720215"
         },
+        "disabled_by": null,
+        "domain": "eafm",
+        "entry_id": "81080ce1926fe6bcb84df4bac1e6eb7e",
+        "minor_version": 1,
         "options": {},
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "user",
+        "title": "A6 Bridge",
         "unique_id": "720215",
-        "disabled_by": null
+        "version": 1
       },
       {
-        "entry_id": "fd22c62754b0f5ebe13acac8c66b8637",
-        "version": 1,
-        "domain": "forecast_solar",
-        "title": "Home",
         "data": {
           "latitude": 52.3731339,
           "longitude": 4.8903147
         },
+        "disabled_by": null,
+        "domain": "forecast_solar",
+        "entry_id": "fd22c62754b0f5ebe13acac8c66b8637",
+        "minor_version": 1,
         "options": {
           "azimuth": 180,
           "declination": 25,
-          "modules power": 1000
+          "modules_power": 1000,
+          "damping_morning": 0.0,
+          "damping_evening": 0.0
         },
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "user",
+        "title": "Home",
         "unique_id": null,
-        "disabled_by": null
+        "version": 2
       },
       {
-        "entry_id": "dde8e0aa9fd1f2b6a27ef54baa5754e9",
-        "version": 1,
+        "data": {},
+        "disabled_by": null,
         "domain": "local_ip",
-        "title": "local_ip",
-        "data": {},
+        "entry_id": "dde8e0aa9fd1f2b6a27ef54baa5754e9",
+        "minor_version": 1,
         "options": {},
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "user",
+        "title": "local_ip",
         "unique_id": null,
-        "disabled_by": null
+        "version": 1
       },
       {
-        "entry_id": "921b97369fcefa03bc37299678181f27",
-        "version": 1,
-        "domain": "moon",
-        "title": "Moon",
         "data": {},
+        "disabled_by": null,
+        "domain": "moon",
+        "entry_id": "921b97369fcefa03bc37299678181f27",
+        "minor_version": 1,
         "options": {},
         "pref_disable_new_entities": false,
         "pref_disable_polling": false,
         "source": "user",
+        "title": "Moon",
         "unique_id": null,
-        "disabled_by": null
+        "version": 1
       }
     ]
   }

@@ -1,21 +1,25 @@
-# Remote Two Core Simulator
+# Remote-Core Simulator
 
-The remote-core simulator is a developer tool to simplify developing integration drivers for the [Remote Two](https://www.unfoldedcircle.com/).
+The remote-core Simulator is a developer tool to simplify developing integration drivers for the
+[Unfolded Circle Remotes](https://www.unfoldedcircle.com/).
 
-It simulates the functionality of the core services running on the embedded device and provides the same Core-APIs
-as a real device. The majority of the API functionality is identical (using the same code base) with most of the
-hardware functions simulated.
+It simulates the functionality of the core-services running on the embedded device and provides the same
+[Core-APIs](https://github.com/unfoldedcircle/core-api) as a real device. The majority of the API functionality is
+identical (using the same code base) with most of the hardware functions simulated.
 
-The remote-core simulator is available as a [Docker image](docker) and as a ready-made [Linux VM](linux-vm).
+The remote-core Simulator is available as a [Docker image](docker) and as a ready-made [Linux VM](linux-vm).
 
 **Please note that this is a preview version and work-in-progress!**
 
-We will release more documentation and code examples on how to develop for the Remote Two.  
-The web-configurator and remote-ui projects will be released as open-source projects once we ship the devices.
-
 Additional resources:
 - Rust based [Home Assistant integration](https://github.com/unfoldedcircle/integration-home-assistant)
-- [Node.js library wrapping the Integration API](https://github.com/unfoldedcircle/integration-node-library)
+- [Node.js API wrapper for the UC Integration-API](https://github.com/unfoldedcircle/integration-node-library)
+- [Python API wrapper library for the UC Integration-API](https://github.com/unfoldedcircle/integration-python-library)  
+  Integrations using the Python API wrapper:
+  - [Android TV integration](https://github.com/unfoldedcircle/integration-androidtv)
+  - [Apple TV integration](https://github.com/unfoldedcircle/integration-appletv)
+  - [Denon AVR integration](https://github.com/unfoldedcircle/integration-denonavr)
+- Open Source [remote-ui application](https://github.com/unfoldedcircle/remote-ui).
 
 More information and contact links are on our [main GitHub page](https://github.com/unfoldedcircle).
 

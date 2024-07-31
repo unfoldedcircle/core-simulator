@@ -151,6 +151,20 @@
             "should_expose": false
           }
         }
+      },
+      "media_player.receiver": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          }
+        }
+      },
+      "conversation.home_assistant": {
+        "assistants": {
+          "conversation": {
+            "should_expose": false
+          }
+        }
       }
     }
   }

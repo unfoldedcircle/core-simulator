@@ -3,7 +3,7 @@
 ## Overview of Third Party Licenses
 These are the licenses for the libraries we use in the Unfolded Circle Remote-Core application:
 
-- [MIT License](#MIT) (476)
+- [MIT License](#MIT) (478)
 - [ISC License](#ISC) (8)
 - [Apache License 2.0](#Apache-2.0) (7)
 - [BSD 3-Clause "New" or "Revised" License](#BSD-3-Clause) (7)
@@ -593,7 +593,7 @@ END OF TERMS AND CONDITIONS
 Apache License 2.0
 
 #### Used by
-- [uc_api]( https://github.com/unfoldedcircle/api-model-rs ) 0.10.0-beta
+- [uc_api]( https://github.com/unfoldedcircle/api-model-rs ) 0.11.1
 
 #### License
 ```
@@ -3579,6 +3579,41 @@ SOFTWARE.
 MIT License
 
 #### Used by
+- [backoff]( https://github.com/ihrwein/backoff ) 0.4.0
+
+#### License
+```
+Copyright (c) 2016 Tibor Benke <ihrwein@gmail.com>
+
+Permission is hereby granted, free of charge, to any
+person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the
+Software without restriction, including without
+limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software
+is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice
+shall be included in all copies or substantial portions
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+```
+### MIT
+MIT License
+
+#### Used by
 - [indexmap]( https://github.com/bluss/indexmap ) 1.9.3
 - [indexmap]( https://github.com/indexmap-rs/indexmap ) 2.2.3
 
@@ -5968,7 +6003,7 @@ MIT License
 #### Used by
 - [tokio-stream]( https://github.com/tokio-rs/tokio ) 0.1.14
 - [tokio-util]( https://github.com/tokio-rs/tokio ) 0.7.10
-- [tokio]( https://github.com/tokio-rs/tokio ) 1.36.0
+- [tokio]( https://github.com/tokio-rs/tokio ) 1.37.0
 
 #### License
 ```
@@ -6096,8 +6131,8 @@ DEALINGS IN THE SOFTWARE.
 MIT License
 
 #### Used by
-- [time-macros]( https://github.com/time-rs/time ) 0.2.17
-- [time]( https://github.com/time-rs/time ) 0.3.34
+- [time-macros]( https://github.com/time-rs/time ) 0.2.18
+- [time]( https://github.com/time-rs/time ) 0.3.36
 
 #### License
 ```
@@ -7206,6 +7241,7 @@ MIT License
 - [custom_debug_derive]( https://github.com/panicbit/custom_debug ) 0.6.1
 - [derive_setters]( https://github.com/Lymia/derive_setters ) 0.1.6
 - [dotenv]( https://github.com/dotenv-rs/dotenv ) 0.15.0
+- [enum-assoc]( https://github.com/Eolu/enum-assoc ) 1.1.0
 - [macaddr]( https://github.com/svartalf/rust-macaddr ) 1.0.1
 - [rust-fsm-dsl]( https://github.com/eugene-babichenko/rust-fsm ) 0.6.1
 - [rust-fsm]( https://github.com/eugene-babichenko/rust-fsm ) 0.6.1

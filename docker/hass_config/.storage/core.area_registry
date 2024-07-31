@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "minor_version": 3,
+  "minor_version": 6,
   "key": "core.area_registry",
   "data": {
     "areas": [
@@ -8,19 +8,28 @@
         "name": "Living Room",
         "id": "living_room",
         "picture": null,
-        "aliases": []
+        "aliases": [],
+        "icon": null,
+        "floor_id": null,
+        "labels": []
       },
       {
         "name": "Kitchen",
         "id": "kitchen",
         "picture": null,
-        "aliases": []
+        "aliases": [],
+        "icon": null,
+        "floor_id": null,
+        "labels": []
       },
       {
         "name": "Bedroom",
         "id": "bedroom",
         "picture": null,
-        "aliases": []
+        "aliases": [],
+        "icon": null,
+        "floor_id": null,
+        "labels": []
       }
     ]
   }

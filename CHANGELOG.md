@@ -11,6 +11,25 @@ _Changes in the next release_
 
 ---
 
+## v0.47.0-beta - 2024-07-31
+### Breaking Changes
+- Update Home Assistant configuration to 2024.7.4. The home-assistant Docker image must be updated with `docker-compose pull`!
+### Added
+- Initial support for Remote 3. See docker/README.md for instructions and restrictions.
+- Bluetooth LE keyboard & mouse peripheral support ([feature-and-bug-tracker#65](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/65)).
+  - Only limited functionality in Simulator with REST Core-API! BT-remote entity creation and pairing is not supported in web-configurator.
+- Install custom integrations with REST Core-API ([feature-and-bug-tracker##79](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/79)).
+  - Only limited functionality in Simulator: upload & basic archive validation is working, but a custom integration cannot be started.
+- Implement external access token functionality.
+- New integration-API driver request message: `get_runtime_info`
+### Fixed
+- Implement missing integration-API driver-request messages: `get_version`, `get_supported_entity_types`, `get_configured_entities`, `get_localization_cfg`
+- `send_cmd` object for external integrations.
+- Enable top dock IR emitter when selecting all outputs
+- Restore external remote-entities from backup
+### Changed
+- Update Core-APIs for Remote 3.
+
 ## v0.43.0-beta - 2024-04-10
 ### Added
 - Support remote-entity in integrations ([core-api#44](https://github.com/unfoldedcircle/core-api/pull/44)).
