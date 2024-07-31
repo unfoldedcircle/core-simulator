@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+---
+
+## v0.47.0-beta - 2024-07-31
 ### Breaking Changes
 - Update Home Assistant configuration to 2024.7.4. The home-assistant Docker image must be updated with `docker-compose pull`!
 ### Added
@@ -16,7 +19,7 @@ _Changes in the next release_
 - Bluetooth LE keyboard & mouse peripheral support ([feature-and-bug-tracker#65](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/65)).
   - Only limited functionality in Simulator with REST Core-API! BT-remote entity creation and pairing is not supported in web-configurator.
 - Install custom integrations with REST Core-API ([feature-and-bug-tracker##79](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/79)).
-  - Only limited functionality in Simulator: upload & basic archive validation is working, but a custom integration cannot be started. 
+  - Only limited functionality in Simulator: upload & basic archive validation is working, but a custom integration cannot be started.
 - Implement external access token functionality.
 - New integration-API driver request message: `get_runtime_info`
 ### Fixed
@@ -26,8 +29,6 @@ _Changes in the next release_
 - Restore external remote-entities from backup
 ### Changed
 - Update Core-APIs for Remote 3.
-
----
 
 ## v0.43.0-beta - 2024-04-10
 ### Added
