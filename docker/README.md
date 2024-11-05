@@ -30,7 +30,7 @@ UC_MODEL=UCR3
 
 ⚠️ When enabling the Remote 3 model, the web-configurator still shows the Remote Two image and is using an invalid
 button layout mapping!  
-The upcoming web-configurator 2.0 will support Remote 3 (ETA: end of summer 2024).
+The upcoming web-configurator 2.0 will support Remote 3 (ETA: November 2024).
 
 ## User Accounts
 
@@ -239,3 +239,19 @@ Container `integration-hass`:
 - Set ENV variable `UC_HASS_MSG_TRACING` to enable Home Assistant WS message tracing.
 
 The same values are used as above.
+
+## Remote-UI
+
+To connect the [remote-ui application](https://github.com/unfoldedcircle/remote-ui) with the Simulator, the app requires
+access to the dynamically created token file in `./ui-env/ws-token`. This file path must be specified in the environment
+variable `UC_TOKEN_PATH`.
+
+Linux example:
+```
+UC_TOKEN_PATH=/home/projects/core-simulator/docker/ui-env/ws-token remote-ui
+```
+
+macOS example:
+```
+UC_TOKEN_PATH=/Users/projects/core-simulator/docker/ui-env/ws-token Remote\ UI.app/Contents/MacOS/Remote\ UI
+```
