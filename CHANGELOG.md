@@ -11,6 +11,18 @@ _Changes in the next release_
 
 ---
 
+## v0.51.0-beta - 2024-11-05
+### Added
+- New IR-emitter entity
+- WebSocket event message when switching profiles
+- OTA download WebSocket progress event messages
+- WoWLAN setting
+
+### Fixed
+- Filter out unsupported entities from external integrations
+- Friendly model name based on UC_MODEL env var
+- Various web-configurator fixes
+
 ## v0.47.0-beta - 2024-07-31
 ### Breaking Changes
 - Update Home Assistant configuration to 2024.7.4. The home-assistant Docker image must be updated with `docker-compose pull`!
