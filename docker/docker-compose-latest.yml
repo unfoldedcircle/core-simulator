@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   core-simulator:
     image: unfoldedcircle/core-simulator
@@ -18,6 +16,10 @@ services:
       - simulator-data:/data
       - ./ui-env:/tmp/ui-env
       - ./upload:/data/upload
+      # If you have a Pro license of Font Awesome 6, you can put the font files into the ./fontawesome6 directory
+      # and uncomment the following volume mapping.
+      # Required: fa-thin-100.woff2 & .ttf, fa-light-300.woff2 & .ttf, fa-regular-400.woff2 & .ttf
+      #- ./fontawesome6:/app/webroot/configurator/fonts/fontawesome6
 
   integration-hass:
     image: unfoldedcircle/integration-hass

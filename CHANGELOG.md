@@ -11,6 +11,19 @@ _Changes in the next release_
 
 ---
 
+## v0.54.2-beta - 2025-01-07
+### Added
+- Initial OAuth2 infrastructure for integration drivers requiring OAuth2 authorization code flow.
+  - This is a development feature at the moment for our upcoming Spotify integration. Documentation will be provided once everything is working.
+  - Include ca-certificates in Docker image for outgoing https requests to authorization servers.
+### Fixed
+- Increased maximum request size to handle large remote entity definitions with lots of commands and multiple UI pages.
+### Changed
+- New Web-Configurator 2.0
+  - Please note that not all icons are shown in the Simulator, since we can't include the licensed Font Awesome 6 fonts.
+  - See docker/docker-compose.yml if you have a Pro license and want to use the same icons as on the Remote device.
+- If an integration disconnects, automatically set the entity state to unavailable.
+
 ## v0.51.0-beta - 2024-11-05
 ### Added
 - New IR-emitter entity

@@ -194,6 +194,14 @@ UC_API_HTTP_ENABLED=false
 UC_API_HTTPS_ENABLED=true
 ```
 
+#### FontAwesome6 fonts for Web-Configurator
+
+The Simulator includes the free version of Font Awesome 6. The real Remote device is shipped with a licensed Pro version.  
+Many icons are missing in the free version and therefore not available in the web-configurator of the Simulator.
+
+If you have a Pro license of Font Awesome 6, you can put the font files into the ./fontawesome6 subdirectory to get the
+same icons as with a Remote device. See `docker-compose.yml` for required font files and how to enable the volume mapping.
+
 #### Certificates
 
 Certificates for the TLS connection can be specified with environment variables:
