@@ -1,6 +1,6 @@
 services:
   core-simulator:
-    image: unfoldedcircle/core-simulator:0.54.2-bt
+    image: unfoldedcircle/core-simulator:0.55.3-bt
     container_name: core-simulator
     restart: "unless-stopped"
     ports:
@@ -22,7 +22,7 @@ services:
       #- ./fontawesome6:/app/webroot/configurator/fonts/fontawesome6
 
   integration-hass:
-    image: unfoldedcircle/integration-hass:0.9.0
+    image: unfoldedcircle/integration-hass:0.12.1
     container_name: integration-hass
     restart: "unless-stopped"
     # configure Home Assistant demo server defined below

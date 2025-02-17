@@ -11,6 +11,58 @@ _Changes in the next release_
 
 ---
 
+## v0.55.3-beta - 2025-02-17
+### Breaking changes
+- Support for TV icons in the user interface with a new "ctv:" icon prefix.
+  - Previously assigned TV icons in the new web-configurator will no longer work, unless the TV icons are re-uploaded as custom icons.
+
+### Fixed
+- Lots of Web-Configurator 2.0 fixes:
+  - No defaults and invalid values in "Send Command" activity sequence ([#432](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/432)).
+  - Unexpected space with text button widget ([#436](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/436)).
+  - Dock configuration is missing service name, shows invalid custom URL ([#416](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/416), [#438](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/438)).
+  - Unable to set activity-group within activity view ([#440](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/440)).
+  - Enable IR code learning for existing commands in IR-remote entity view.
+  - IR learning screen doesn't stop after 60s timeout.
+  - Entity might continuously reload while a media-player is active.
+  - After creating an IR remote and clicking done, the screen does not close.
+  - Reset button mapping in IR-remote does not show warning message in detail view.
+  - Invalid device name shown in software update popup.
+  - Integration overview doesn't show "external"- and "custom"-integration identifications.
+  - Dock update is still possible with battery too low warning.
+  - Dock factory reset & firmware check is only possible if dock is connected.
+  - "Not found" error when resetting a physical remote-entity button mapping.
+  - Web-links in descriptions and integration setup pages open in new window.
+  - Entity filter shows question mark instead of icon.
+  - Integration icon within entity is not required for integration screens.
+  - UI list position is reset after deleting an entity.
+  - Media-player toggle sends stop command for entities not having the stop and play_pause features.
+  - IR-entities are no longer shown under infrared entities ([#426](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/426)).
+  - Broken screen layout in tablet portrait mode when using an entity filter.
+  - Uploading a PNG with transparency results in an icon with black background ([#427](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/427)).
+  - Low image quality after image resize in icon upload.
+  - Icon upload modifies all icons, even icons with correct image size & format.
+  - Copy activity and macro fails with custom icon ([#431](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/431)).
+  - Data not found error message when retrying integration setup flow.
+- Dock 3 firmware update check and OTA update.
+
+### Added
+- Option to show media widget horizontally.
+- Web-configurator:
+  - "Add all entities" button in last step of Integration driver setup.
+  - Icon mapping support for the free FontAwesome icon set in the Simulator.
+
+### Changed
+- Updated Home Assistant Integration to 0.12.1.
+- Web-configurator:
+  - Allow resize for media player widget.
+  - Add "customise your remote" menu item to hamburger menu.
+  - Overflow indicator in lists where there is more content.
+  - Reduce image resource sizes and optimize loading.
+  - Replace internationalization framework for improved pluralization and Crowdin support. Now we can start translations.
+  - Replace no longer maintained Markdown plugin.
+- Update Node.js runtime to new LTS version 22.13.
+
 ## v0.54.2-beta - 2025-01-07
 ### Added
 - Initial OAuth2 infrastructure for integration drivers requiring OAuth2 authorization code flow.
