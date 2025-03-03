@@ -11,6 +11,16 @@ _Changes in the next release_
 
 ---
 
+## v0.56.1-beta - 2025-03-03
+### Fixed
+- Web-configurator:
+  - Missing device search field in infrared dataset search for certain manufacturers.
+  - Icon mapping in Firefox.
+  - "Keep WiFi connected in standby" toggle button did not change the configuration setting.
+
+### Changed
+- Web-configurator: show color wheel instead of hue and saturation for color selection.
+
 ## v0.55.3-beta - 2025-02-17
 ### Breaking changes
 - Support for TV icons in the user interface with a new "ctv:" icon prefix.
