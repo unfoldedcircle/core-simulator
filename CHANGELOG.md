@@ -11,6 +11,13 @@ _Changes in the next release_
 
 ---
 
+## v0.56.2-beta - 2025-03-06
+### Fixed
+- Web-configurator:
+  - Deleting an IR-remote entity doesn't remove it from the screen.
+  - Integrations: entity search must not force-reload all entities from the integration driver.
+  - Invalid error message for timeout errors.
+
 ## v0.56.1-beta - 2025-03-03
 ### Fixed
 - Web-configurator:
