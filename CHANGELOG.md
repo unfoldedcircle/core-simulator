@@ -11,6 +11,20 @@ _Changes in the next release_
 
 ---
 
+## v0.58.2-beta - 2025-04-17
+### Added
+- REST Core-API: add query parameter to resource type endpoint.
+### Fixed
+- Auto reload available integration entities ([#449](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/449)).
+- Web-configurator:
+  - Auto-select search field in icon picker.
+  - Customize remote shows invalid state after deleting BT entity.
+  - Customize screen: entity search result is not cleared when leaving and re-entering the screen.
+  - IR codeset search: device search field is not cleared after a new search.
+  - Links on login page for Simulator.
+### Changed
+- Web index page redirects to web-configurator.
+
 ## v0.56.2-beta - 2025-03-06
 ### Fixed
 - Web-configurator:
