@@ -24,7 +24,7 @@ services:
       #- ./fontawesome6:/app/webroot/configurator/fonts/fontawesome6
 
   integration-hass:
-    image: unfoldedcircle/integration-hass:0.12.1
+    image: unfoldedcircle/integration-hass:0.12.2
     container_name: integration-hass
     restart: "unless-stopped"
     # configure Home Assistant demo server defined below
