@@ -11,6 +11,10 @@ _Changes in the next release_
 
 ---
 
+## v0.59.0-beta - 2025-05-06
+### Added
+- Dock 3 external port configuration with REST Core-API
+
 ## v0.58.3-beta - 2025-04-17
 ### Added
 - Propagate media player attribute `media_position_updated_at` from integrations ([#443](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/443)).
