@@ -11,6 +11,19 @@ _Changes in the next release_
 
 ---
 
+## v0.60.0-beta - 2025-05-12
+### Breaking changes
+- Dynamic IR-emitter output ports for Dock 3, combine internal outputs as a single "Dock output".
+
+### Added
+- Prepared Dock 3 port and volume configuration. Web-configurator support for Dock 3 port configuration will be included in the next update.
+
+### Fixed
+- Web-configurator:
+  - Debounce search input: don't send a search request for every key press.
+  - Remote-entity toggle test feature uses the correct command and doesn't clear the entity screen.
+  - Handle no longer available IR-emitter output ports in the remote-entity screen.
+
 ## v0.59.0-beta - 2025-05-06
 ### Added
 - Dock 3 external port configuration with REST Core-API
