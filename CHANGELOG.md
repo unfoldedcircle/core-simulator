@@ -11,6 +11,48 @@ _Changes in the next release_
 
 ---
 
+## v0.61.5-beta - 2025-06-13
+### Fixed
+- Web-configurator:
+  - Select a new backup file after the restore process.
+  - Directly add an integration on the integration screen and infrared- and BT-remote entities on the corresponding screens.
+  - Show Bluetooth setup instructions for Dock 3.
+  - Dock search only works with lower-case search input.
+  - Activity search result shows "add your first activity" if nothing is found.
+  - Lock UI after a reboot action.
+  - Command parameter dropdown closes by itself ([#452](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/452)).
+  - Skip the last entity-selection screen in the integration setup if no new entities are available.
+  - Keep applied filters when returning from a detail screen.
+  - Set input focus to search fields when changing screens.
+  - Localization change doesn't change language in settings menu.
+  - English language fallback for translated integrations if configured language is not available.
+  - Automatic update of the infrared commands after the import of a CSV IR dataset.
+  - Buttons are not shown on smaller screens in the icon upload resize screen.
+  - Improved error handling when adding widgets to a UI screen.
+  - Show the correct color and type for Dock 3.
+  - Text overflow in timezone dropdown field.
+- Remote 3:
+  - Commands cannot be assigned to the stop, record and menu buttons ([#458](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/458)).
+  - Wireless charging control with Core-API.
+
+### Added
+- Web-configurator:
+  - Search option for Macros ([#463](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/463)).
+  - About information in the settings page.
+  - Dock 3: manual configuration for IR-blasters and IR-emitters. RS232 and trigger support will be provided with future updates.
+
+### Changed
+- Core-API:
+  - Macro search option. 
+  - Enhanced filter option in entity retrieval to prepare for proper paging in web-configurator.
+- Web-configurator:
+  - Buttons on the remote picture are clickable for button mappings.
+  - The expanded-view in button mapping is now the default.
+  - Backup restore automatically starts after selecting a backup file.
+  - Backup file selection for restore requires the ".backup" file extension.
+  - Preparation of translations. Various translations will be available soon.
+  - Show entity identifier in detail view.
+
 ## v0.60.0-beta - 2025-05-12
 ### Breaking changes
 - Dynamic IR-emitter output ports for Dock 3, combine internal outputs as a single "Dock output".
