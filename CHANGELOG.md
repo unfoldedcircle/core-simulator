@@ -11,6 +11,40 @@ _Changes in the next release_
 
 ---
 
+## v0.62.0-beta - 2025-07-14
+### Fixed
+- Web-configurator:
+  - Dock images are no longer loading ([#490](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/490)).
+  - Customize remote: page edit button missing on touchscreen devices.
+- Toggle IR codes from the IR database result in "invalid request" errors ([#495](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/495)).
+- Dock 3 setup fails with custom password.
+- Propagate dock connection type in Core-API.
+
+### Added
+- Web-configurator:
+  - Add a logout option to the profile menu.
+  - Display the web-configurator version on the about page in the settings.
+  - Test mode for activities
+  - Prompt for entity addition when copying.
+- Core-API enhancements ([core-api#61](https://github.com/unfoldedcircle/core-api/pull/61)):
+  - WiFi band configuration.
+  - Periodic WiFi scan interval.
+  - Reset option for network configuration.
+  - Standby counter in power mode response until device enters standby.
+
+### Changed
+- Web-configurator:
+  - Support for uploading multiple image files at the same time. If multiple files are selected, they must be in the required format. The resize editor is only available for single uploads.
+  - Dock discovery: option to restart discovery and support article links.
+  - Show a clear message if no IR output is available.
+  - IR-remote entity: show the reset option only for customized commands, remove "saving changes" popup.
+  - Improve resource list layout.
+  - Redesign IR test function when adding an IR remote.
+  - Showing friendly Dock name in discovery when available.
+  - Highlight dangling entities in the activity screen.
+  - Improve custom IR & learning screens.
+- Core-API: activity & macro patch responses return enhanced entity information.
+
 ## v0.61.5-beta - 2025-06-13
 ### Fixed
 - Web-configurator:
