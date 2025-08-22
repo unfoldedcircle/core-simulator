@@ -11,6 +11,40 @@ _Changes in the next release_
 
 ---
 
+## v0.62.3-beta - 2025-08-22
+### Fixed
+- PRONTO toggle code handling in /ir/codes/custom/:codeset endpoints (not used by web-configurator).
+- Web-configurator:
+    - Custom icons are no longer shown in the icon picker ([#547](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/547)).
+    - Adding or removing a user interface in the activity view requires a manual refresh ([#549](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/549)).
+    - Select custom icon element missing in mobile Safari browser ([#508](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/508)).
+    -  command selection box cut off with send command/sequence. ([#510](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/510)).
+    - Renaming a page removes all widgets from the page ([#558](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/558)).
+    - Search field for background images disappears.
+    - 'Check your input' error when adding a missing entity while duplicating a page or UI element.
+
+### Added
+- Web-configurator:
+    - Keepalive option while editing.
+    - Initial German and Swiss German translations. More translations will follow!
+    - WiFi band configuration for Remote 3 (restrict to 5 or 2.4 Ghz).
+    - Configuration for active WiFi scan.
+    - Test mode for commands in an activity.
+
+### Changed
+- Web-configurator:
+    - Dock discovery: option to restart discovery, support article links, show friendly dock name if available.
+    - Show a clear message if no IR output is available.
+    - IR-remote entity: show the reset option only for customized commands, remove "saving changes" popup.
+    - Improve resource list layout.
+    - Redesign IR test function when adding an IR remote.
+    - Prompt for entity addition when copying.
+    - Highlight dangling entities in the activity screen.
+    - Improve custom IR & learning screens.
+    - Multi-language fields only show available languages with option to add the current language.
+    - Add missing list paging instead of auto-load or preload all data.
+    - Allow pasting PRONTO IR toggle codes separated by a '|' and HEX / PRONTO IR sequences separated by a '+' ([#484](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/484)).
+q
 ## v0.62.0-beta - 2025-07-14
 ### Fixed
 - Web-configurator:

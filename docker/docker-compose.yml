@@ -1,6 +1,6 @@
 services:
   core-simulator:
-    image: unfoldedcircle/core-simulator:0.62.0-bt
+    image: unfoldedcircle/core-simulator:0.62.3-bt
     container_name: core-simulator
     restart: "unless-stopped"
     ports:
