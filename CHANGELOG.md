@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Changed
+- Update Home Assistant integration to 0.13.1
+
 ---
 
 ## v0.62.3-beta - 2025-08-22
@@ -44,7 +47,7 @@ _Changes in the next release_
     - Multi-language fields only show available languages with option to add the current language.
     - Add missing list paging instead of auto-load or preload all data.
     - Allow pasting PRONTO IR toggle codes separated by a '|' and HEX / PRONTO IR sequences separated by a '+' ([#484](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/484)).
-q
+
 ## v0.62.0-beta - 2025-07-14
 ### Fixed
 - Web-configurator:
