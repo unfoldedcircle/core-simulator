@@ -9,10 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
-### Changed
-- Update Home Assistant integration to 0.13.1
-
 ---
+
+## v0.63.0-beta - 2025-09-12
+### Changed
+- Prepare a continuous command-repeat feature for remote-entities usable by all integrations, similar to the continuous IR-repeat feature.
+- Update Home Assistant integration to 0.13.1
+    - Updated TLS runtime and certificate validation for better compatibility ([#189](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/189), [integration-home-assistant#73](https://github.com/unfoldedcircle/integration-home-assistant/pull/73)).
+    - Option to disable TLS certificate validation of HA WebSocket server ([integration-home-assistant#71](https://github.com/unfoldedcircle/integration-home-assistant/pull/71)).
+    - Change binary sensor mapping: use the new "binary" device class, store binary sensor device class in the unit attribute ([integration-home-assistant#74](https://github.com/unfoldedcircle/integration-home-assistant/pull/74)).
+### Fixed
+- Web-configurator:
+    - A newly added key in an IR remote is not available in the UI & button mapping screens and requires a manual refresh.
+    - Integration setup: the last item in a scroll list is not always selectable depending on screen size.
+    - Disabling beta updates requires a reboot.
+- Home Assistant integration:
+    - Initial setup with a wss:// Home Assistant URL or switching from ws to wss doesn't require a reboot anymore.
+    - Report the correct integration version without the "-dirty" suffix if it was built with a clean codebase.
+    - Only report the documented sensor states "ON," "UNAVAILABLE" and "UNKNOWN."
 
 ## v0.62.3-beta - 2025-08-22
 ### Fixed
