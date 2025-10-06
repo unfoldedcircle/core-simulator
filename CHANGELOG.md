@@ -11,6 +11,23 @@ _Changes in the next release_
 
 ---
 
+## v0.64.0-beta - 2025-09-25
+### Fixed
+- Remote 3: Include STOP, MENU, RECORD buttons in the automatic button mappings.
+- Web-configurator:
+    - Upload CSV file button in IR-remote entity missing ([#621](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/621)).
+    - Edit mode in the UI customization screen jumps back to the first item ([#635](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/635)).
+    - Overlap in button mapping page ([#634](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/634)).
+    - UI page rename didn't show an error if the new name already exists.
+    - Invalid button command text for mapped buttons in the IR-remote button mapping.
+    - Invalid default activity group is shown for activities without an activity group.
+### Added
+- Web-configurator: request web app reload after a system update.
+### Changed
+- Added a default activity group for all newly created activities.
+    - Existing Activities can be added and removed from the default activity.
+    - The new default activity can be edited but not deleted.
+
 ## v0.63.0-beta - 2025-09-12
 ### Changed
 - Prepare a continuous command-repeat feature for remote-entities usable by all integrations, similar to the continuous IR-repeat feature.
