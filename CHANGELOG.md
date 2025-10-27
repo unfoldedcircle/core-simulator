@@ -11,6 +11,10 @@ _Changes in the next release_
 
 ---
 
+## v0.65.0-beta - 2025-10-27
+### Added
+- REST Core-API: new multi-button merge and replace endpoints for activities and remote-entities.
+
 ## v0.64.0-beta - 2025-09-25
 ### Fixed
 - Remote 3: Include STOP, MENU, RECORD buttons in the automatic button mappings.
