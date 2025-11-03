@@ -11,6 +11,12 @@ _Changes in the next release_
 
 ---
 
+## v0.65.1-beta - 2025-11-03
+### Added
+- REST Core-API: new sensor widget in activity user interface.
+### Fixed
+- REST Core-API: new multi-button merge for activities and remote-entities keeps the old button mapping if no command mapping is provided.
+
 ## v0.65.0-beta - 2025-10-27
 ### Added
 - REST Core-API: new multi-button merge and replace endpoints for activities and remote-entities.
