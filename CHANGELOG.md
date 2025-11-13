@@ -11,6 +11,12 @@ _Changes in the next release_
 
 ---
 
+## v0.65.2-beta - 2025-11-13
+### Added
+- REST Core-API development features for the web-configurator.
+  - Slider & voice assistant configuration in activities.
+  - New entity type `voice_assistant` with basic support.
+
 ## v0.65.1-beta - 2025-11-03
 ### Added
 - REST Core-API: new sensor widget in activity user interface.
