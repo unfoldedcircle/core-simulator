@@ -11,6 +11,31 @@ _Changes in the next release_
 
 ---
 
+## v0.66.0-beta - 2025-11-27
+### Added
+- REST and WS Core-API development features for the web-configurator.
+  - Initial voice assistant support.
+  - Configuration options for voice assistant.
+  - New voice assistant WS events. 
+- Web-configurator:
+  - Touch slider configuration support ([#474](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/474)).  
+    Available configuration options for supported entities:
+      - Media-player: volume or seek
+      - Light: brightness
+      - Cover: set position
+  - Sensor widget support for activities ([#291](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/291)).
+  - Copy-paste support for button mapping ([#630](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/630)).
+  - Ability to run activity sequences and macros ([#598](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/598)).
+  - Logout option in hamburger menu.
+### Fixed
+- Web-configurator:
+  - improved widget rearrangement in UI grid.
+  - Allow minimal screen brightness setting of 5% ([#672](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/672)).
+### Changed
+- Web-configurator:
+    - Revised command selection dialog so it's easier to see commands for just one entity.
+    - Button mapping popup: the whole line is clickable instead of just the icon.
+
 ## v0.65.2-beta - 2025-11-13
 ### Added
 - REST Core-API development features for the web-configurator.
