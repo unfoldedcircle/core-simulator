@@ -26,7 +26,8 @@ Important restrictions when used for developing custom integrations:
 ## UC Remote Device Model
 
 The Simulator acts as a Remote 3 device by default. To switch to Remote Two, the following environment
-variable needs to be commented out in the `core-simulator` service, or changed to `UCR2`:
+variable needs to be commented out in the `core-simulator` service, or changed to `UC_MODEL=UCR2`:
+
 ```
 UC_MODEL=UCR3
 ```
@@ -255,16 +256,19 @@ The same values are used as above.
 The Docker compose setup already includes the [Speech-to-Phrase](https://github.com/OHF-voice/speech-to-phrase) image
 required for Home Assistant.
 
-#### Add Wyoming
+#### Add Wyoming Protocol Integration
 
 1. Go to Settings, Devices & services
 2. Add Integration
 3. Search for `Wyoming Protocol` and add it:
    - Host: `speech-to-phrase`
    - Port: `10300`
-4. Go to Settings, Voice assistants
-5. If the Assist list is empty: add assistant, otherwise edit the default entry
-6. For `Speech-to-text` select `speech-to-phrase`.
+
+#### Configure Voice Assistant
+
+1. Go to Settings, Voice assistants
+2. If the Assist list is empty: add assistant, otherwise edit the default entry
+3. For `Speech-to-text` select `speech-to-phrase`.
 
 > [!IMPORTANT]
 > The `Speech-to-text` configuration is required to enable the `voice_assistant` entity.
