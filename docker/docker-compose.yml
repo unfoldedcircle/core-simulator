@@ -1,6 +1,6 @@
 services:
   core-simulator:
-    image: unfoldedcircle/core-simulator:0.66.0-bt
+    image: unfoldedcircle/core-simulator:0.66.2-bt
     container_name: core-simulator
     restart: "unless-stopped"
     ports:
@@ -10,7 +10,7 @@ services:
       - UC_TOKEN_PATH=/tmp/ui-env/ws-token
       - RUST_LOG=debug,remote_core::api::websocket=debug
       - UC_API_MSG_TRACING=all
-#      - UC_MODEL=UCR3
+      - UC_MODEL=UCR3
 #      - UC_INTEGRATION_DISABLE_CERT_VERIFICATION=true
 # To run the simulator on the same network as the host. Existing Docker integrations must be reconfigured!
 #    network_mode: "host"
@@ -24,13 +24,13 @@ services:
       #- ./fontawesome6:/app/webroot/configurator/fonts/fontawesome6
 
   integration-hass:
-    image: unfoldedcircle/integration-hass:0.13.1
+    image: unfoldedcircle/integration-hass:0.14.1
     container_name: integration-hass
     restart: "unless-stopped"
     # configure Home Assistant demo server defined below
     environment:
       - UC_HASS_URL=ws://hassio:8123/api/websocket
-      - UC_HASS_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhMWE0Y2YyYTIwYWU0MjZlYTc2NjJhNWY1OTk3NzQyOCIsImlhdCI6MTY1NTQ4MTIzNywiZXhwIjoxOTcwODQxMjM3fQ.RH4Xte1j8-k0gGbxx16NlSefGLMuIeuFgb8mpJk8Q9k
+      - UC_HASS_TOKEN=${HASS_TOKEN}
       # Token can also be propagated from an already defined environment variable. E.g. if defined in HASS_TOKEN:
       #- UC_HASS_TOKEN=$HASS_TOKEN
     # Port exposure is not really required, only for testing
@@ -52,6 +52,22 @@ services:
     volumes:
       - ./hass_config:/config
     privileged: true
+
+  # Optional local speech-to-text system for Home Assistant. Can be disabled if not used.
+  speech-to-phrase:
+    image: rhasspy/wyoming-speech-to-phrase:1.4.1
+    container_name: speech-to-phrase
+    restart: unless-stopped
+    # Port exposure is not really required, only for testing
+    ports:
+      - "10300:10300"
+    volumes:
+      - ./speech-to-phrase/models:/models
+      - ./speech-to-phrase/train:/train
+    command:
+      --hass-websocket-uri 'ws://hassio:8123/api/websocket'
+      --hass-token ${HASS_TOKEN}
+      --retrain-on-start
 
 # Python integration library example
 #  python-example:

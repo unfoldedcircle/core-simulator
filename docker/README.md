@@ -6,6 +6,7 @@ The pre-defined [docker-compose.yml](docker-compose.yml) is an all-in-one simula
 - [Home-Assistant server](https://www.home-assistant.io/): [ghcr.io/home-assistant/home-assistant:stable](https://github.com/home-assistant/core/pkgs/container/home-assistant)
 - The Home-Assistant data is persisted on the host in the [`hass_config`](hass_config) directory and bind-mounted into the container.
 - The remote-core Simulator data is persisted in a Docker volume.
+- [Speech-to-Phrase](https://github.com/OHF-voice/speech-to-phrase), a local speech-to-text system for Home Assistant.
 
 Important restrictions when used for developing custom integrations:
 - The Simulator runs in a bridged Docker network. Therefore, mDNS discovery won't work for detecting drivers on the host!  
@@ -19,18 +20,16 @@ Important restrictions when used for developing custom integrations:
   - The registered custom integration driver must be deleted manually in the web-configurator or with a Core-API call.
 - Bluetooth is not available.
   - BT-remote entities cannot be created in the web-configurator.
+- Microphone access for voice assistants is not available.
+  - We plan to add this feature later with an external application running on the Linux or Mac host (eventually also Windows).
 
 ## UC Remote Device Model
 
-The Simulator acts as a Remote Two device by default. To enable Remote 3 specific features, the following environment
-variable needs to be set in the `core-simulator` service:
+The Simulator acts as a Remote 3 device by default. To switch to Remote Two, the following environment
+variable needs to be commented out in the `core-simulator` service, or changed to `UCR2`:
 ```
 UC_MODEL=UCR3
 ```
-
-⚠️ When enabling the Remote 3 model, the web-configurator still shows the Remote Two image and is using an invalid
-button layout mapping!  
-The upcoming web-configurator 2.0 will support Remote 3 (ETA: November 2024).
 
 ## User Accounts
 
@@ -41,6 +40,9 @@ Home-Assistant:
 - Web page: <http://localhost:8123>
 - user: `unfolded`
 - password: `remotetwo`
+
+A long lived access token is required for the `integration-hass` and `speech-to-phrase` services. A pre-generated
+access token is stored in the `.env` file that is used in the Docker compose files.
 
 ## Docker Compose Commands
 
@@ -247,6 +249,26 @@ Container `integration-hass`:
 - Set ENV variable `UC_HASS_MSG_TRACING` to enable Home Assistant WS message tracing.
 
 The same values are used as above.
+
+### Home Assistant Voice Assistant Setup
+
+The Docker compose setup already includes the [Speech-to-Phrase](https://github.com/OHF-voice/speech-to-phrase) image
+required for Home Assistant.
+
+#### Add Wyoming
+
+1. Go to Settings, Devices & services
+2. Add Integration
+3. Search for `Wyoming Protocol` and add it:
+   - Host: `speech-to-phrase`
+   - Port: `10300`
+4. Go to Settings, Voice assistants
+5. If the Assist list is empty: add assistant, otherwise edit the default entry
+6. For `Speech-to-text` select `speech-to-phrase`.
+
+> [!IMPORTANT]
+> The `Speech-to-text` configuration is required to enable the `voice_assistant` entity.
+> Otherwise the Home Assistant voice assistant entity will not be available.
 
 ## Remote-UI
 

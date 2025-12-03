@@ -11,6 +11,19 @@ _Changes in the next release_
 
 ---
 
+## v0.66.2-beta - 2025-12-02
+### Added
+- Instructions on how to setup a voice assistant in the provided Home Assistant Docker compose setup.
+- Home Assistant integration with voice assistant support.
+### Fixed
+- Web-configurator:
+  - Adding a widget does not open in the remote UI editor.
+  - Possible fix for scrolling window inside seqence-list is not possible ([#693](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/693)).
+### Changed
+- Filter media player media information filtering: replace all whitespace characters with a normal space except the
+  non-breaking space.
+- Use Remote 3 in Simulator by default. See docker/README.md on how to switch back to Remote Two.
+
 ## v0.66.0-beta - 2025-11-27
 ### Added
 - REST and WS Core-API development features for the web-configurator.
