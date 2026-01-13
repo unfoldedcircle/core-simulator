@@ -11,6 +11,21 @@ _Changes in the next release_
 
 ---
 
+## v0.68.0-beta - 2026-01-13
+### Added
+- Select entity support.
+### Fixed
+- Return same `power_supply` value in `GetPowerMode` WS response
+- Web-configurator:
+  - Performance improvements for editing button mappings, UI widgets, activity- and macro-sequences.
+  - Media-player seek command returning an error when used in a UI widget.
+  - Connection / sleep status check after sleep timer expires.
+  - Improvements to sensor display.
+  - Sensor entity filter removed from activities and macros. Sensors do not need to be included and cannot execute commands.
+  - Integration state is not updated in integration screen.
+### Changed
+- Extend sequence timeout to 5 minutes ([#137](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/137)).
+
 ## v0.66.2-beta - 2025-12-02
 ### Added
 - Instructions on how to setup a voice assistant in the provided Home Assistant Docker compose setup.
