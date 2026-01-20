@@ -11,6 +11,15 @@ _Changes in the next release_
 
 ---
 
+## v0.68.1-beta - 2026-01-20
+### Added
+- REST Core-API: Select UI-widget support.
+### Changed
+- Enhanced error information in `entity_change` events for activity and macro sequence errors.
+  - `error`: error code string instead of debug error message. For example, `NOT_FOUND` (as in Core-API error `code`).
+  - `error_code`: numeric error status code. For example, `404` (as in Core-API http status code).
+  - `error_message`: debug error message (previously in `error`). For example, `No data found` (as in Core-API error `message`).
+
 ## v0.68.0-beta - 2026-01-13
 ### Added
 - Select entity support.
