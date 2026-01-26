@@ -11,6 +11,20 @@ _Changes in the next release_
 
 ---
 
+## v0.69.1-beta - 2026-01-26
+### Fixed
+- Web-configurator:
+  - Potential fix for IR commands no longer showing in activity sequences ([#738](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/738)).
+  - Not all entity states were updated in the integration screen.
+  - A busy indicator is shown until the log download starts.
+
+### Added
+- New [Select-entity](https://unfoldedcircle.github.io/core-api/entities/entity_select.html) with a new UI-widget.
+
+### Changed
+- Prefer IPv4 for external integrations ([#734](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/734)).
+- Show more detailed error reasons for integration errors.
+
 ## v0.68.1-beta - 2026-01-20
 ### Added
 - REST Core-API: Select UI-widget support.
