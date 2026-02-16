@@ -57,6 +57,9 @@ Check <https://hub.docker.com/u/unfoldedcircle> for new releases.
 ⚠️ if you are using Linux or macOS, please make sure the subdirectories `ui-env` and `upload` are world-writeable.  
 If you get permission errors: `chmod 777 ui-env upload`.
 
+⚠️ macOS requires Rosetta 2 when running on an M1 or newer platform. MacOS 26 or newer Docker Desktop versions might
+also require the `--platform linux/amd64` argument to pull the amd64 based `unfoldedcircle/core-simulator` image.
+
 Start in foreground:
 ```shell
 docker-compose up

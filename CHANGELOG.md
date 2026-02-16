@@ -11,6 +11,10 @@ _Changes in the next release_
 
 ---
 
+## v0.69.2-beta - 2026-02-16
+### Added
+- REST Core-API: activity ready check option ([feature-and-bug-tracker#753](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/753)).
+
 ## v0.69.1-beta - 2026-01-26
 ### Fixed
 - Web-configurator:
