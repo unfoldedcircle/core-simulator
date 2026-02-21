@@ -11,6 +11,25 @@ _Changes in the next release_
 
 ---
 
+## v0.69.3-beta - 2026-02-20
+### Fixed
+- Web-configurator:
+  - Grid size in remote- and activity-page reset to default 4x6 size when renaming page ([#626](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/626), [#655](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/655)).
+  - Improved sensor values display.
+  - Improved pre-selection of input fields for direct text entry.
+  - Entity list does not refresh in the customize your remote view. 
+  - Set color command is displayed incorrectly during sequence execution.
+  - OTA check loop.
+
+### Added
+- Add activity readiness check option ([#753](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/753))
+
+### Changed
+- Support content delivery network for OTA updates.
+- Web-configurator:
+  - Pagination settings are now saved in the user session ([#430](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/430), [#697](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/697)).
+  - Renamed generic toggle button command based on entity type.
+
 ## v0.69.2-beta - 2026-02-16
 ### Added
 - REST Core-API: activity ready check option ([feature-and-bug-tracker#753](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/753)).
