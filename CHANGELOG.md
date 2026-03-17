@@ -11,6 +11,24 @@ _Changes in the next release_
 
 ---
 
+## v0.70.3-beta - 2026-03-17
+### Fixed
+- Web-configurator:
+  - crolling window inside seqence-list is not possible ([#693](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/693)).
+  - Invalid command for single boolean parameter.
+  - Activity UI edit page screen shows invalid page name if a previous error was not cleared.
+  - Missing error indication for regex inputs.
+  - Command with multiple regex text parameters cannot be saved.
+
+### Added
+- API support for media browsing, searching and playback in media-player entity ([#70](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/70), [core-api#77](https://github.com/unfoldedcircle/core-api/pull/77)).
+  - Home Assistant integration support for new media-player functionality.
+- Application credential management for upcoming integrations requiring OAuth 2.0 Authorization Code Grant.
+  - This is a development feature and cannot be used yet with existing integrations.
+
+### Changed
+- Improve IR send-command editing in activities & macros: show defined IR commands in dropdown list.
+
 ## v0.69.3-beta - 2026-02-20
 ### Fixed
 - Web-configurator:
