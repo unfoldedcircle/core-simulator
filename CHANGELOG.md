@@ -11,6 +11,20 @@ _Changes in the next release_
 
 ---
 
+## v0.70.5-beta - 2026-03-18
+### Fixed
+- Home Assistant integration: ignore invalid media browse response data (e.g. from Kodi)
+- Web-configurator:
+  - Prevent spurious reconnect screen on transient WS drops.
+  - Not showing timeout after reconnect.
+  - Various runtime fixes and reduced runtime resource usage. 
+
+### Added
+- Support new `stable_ids` option in media browse and search.
+- Web-configurator:
+  - Support optional command parameters.
+  - Improved sequence command layout.
+
 ## v0.70.3-beta - 2026-03-17
 ### Fixed
 - Web-configurator:
