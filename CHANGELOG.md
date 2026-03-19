@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
+### Fixed
+- Home Assistant: play_media_action attribute for play media action feature ([#92](https://github.com/unfoldedcircle/integration-home-assistant/pull/92))
+
 ---
 
 ## v0.70.6-beta - 2026-03-19
