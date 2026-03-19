@@ -11,6 +11,13 @@ _Changes in the next release_
 
 ---
 
+## v0.70.6-beta - 2026-03-19
+### Fixed
+- Web-configurator: entity parameter cannot be added or shows wrong value if data is missing, e.g. in select_next commands created with an old version.
+
+### Changed
+- Filter non-printable characters and Emojis in media-browse results and playlist name.
+
 ## v0.70.5-beta - 2026-03-18
 ### Fixed
 - Home Assistant integration: ignore invalid media browse response data (e.g. from Kodi)
@@ -28,7 +35,7 @@ _Changes in the next release_
 ## v0.70.3-beta - 2026-03-17
 ### Fixed
 - Web-configurator:
-  - crolling window inside seqence-list is not possible ([#693](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/693)).
+  - Scrolling window inside seqence-list is not possible ([#693](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/693)).
   - Invalid command for single boolean parameter.
   - Activity UI edit page screen shows invalid page name if a previous error was not cleared.
   - Missing error indication for regex inputs.
