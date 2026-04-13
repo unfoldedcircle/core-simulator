@@ -9,10 +9,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _Changes in the next release_
 
-### Fixed
-- Home Assistant: play_media_action attribute for play media action feature ([#92](https://github.com/unfoldedcircle/integration-home-assistant/pull/92))
-
 ---
+
+## v0.71.0 - 2026-04-13
+### Fixed
+- Web-configurator:
+  - Renaming Remote pages doesn't always work.
+  - Select-entity cannot be included when creating a new macro or activity.
+  - Select-UI-widget without a value is not visible in UI grid.
+  - Button mapping broken for Home Assistant entities ([#768](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/768)).
+- Home Assistant:
+  - play_media_action attribute for play media action feature ([home-assistant#92](https://github.com/unfoldedcircle/integration-home-assistant/pull/92)).
+  - Ignore browse media items without a title ([home-assistant#93](https://github.com/unfoldedcircle/integration-home-assistant/pull/93)).
+  - Filter out non-playable media content ids  ([home-assistant#94](https://github.com/unfoldedcircle/integration-home-assistant/pull/94)).
+
+### Added
+- Allow integrations to provide an entity description.
+- Web-configurator: media browse dialog for selecting a media item for the play command.
+
+### Changed
+- Allow editing of remote-entity button mappings & UI elements ([#768](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/768)).
+- Truncate media fields and validate BrowseMediaItem.
+- Update Swagger UI from v4 to 5.32.2
+- Update Core-API specification from OpenAPI 3.0.3 to 3.1.1, use redocly for bundling and linting.
 
 ## v0.70.6-beta - 2026-03-19
 ### Fixed
