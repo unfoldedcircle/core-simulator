@@ -11,6 +11,14 @@ _Changes in the next release_
 
 ---
 
+## v0.72.0 - 2026-04-27
+### Fixed
+- Sending unsubscribe events to integrations when removing configured entities.
+- Web-configurator: US English text ([core-api#83](https://github.com/unfoldedcircle/core-api/issues/83)).
+
+### Changed
+- Strictly validate light command parameters and attributes to prevent invalid color change commands.
+
 ## v0.71.0 - 2026-04-13
 ### Fixed
 - Web-configurator:
