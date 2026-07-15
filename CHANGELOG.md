@@ -11,6 +11,30 @@ _Changes in the next release_
 
 ---
 
+## v0.74.1 - 2026-07-15
+
+Updated components:
+- Core 0.74.1
+- Web-Configurator 2.1.0
+
+### Fixed
+- Wait up to 30s for custom integrations to startup when running the integration setup ([#448](https://github.com/unfoldedcircle/feature-and-bug-tracker/issues/448)).
+- Web-Configurator:
+  - Fixed widget placement issues where widgets could incorrectly overlap.
+  - Fixed incorrect behavior for some button list items.
+
+### Changed
+- Web-Configurator:
+  - Improved connection reliability with a major rewrite of the app’s live connection handling.
+  - Reduced unnecessary reloads and refresh loops caused by connection events.
+  - Improved real-time updates so device and remote changes are handled more consistently.
+  - Made reconnecting after temporary network issues more stable.
+  - Improved login reliability and handling of authentication errors.
+  - Stored PINs are now cleared when authentication fails, helping avoid repeated login issues.
+  - Added the ability to change the locally stored dock password.
+  - Improved app refresh behavior after a system update so the latest version loads more reliably.
+  - Improved error handling and error messages in several areas.
+
 ## v0.72.0 - 2026-04-27
 ### Fixed
 - Sending unsubscribe events to integrations when removing configured entities.
