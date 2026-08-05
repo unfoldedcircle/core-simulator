@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/docker"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 14
+
+  - package-ecosystem: "docker"
+    directory: "/docker/python-intg-example"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 14
